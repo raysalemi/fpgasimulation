@@ -1,0 +1,2262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_handshake</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,24,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_handshake"></a>
+<a name="wp789546"></a><h3 class="pHeading2">
+  
+
+
+ovl_handshake
+  </h3>
+
+
+<a name="wp789576"></a><p class="pBody">
+Ensures that specified request and acknowledge signals follow a specified handshake protocol.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp841098table841073">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp841098"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers009.jpg" height="109" width="242" id="wp841076" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp841100"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp841101"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp841135"></a><p class="pTableCell">
+<span class="cItalic">min_ack_cycle </span>
+
+</p>
+
+<a name="wp841136"></a><p class="pTableCell">
+<span class="cItalic">max_ack_cycle </span>
+
+</p>
+
+<a name="wp841137"></a><p class="pTableCell">
+<span class="cItalic">req_drop </span>
+
+</p>
+
+<a name="wp841138"></a><p class="pTableCell">
+<span class="cItalic">deassert_count </span>
+
+</p>
+
+<a name="wp841139"></a><p class="pTableCell">
+<span class="cItalic">max_ack_length </span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp841147"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp841108"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp841109"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp841110"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp841111"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp841112"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp841123"></a><p class="pTableCell">
+<span class="cBold">Class: </span>event-bounded assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp789577"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp789578"></a><pre class="pCode">
+     <span class="cBold">ovl_handshake</span>  
+</pre>
+
+<a name="wp789579"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, min_ack_cycle, max_ack_cycle, req_drop,</span>
+</pre>
+
+<a name="wp839810"></a><pre class="pCode">
+     <span class="cItalic">         deassert_count, max_ack_length, property_type</span>,<span class="cItalic"> msg</span>,
+</pre>
+
+<a name="wp839813"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span>)] 
+</pre>
+
+<a name="wp789581"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, enable, req, ack, fire</span>);
+</pre>
+
+<a name="EW44"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp789637"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp837373table789582">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837373"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837375"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798218"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_ack_cycle</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798220"></a><p class="pTableCell">
+
+Minimum number of clock cycles before acknowledge. A value of 0 turns off the ack min cycle check. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798222"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_ack_cycle</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798224"></a><p class="pTableCell">
+
+Maximum number of clock cycles before acknowledge. A value of 0 turns off the ack max cycle check. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798226"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">req_drop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798228"></a><p class="pTableCell">
+
+If greater than 0, value of <span class="cItalic">req</span> must remain TRUE until acknowledge. A value of 0 turns off the req drop check. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798230"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deassert_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798232"></a><p class="pTableCell">
+
+Maximum number of clock cycles after acknowledge that <span class="cItalic">req</span> can remain TRUE (i.e., <span class="cItalic">req</span> must not be stuck active). A value of 0 turns off the req deassert  check. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798234"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_ack_length</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798236"></a><p class="pTableCell">
+
+Maximum number of clock cycles that <span class="cItalic">ack</span> can be TRUE. A value of 0 turns off the max ack length check. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837709"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837711"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837705"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837707"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837701"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837703"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837697"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837699"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837693"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837695"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837689"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837691"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp789671"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp838446table789638">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838446"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838448"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838450"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838452"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838454"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838456"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798206"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">req</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798208"></a><p class="pTableCell">
+
+Expression that starts a transaction.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798210"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">ack</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798212"></a><p class="pTableCell">
+
+Expression that indicates the transaction is complete.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838795"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp838796"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838798"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp789672"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp789673"></a><p class="pBody">
+The ovl_handshake assertion checker checks the single-bit expressions <span class="cItalic">req</span> and <span class="cItalic">ack</span> at each active edge of <span class="cItalic">clock</span> to verify their values conform to the request-acknowledge handshake protocol specified by the checker parameters/generics. A request event (where <span class="cItalic">req</span> transitions to TRUE) initiates a transaction on the active edge of <span class="cItalic">clock</span> and an acknowledge event (where <span class="cItalic">ack</span> transitions to TRUE) signals the transaction is complete on the active edge of <span class="cItalic">clock</span>. The transaction must not include multiple request events and every acknowledge must have a pending request. Other checks&#151; to ensure the acknowledge is received in a specified window, the request is held active until the acknowledge, the requests and acknowledges are not stuck active and the pulse length is not too long&#151; are enabled and controlled by the checker's parameters/generics.
+</p>
+
+<a name="wp789674"></a><p class="pBody">
+When a violation occurs, the checker discards any pending request. Checking is restarted the next cycle that <span class="cItalic">ack</span> is sampled FALSE.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp789719"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798146table789676">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798146"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MULTIPLE_REQ_VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798148"></a><p class="pTableCell">
+
+The value of <span class="cItalic">req</span> transitioned to TRUE while waiting for an acknowledge or while acknowledge was asserted. Extra requests do not initiate new transactions. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798150"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ACK_WITHOUT_REQ_</span>
+
+
+
+</p>
+
+
+
+<a name="wp800913"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798152"></a><p class="pTableCell">
+
+The value of <span class="cItalic">ack</span> transitioned to TRUE without a pending request.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798154"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ACK_MIN_CYCLE_ </span>
+
+
+
+</p>
+
+
+
+<a name="wp800914"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798156"></a><p class="pTableCell">
+
+The value of ack transitioned to TRUE before <span class="cItalic">min_ack_cycle</span> clock cycles transpired after the request.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798158"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ACK_MAX_CYCLE_ </span>
+
+
+
+</p>
+
+
+
+<a name="wp800915"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798160"></a><p class="pTableCell">
+
+The value of <span class="cItalic">ack</span> did not transition to TRUE before <span class="cItalic">max_ack_cycle</span> clock cycles transpired after the request.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798162"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">REQ_DROP_VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798164"></a><p class="pTableCell">
+
+The value of <span class="cItalic">req</span> transitioned from TRUE before an acknowledge.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798166"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">REQ_DEASSERT_VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798168"></a><p class="pTableCell">
+
+The value of req did not transition from TRUE before <span class="cItalic">deassert_count</span> clock cycles transpired after an acknowledge.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798170"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ACK_MAX_LENGTH_</span>
+
+
+
+</p>
+
+
+
+<a name="wp800916"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">VIOLATION</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798172"></a><p class="pTableCell">
+
+The value of ack did not transition from TRUE before <span class="cItalic">max_ack_length </span>clock cycles transpired after an acknowledge.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW45"></a><a name="wp801121"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801117table801115">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801117"></a><p class="pTableCell">
+
+req contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801120"></a><p class="pTableCell">
+
+Req expression value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801567"></a><p class="pTableCell">
+
+ack contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801569"></a><p class="pTableCell">
+
+Ack expression value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp789733"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798138table789720">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798138"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_req_asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798140"></a><p class="pTableCell">
+
+BASIC &#151;  A transaction initiated.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798142"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_ack_asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798144"></a><p class="pTableCell">
+
+BASIC &#151;  A transaction completed.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874487"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874488"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPSee also"></a>
+<a name="wp789734"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp799689table799684">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp799689"></a><p class="pTableCell">
+
+<a href="hold.html"><span class="cLink">hold</span> requests are not made while waiting for a <span class="cItalic">holda</span> acknowledge and that every <span class="cItalic">holda</span> acknowledge is in response to a unique <span class="cItalic">hold</span> request.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers071.jpg" height="76" width="413" id="wp789795" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers072.jpg" height="80" width="413" id="wp789824" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp789880"></a><p class="pBody">
+After a violation, checking is turned off until <span class="cItalic">holda</span> acknowledge is sampled deasserted.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers073.jpg" height="75" width="413" id="wp789855" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp789936"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp789883table789881">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp789883"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_handshake #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp789893"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp789894"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">2, </span>
+
+</p>
+
+<a name="wp789895"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">3, </span>
+
+</p>
+
+<a name="wp789896"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789897"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789898"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789899"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp789900"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;hold-holda handshake error&rdquo;, </span>
+
+</p>
+
+<a name="wp835211"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835212"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835213"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp789901"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp789905"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp789906"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// min_ack_cycle </span>
+
+</p>
+
+<a name="wp789907"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_cycle </span>
+
+</p>
+
+<a name="wp789908"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req_drop </span>
+
+</p>
+
+<a name="wp789909"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// deassert_count </span>
+
+</p>
+
+<a name="wp789910"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_length</span>
+
+</p>
+
+<a name="wp789911"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp789912"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869686"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869900"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870110"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp789913"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp789917"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">valid_hold_holda (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp789927"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp836009"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp789928"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp789929"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">hold, </span>
+
+</p>
+
+<a name="wp837191"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">holda, </span>
+
+</p>
+
+<a name="wp789930"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">fire_valid_hold_holda );</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp789932"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870292"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp789933"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp789934"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req </span>
+
+</p>
+
+<a name="wp836771"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// ack</span>
+
+</p>
+
+<a name="wp789935"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp789937"></a><p class="pBody">
+Ensures that multiple <span class="cItalic">hold</span> requests are not made while waiting for a <span class="cItalic">holda</span> acknowledge and that every <span class="cItalic">holda</span> acknowledge is in response to a unique <span class="cItalic">hold</span> request. Ensures <span class="cItalic">holda</span> acknowledge asserts 2 to 3 cycles after each hold request. 
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers074.jpg" height="68" width="337" id="wp789939" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp790028"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp789975table789973">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp789975"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_handshake #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp789985"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp789986"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789987"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789988"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789989"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp789990"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">2, </span>
+
+</p>
+
+<a name="wp789991"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp789992"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;hold-holda handshake error&rdquo;, </span>
+
+</p>
+
+<a name="wp835223"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835224"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835225"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp789993"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp789997"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp789998"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// min_ack_cycle </span>
+
+</p>
+
+<a name="wp789999"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_cycle </span>
+
+</p>
+
+<a name="wp790000"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req_drop </span>
+
+</p>
+
+<a name="wp790001"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// deassert_count </span>
+
+</p>
+
+<a name="wp790002"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_length</span>
+
+</p>
+
+<a name="wp790003"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp790004"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869690"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869904"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870114"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp790005"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp790009"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">valid_hold_holda (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp790019"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp836015"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp790020"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp790021"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">hold, </span>
+
+</p>
+
+<a name="wp837184"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">holda, </span>
+
+</p>
+
+<a name="wp790022"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">fire_valid_hold_holda );</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp790024"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870296"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp790025"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp790026"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req </span>
+
+</p>
+
+<a name="wp836776"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// ack</span>
+
+</p>
+
+<a name="wp790027"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp790029"></a><p class="pBody">
+Ensures that multiple <span class="cItalic">hold</span> requests are not made while waiting for a <span class="cItalic">holda</span> acknowledge and that every <span class="cItalic">holda</span> acknowledge is in response to a unique <span class="cItalic">hold</span> request. Ensures <span class="cItalic">holda</span> acknowledge asserts for 2 cycles.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers075.jpg" height="75" width="413" id="wp790031" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp790112"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp790059table790057">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp790059"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_handshake #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp790069"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp790070"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp790071"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp790072"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp790073"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp790074"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp790075"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp790076"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;hold-holda handshake error&rdquo;, </span>
+
+</p>
+
+<a name="wp835231"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835232"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835233"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp790077"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp790081"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp790082"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// min_ack_cycle </span>
+
+</p>
+
+<a name="wp790083"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_cycle </span>
+
+</p>
+
+<a name="wp790084"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req_drop </span>
+
+</p>
+
+<a name="wp790085"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// deassert_count </span>
+
+</p>
+
+<a name="wp790086"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// max_ack_length</span>
+
+</p>
+
+<a name="wp790087"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp790088"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869694"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869908"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870118"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp790089"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp790093"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">valid_hold_holda (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp790103"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp836021"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp790104"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp790105"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">hold, </span>
+
+</p>
+
+<a name="wp837177"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">holda, </span>
+
+</p>
+
+<a name="wp790106"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">fire_valid_hold_holda );</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp790108"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870300"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp790109"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp790110"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// req </span>
+
+</p>
+
+<a name="wp836781"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// ack</span>
+
+</p>
+
+<a name="wp790111"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp790113"></a><p class="pBody">
+Ensures that multiple <span class="cItalic">hold</span> requests are not made while waiting for a <span class="cItalic">holda</span> acknowledge and that every <span class="cItalic">holda</span> acknowledge is in response to a unique <span class="cItalic">hold</span> request. Ensures <span class="cItalic">hold</span> request remains asserted until its <span class="cItalic">holda</span> acknowledge and then deasserts in the next cycle.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers076.jpg" height="83" width="413" id="wp790115" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

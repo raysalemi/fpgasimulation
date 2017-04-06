@@ -1,0 +1,2788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_multiport_fifo</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,30,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_multiport_fifo"></a>
+<a name="wp846787"></a><h3 class="pHeading2">
+  
+
+
+ovl_multiport_fifo
+  </h3>
+
+
+<a name="wp846788"></a><p class="pBody">
+Ensures the data integrity of a FIFO with multiple enqueue and dequeue ports, and ensures that the FIFO does not overflow or underflow.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846830table846789">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp846830"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers041.jpg" height="125" width="242" id="wp846792" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+<a name="wp846839"></a><p class="pTableCell">
+*if <span style="color: #000000" class="cxgCour10i">preload_count</span><span style="color: #000000" class="cxgCour10"> = 0</span>: 
+
+</p>
+
+<a name="wp846840"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10">preload</span> is <span style="color: #000000" class="cxgCour10i">width</span> bits wide</p>
+</td>
+    <td>
+<a name="wp846842"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp846843"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp846844"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">width</span></span>
+
+</p>
+
+<a name="wp846845"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">depth</span></span>
+
+</p>
+
+<a name="wp846846"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">		enq_count</span></span>
+
+</p>
+
+<a name="wp846847"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">deq_count</span></span>
+
+</p>
+
+<a name="wp846848"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">pass_thru</span></span>
+
+</p>
+
+<a name="wp846849"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">registered</span></span>
+
+</p>
+
+<a name="wp846850"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">enq_latency</span></span>
+
+</p>
+
+<a name="wp846851"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">deq_latency</span></span>
+
+</p>
+
+<a name="wp846852"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">preload_count</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp869396"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">high_water_mark</span></span>
+
+</p>
+
+<a name="wp846855"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">full_check</span></span>
+
+</p>
+
+<a name="wp846856"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">empty_check</span></span>
+
+</p>
+
+<a name="wp846857"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">value_check</span></span>
+
+</p>
+
+<a name="wp846858"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp846859"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp846860"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">coverage_level</span></span>
+
+</p>
+
+<a name="wp846861"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp846862"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp846863"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp846867"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp846870"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp846871"></a><pre class="pCode">
+     <span class="cBold">ovl_multiport_fifo</span>
+</pre>
+
+<a name="wp846872"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, depth, enq_count, deq_count, pass_thru, </span>
+</pre>
+
+<a name="wp846873"></a><pre class="pCode">
+     <span class="cItalic">         registered, enq_latency, deq_latency, preload_count, </span>
+</pre>
+
+<a name="wp846874"></a><pre class="pCode">
+     <span class="cItalic">         high_water_mark, full_check, empty_check, value_check, </span>
+</pre>
+
+<a name="wp846875"></a><pre class="pCode">
+     <span class="cItalic">         property_type, msg, coverage_level, clock_edge, reset_polarity, </span>
+</pre>
+
+<a name="wp846876"></a><pre class="pCode">
+     <span class="cItalic">         gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp846877"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, enq, deq, enq_data, deq_data, </span>
+</pre>
+
+<a name="wp846878"></a><pre class="pCode">
+     <span class="cItalic">      full, empty, preload, fire</span>);
+</pre>
+
+<a name="EW56"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp846990"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846881table846879">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846881"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846883"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846885"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846887"></a><p class="pTableCell">
+
+Width of a data item in the FIFO. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846889"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">depth</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846891"></a><p class="pTableCell">
+
+FIFO depth. The <span class="cItalic">depth</span> must be &gt; 0 . Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846893"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846895"></a><p class="pTableCell">
+
+Number of FIFO enqueue ports. Must be &#8804; <span class="cItalic">depth</span>. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846897"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846899"></a><p class="pTableCell">
+
+Number of FIFO dequeue ports. Must be &#8804; <span class="cItalic">depth</span>. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846901"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846903"></a><p class="pTableCell">
+
+How the FIFO handles dequeues and enqueues in the same cycle if the FIFO count is such that a dequeue violation might occur.
+
+
+
+</p>
+
+
+
+<a name="wp846904"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp846905"></a><p class="pTableL1Body">No pass-through mode means dequeue before enqueue. A dequeue violation occurs if the number of scheduled dequeues &gt; the current FIFO count.</p>
+
+<a name="wp846906"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp846907"></a><p class="pTableL1Body">Pass-through mode means enqueue before dequeue. A dequeue violation occurs if the number of scheduled dequeues - the number of scheduled enqueues &gt; the current FIFO count.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846909"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">registered</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846911"></a><p class="pTableCell">
+
+How the FIFO handles dequeues and enqueues in the same cycle if the FIFO count is such that an enqueue violation might occur.
+
+
+
+</p>
+
+
+
+<a name="wp846912"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">registered</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp846913"></a><p class="pTableL1Body">No registered mode means enqueue before dequeue. An enqueue violation occurs if the current FIFO count + the number of scheduled enqueues &gt; <span class="cItalic">depth</span>.</p>
+
+<a name="wp846914"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">registered</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp846915"></a><p class="pTableL1Body">Registered mode means dequeue before enqueue. An enqueue violation occurs if the current FIFO count + the number of scheduled enqueues - the number scheduled dequeues &gt; <span class="cItalic">depth</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846917"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq_latency</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846919"></a><p class="pTableCell">
+
+Latency for enqueue data.
+
+
+
+</p>
+
+
+
+<a name="wp846920"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq_latency</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp846921"></a><p class="pTableL1Body">Checks and coverage assume <span class="cItalic">enq_data</span> is valid and the enqueue operation is performed in the same cycle <span class="cItalic">enq</span> asserts. </p>
+
+<a name="wp846922"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq_latency</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp846923"></a><p class="pTableL1Body">Checks and coverage assume <span class="cItalic">enq_data</span> is valid and the enqueue operation is performed <span class="cItalic">enq_latency</span> cycles after <span class="cItalic">enq</span> asserts. </p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846925"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_latency</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846927"></a><p class="pTableCell">
+
+Latency for dequeued data. It is used for the value check.
+
+
+
+</p>
+
+
+
+<a name="wp846928"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_latency</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp846929"></a><p class="pTableL1Body">Checks and coverage assume <span class="cItalic">deq_data</span> is valid and the dequeue operation is performed in the same cycle <span class="cItalic">deq</span> asserts. </p>
+
+<a name="wp846930"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_latency</span><span style="color: #000000" class="cxgCour10"> &gt; 0 </span>
+
+
+
+</p>
+
+
+
+<a name="wp846931"></a><p class="pTableL1Body">Checks and coverage assume <span class="cItalic">deq_data</span> is valid and the dequeue operation is performed <span class="cItalic">deq_latency</span> cycles after <span class="cItalic">deq</span> asserts.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846933"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">preload_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846935"></a><p class="pTableL1Body">Number of items to preload the FIFO on reset. The preload port</p>
+
+<a name="wp846936"></a><p class="pTableL1Body">is a concatenated list of items to be preloaded into the FIFO.</p>
+
+<a name="wp846937"></a><p class="pTableL1Body">Default: 0 (FIFO empty on reset).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846939"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">high_water_mark</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846941"></a><p class="pTableCell">
+
+FIFO high-water mark. Must be &lt; <span class="cItalic">depth</span>. A value of 0 disables the high_water_mark cover point. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846943"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846945"></a><p class="pTableL1Body">Whether or not to perform full checks.</p>
+
+<a name="wp846946"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">full_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846947"></a><p class="pTableL1Body">Turns off the full check.</p>
+
+<a name="wp846948"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">full_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846949"></a><p class="pTableL1Body">Turns on the full check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846951"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846953"></a><p class="pTableL1Body">Whether or not to perform empty checks.</p>
+
+<a name="wp846954"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">empty_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846955"></a><p class="pTableL1Body">Turns off the empty check.</p>
+
+<a name="wp846956"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">empty_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846957"></a><p class="pTableL1Body">Turns on the empty check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846959"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">value_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846961"></a><p class="pTableL1Body">Whether or not to perform value checks.</p>
+
+<a name="wp846962"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846963"></a><p class="pTableL1Body">Turns off the value check.</p>
+
+<a name="wp846964"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846965"></a><p class="pTableL1Body">Turns on the value check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846967"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846969"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846971"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846973"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846975"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846977"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846979"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846981"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846983"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846985"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846987"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846989"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp847054"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846995table846993">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846995"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846997"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846999"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847001"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847003"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847005"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847007"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">enq_count</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847009"></a><p class="pTableCell">
+
+Concatenation of FIFO enqueue inputs. When one or more <span style=" font-style: italic;">enq</span> bits are sampled TRUE, the FIFO performs an enqueue operation from the asserted bits' corresponding enqueue data ports (<span class="cItalic">enq_latency</span> cycles later). Data items are enqueued in order from the least to most-significant bits and the FIFO counter is incremented by the number of TRUE <span style=" font-style: italic;">enq</span> bits
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847011"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">deq_count</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847013"></a><p class="pTableCell">
+
+Concatenation of FIFO dequeue inputs. When one or more <span style=" font-style: italic;">deq</span> bits are sampled TRUE, the FIFO performs a dequeue operation from the asserted bits' corresponding dequeue data ports (<span class="cItalic">deq_latency</span> cycles later). Data items are dequeued in order from the least to most-significant bits and the FIFO counter is decremented by the number of TRUE <span style=" font-style: italic;">deq</span> bits
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847015"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847017"></a><p class="pTableCell">
+
+Output status flag from the FIFO. 
+
+
+
+</p>
+
+
+
+<a name="wp847018"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847019"></a><p class="pTableL1Body">FIFO not full.</p>
+
+<a name="wp847020"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp847021"></a><p class="pTableL1Body">FIFO full.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847023"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847025"></a><p class="pTableCell">
+
+Output status flag from the FIFO. 
+
+
+
+</p>
+
+
+
+<a name="wp847026"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847027"></a><p class="pTableL1Body">FIFO not empty.</p>
+
+<a name="wp847028"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp847029"></a><p class="pTableL1Body">FIFO empty.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847031"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enq_data</span>
+
+
+
+</p>
+
+
+
+<a name="wp847032"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">enq_count</span><span style="color: #000000" class="cxgCour10">*</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847034"></a><p class="pTableCell">
+
+Concatenation of enqueue data inputs. If the value check is on, this port contains the data items to enqueue <span class="cItalic">enq_latency</span> cycles after the <span class="cItalic">enq</span> bits assert.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847036"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_data</span>
+
+
+
+</p>
+
+
+
+<a name="wp847037"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">deq_count</span><span style="color: #000000" class="cxgCour10">*</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847039"></a><p class="pTableCell">
+
+Concatenation of dequeue data inputs. If the value check is on, this port contains the dequeued data items <span class="cItalic">deq_latency</span> cycles after the <span class="cItalic">deq</span> bits assert.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847041"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">preload</span>
+
+
+
+</p>
+
+
+
+<a name="wp847042"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">preload_count</span><span style="color: #000000" class="cxgCour10">*</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1 :0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847044"></a><p class="pTableCell">
+
+Concatenated preload data to enqueue on reset.
+
+
+
+</p>
+
+
+
+<a name="wp847045"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">preload_count</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847046"></a><p class="pTableCell">
+
+No preload of the FIFO is assumed. The width of preload should be <span class="cItalic">width</span>, however no values from <span class="cItalic">preload</span> are used. The FIFO is assumed to be empty on reset.
+
+
+
+</p>
+
+
+
+<a name="wp847047"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">preload_count</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847048"></a><p class="pTableCell">
+
+Checker assumes the value of <span class="cItalic">preload</span> is a concatenated list of items that were all enqueued on the FIFO on reset (or simulation start). The width of preload should be <span class="cItalic">preload_count * width</span> (preload items are the same width). Preload values are enqueued from the low order item to the high order item.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847050"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp847051"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[OVL_FIRE_WIDTH-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847053"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp847057"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp847058"></a><p class="pBody">
+The ovl_multiport_fifo assertion checker ensures a multiport FIFO functions legally. A multiport FIFO is a memory structure that stores and retrieves data items based on a first-in first-out queueing protocol. The FIFO can have multiple enqueue data ports and multiple dequeue data ports (the number of each does need to match). Each enqueue data port has a corresponding enqueue signal that indicates the data port's value should be enqueued. Similarly, each dequeue data port has a corresponding dequeue signal that indicates a data item from the FIFO should be dequeued to that port. 
+</p>
+
+<a name="wp847059"></a><p class="pBody">
+A FIFO with multiple enqueue ports can signal an enqueue from any combination of the ports each enqueue clock cycle. Similarly, a FIFO with multiple dequeue ports can signal a dequeue to any combination of the ports each dequeue clock cycle. When multiple ports are enqueued (dequeued) in a cycle, the order their contents are enqueued (dequeued) is always the same. A FIFO can also have enqueue and dequeue latency constants. Enqueue latency is the number of clock cycles after an enqueue signal asserts that the corresponding enqueue data value is valid at the corresponding enqueue data port. Dequeue latency is the number of clock cycles it takes for a dequeue to produce a data value at its corresponding dequeue port.
+</p>
+
+<a name="wp847060"></a><p class="pBody">
+To connect the ovl_multiport_fifo checker to the FIFO logic:
+</p>
+
+<a name="wp847061"></a>
+<ul><li class="LL1BulSolid">Concatenate the enqueue signals&#151; arranged in order from first-in (least-significant bit) to last-in (most-significant bit)&#151; and connect to the <span class="cItalic">enq</span> port. Concatenate the dequeue signals&#151; arranged in order from first-out (least-significant bit) to last-out (most-significant bit)&#151; and connect to the <span class="cItalic">deq</span> port.</li></ul><a name="wp847062"></a>
+<ul><li class="LL1BulSolid">If the checker will perform value checks, concatenate the enqueue data ports in the same order as the <span class="cItalic">enq</span> bits and connect to the <span class="cItalic">enq_data</span> port. Concatenate the dequeue data ports in the same order as the <span class="cItalic">deq</span> bits and connect to the <span class="cItalic">deq_data</span> port. Otherwise, connect <span class="cItalic">enq_data</span> and <span class="cItalic">deq_data</span> to 0.</li></ul><a name="wp847063"></a>
+<ul><li class="LL1BulSolid">If the checker will perform full checks, connect the FIFO-full status flag to the <span class="cItalic">full</span> port. Otherwise, connect <span class="cItalic">full</span> to 1'b0. If the checker will perform empty checks, connect the FIFO-full status flag to the <span class="cItalic">empty</span> port. Otherwise, connect <span class="cItalic">empty</span> to 1'b0.</li></ul><a name="wp847064"></a><p class="pBody">
+The checker checks <span class="cItalic">enq</span> and <span class="cItalic">deq</span> at the active edge of <span class="cItalic">clock</span>. If an <span class="cItalic">enq</span> bit is TRUE, an enqueue operation is scheduled for the corresponding enqueue data port <span class="cItalic">enq_latency</span> cycles later (or in the current cycle if <span class="cItalic">enq_latency</span> is 0). Similarly, if a <span class="cItalic">deq</span> bit is TRUE, a dequeue operation is scheduled to the corresponding dequeue data port <span class="cItalic">deq_latency</span> cycles later (or in the current cycle if <span class="cItalic">deq_latency</span> is 0). 
+</p>
+
+<a name="wp847065"></a><p class="pBody">
+At each active edge of <span class="cItalic">clock</span>, the checker does the following:
+</p>
+
+<a name="wp847066"></a>
+<ol start="1."><li class="LL1Seq">Updates its FIFO counter with the results of enqueues and dequeues from the previous cycle.</li></ol><a name="wp847067"></a>
+<ol start="2."><li class="LL1Seq">Checks the <span class="cItalic">full</span> flag if <span class="cItalic">full_check</span> is 1. If <span class="cItalic">full</span> is FALSE and the FIF0 count = <span class="cItalic">depth</span> or if <span class="cItalic">full</span> is TRUE and the FIFO count &lt; <span class="cItalic">depth</span>, a full check violation occurs.</li></ol><a name="wp847068"></a>
+<ol start="3."><li class="LL1Seq">Checks the <span class="cItalic">empty</span> flag if <span class="cItalic">empty_check</span> is 1. If <span class="cItalic">empty</span> is FALSE and the FIF0 count = 0 or if <span class="cItalic">empty</span> is TRUE and the FIFO count &gt; 0, an empty check violation occurs.</li></ol><a name="wp847069"></a>
+<ol start="4."><li class="LL1Seq">Checks for a potential overflow. If the number of enqueues scheduled for the current cycle exceeds the current number of unused FIFO locations, an enqueue check violation occurs. In this case, since the FIFO state is unknown, value checks are turned off until the next checker reset.</li></ol><a name="wp847070"></a>
+<ol start="5."><li class="LL1Seq">Checks for a potential underflow. If the number of dequeues scheduled for the current cycle exceeds the current number of FIFO entries, a dequeue check violation occurs. In this case, since the FIFO state is unknown, value checks are turned off until the next checker reset.</li></ol><a name="wp847071"></a>
+<ol start="6."><li class="LL1Seq">If <span class="cItalic">value_check</span> is 1 (and no enqueue or dequeue violations have occurred), the checker maintains an internal copy of what it expects the FIFO entries to be. The checker issues a value check violation for each internal dequeued data item that does not match the corresponding value of <span class="cItalic">deq_data</span>.</li></ol><a name="wp847072"></a><p class="pBody">
+A corner-case situation occurs when both enqueues and dequeues are scheduled simultaneously in the same cycle. By default, the checker enforces the best-case (i.e., most restrictive) scenarios. For the enqueue check, enqueues are &ldquo;performed&rdquo; before dequeues. For the dequeue check, dequeues are &ldquo;performed&rdquo; before enqueues. However, the checker can be configured to allow worse-case (i.e., less restrictive) scenarios by setting the <span class="cItalic">registered</span> and <span class="cItalic">pass_thru</span> parameters/generics:
+</p>
+
+<a name="wp847073"></a>
+<ul><li class="LL1BulSolid">In registered mode, the enqueue check calculates the FIFO count by subtracting the number of dequeues before adding the number of enqueues, resulting in a less restrictive check. </li></ul><a name="wp847074"></a>
+<ul><li class="LL1BulSolid">In pass-through mode, the dequeue check calculates the FIFO count by adding the number of enqueues before subtracting the number of dequeues, resulting in a less restrictive check. </li></ul><a name="wp847075"></a><p class="pBody">
+By default, the FIFO is empty at the start of the first cycle after a reset (or the start of simulation). However, the checker can be configured to match a FIFO that contains data items at these initial points. To do this, the checker &ldquo;preloads&rdquo; these data items. The <span class="cItalic">preload_count</span> parameter specifies the number of data items to preload. 
+</p>
+
+<a name="wp847076"></a><p class="pBody">
+If <span class="cItalic">value_check</span> is 1, at the start of any cycle in which reset has transitioned from active to inactive, the checker reads the <span class="cItalic">preload</span> port. This is a port containing a concatenated value equal to <span class="cItalic">preload_count</span> data items. The checker enqueues these data items onto the internal FIFO in order from the low-order item to the high-order item. 
+</p>
+
+<a name="wp847077"></a><p class="pBody">
+Uses: FIFO, queue, buffer, ring buffer, elasticity buffer.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp847133"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp847083table847081">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847083"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ENQUEUE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847085"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Enqueue occurred that would overflow the FIFO.</span>
+
+
+
+</p>
+
+
+
+<a name="wp847086"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">registered</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847087"></a><p class="pTableL1Body">One or more <span class="cItalic">enq</span> bits were TRUE, but <span class="cItalic">enq_latency</span> cycles later, FIFO count + number of enqueued items &gt; <span class="cItalic">depth</span>.</p>
+
+<a name="wp847088"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">registered</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp847089"></a><p class="pTableL1Body">One or more <span class="cItalic">enq</span> bits were TRUE, but <span class="cItalic">enq_latency</span> cycles later, FIFO count + number of enqueued items - number of dequeued items.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847091"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">DEQUEUE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847093"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Dequeue occurred that would underflow the FIFO.</span>
+
+
+
+</p>
+
+
+
+<a name="wp847094"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847095"></a><p class="pTableL1Body">One or more <span class="cItalic">deq</span> bits were TRUE, but <span class="cItalic">deq_latency</span> cycles later, FIFO count &lt; number of dequeued items.</p>
+
+<a name="wp847096"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp847097"></a><p class="pTableL1Body">One or more <span class="cItalic">deq</span> bits were TRUE, but <span class="cItalic">deq_latency</span> cycles later, FIFO count &lt; number of dequeued items - number of enqueued items.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847099"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">FULL</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847101"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">The FIFO was not full when the full signal was asserted.</span>
+
+
+
+</p>
+
+
+
+<a name="wp847103"></a><p class="pTableL1Body"><span class="cItalic">Full</span> was TRUE, but the FIFO contained fewer than <span class="cItalic">depth</span> items.</p>
+
+<a name="wp847105"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">The full signal was not asserted when the FIFO was full.</span>
+
+
+
+</p>
+
+
+
+<a name="wp847107"></a><p class="pTableL1Body"><span class="cItalic">Full</span> was FALSE, but the FIFO &#92;contained <span class="cItalic">depth</span> items.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847109"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">FULL</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847111"></a><p class="pTableCell">
+
+FIFO `full' signal was asserted, but the FIFO was not full.
+
+
+
+</p>
+
+
+
+<a name="wp847112"></a><p class="pTableL1Body">FIFO contained fewer than <span class="cItalic">depth</span> items but <span class="cItalic">full</span> was TRUE.</p>
+
+<a name="wp847114"></a><p class="pTableCell">
+
+FIFO `full' signal was not asserted, but the FIFO was full.
+
+
+
+</p>
+
+
+
+<a name="wp847115"></a><p class="pTableL1Body">FIFO contained <span class="cItalic">depth</span> items and <span class="cItalic">full</span> was FALSE.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847117"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">EMPTY</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847119"></a><p class="pTableCell">
+
+FIFO `empty' signal was asserted, but the FIFO was not empty.
+
+
+
+</p>
+
+
+
+<a name="wp847120"></a><p class="pTableL1Body">FIFO contained one or more items but <span class="cItalic">empty</span> was TRUE.</p>
+
+<a name="wp847122"></a><p class="pTableCell">
+
+FIFO `empty' signal was not asserted, but the FIFO was empty.
+
+
+
+</p>
+
+
+
+<a name="wp847123"></a><p class="pTableL1Body">FIFO contained no items but <span class="cItalic">empty</span> was FALSE.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847125"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">VALUE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847127"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Dequeued FIFO value did not equal the corresponding enqueued value.</span>
+
+
+
+</p>
+
+
+
+<a name="wp847128"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_latency</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847129"></a><p class="pTableL1Body">A <span class="cItalic">deq</span> bit was TRUE, but the corresponding data item in <span class="cItalic">deq_data</span> did not equal the item originally enqueued.</p>
+
+<a name="wp847130"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">deq_latency</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp847131"></a><p class="pTableL1Body"><span class="cItalic">A deq</span> bit was TRUE, but <span class="cItalic">deq</span>_<span class="cItalic">latency</span> cycles later the corresponding data item in <span class="cItalic">deq_data</span> did not equal the item originally enqueued.</p>
+
+<a name="wp847132"></a><p class="pTableCell">
+
+This check automatically turns off if an enqueue or dequeue check violation occurs since it is no longer possible to correspond enqueued with dequeued values. The check turns back on when the checker resets.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW57"></a><a name="MGCCIDPImplicit X/Z Checks"></a>
+<a name="wp847161"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp847136table847134">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847136"></a><p class="pTableCell">
+
+enq contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847138"></a><p class="pTableCell">
+
+Enqueue contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847140"></a><p class="pTableCell">
+
+deq contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847142"></a><p class="pTableCell">
+
+Dequeue contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847144"></a><p class="pTableCell">
+
+full contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847146"></a><p class="pTableCell">
+
+FIFO full signal was X or Z. Check is off if <span class="cItalic">full_check</span> is 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847148"></a><p class="pTableCell">
+
+empty contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847150"></a><p class="pTableCell">
+
+FIFO empty signal was X or Z. Check is off if <span class="cItalic">empty_check</span> is 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847152"></a><p class="pTableCell">
+
+enq_data contains X or 
+
+
+
+</p>
+
+
+
+<a name="wp847153"></a><p class="pTableCell">
+
+Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847155"></a><p class="pTableCell">
+
+Enqueue data item in the <span class="cItalic">enq_data</span> expression contained X or Z bits when it was scheduled to be enqueued onto the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847157"></a><p class="pTableCell">
+
+deq_data contains X or 
+
+
+
+</p>
+
+
+
+<a name="wp847158"></a><p class="pTableCell">
+
+Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847160"></a><p class="pTableCell">
+
+Dequeue data item in the <span class="cItalic">deq_data</span> expression contained X or Z bits when it was scheduled to be dequeued from the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp847204"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp847166table847164">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847166"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_enqueues</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847168"></a><p class="pTableCell">
+
+SANITY &#151;  Number of data items enqueued on the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847170"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_dequeues</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847172"></a><p class="pTableCell">
+
+SANITY &#151;  Number of data items dequeued from the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847174"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_simultaneous_</span>
+
+
+
+</p>
+
+
+
+<a name="wp847175"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">enq_deq</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847177"></a><p class="pTableCell">
+
+BASIC &#151;  Number of cycles both an enqueue and a dequeue (to/from the same port??) were scheduled to occur.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847179"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_high_water_mark</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847181"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times the FIFO count transitioned from &lt; <span class="cItalic">high_water_mark </span>to<span class="cItalic"> </span><img src='images/symbol_ge.gif' align='absmiddle' /> <span class="cItalic">high_water_mark</span>. Not reported if <span class="cItalic">high_water_mark</span> is 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847183"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_simultaneous_</span>
+
+
+
+</p>
+
+
+
+<a name="wp847184"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">deq_enq_when_empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847186"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the FIFO was enqueued and dequeued simultaneously when it was empty.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847188"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_simultaneous_</span>
+
+
+
+</p>
+
+
+
+<a name="wp847189"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">deq_enq_when_full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847191"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the FIFO was enqueued and dequeued simultaneously when it was full.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847193"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847195"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles FIFO was empty after processing enqueues and dequeues for the cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847197"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847199"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles FIFO was full after processing enqueues and dequeues for the cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp847201"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_observed_counts</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp847203"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the FIFO counts that occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874613"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875216table875214">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875216"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">multiport_fifo_corner</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875218"></a><p class="pTableCell">
+
+Number of cycles the number of entries in the FIFO changed to a value with the specified characteristic. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875256"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">cov_fifo_full_count</span> &#151;  FIFO is full.</li></ul><a name="wp875260"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">cov_fifo_empty_count</span> &#151;  FIFO is empty.</li></ul><a name="wp875264"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">cov_fifo_full_count</span> &#151;  number of entries is <img src='images/symbol_ge.gif' align='absmiddle' /> <span class="cItalic">high_water_mark</span>.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875221"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">multiport_fifo_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875244"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">statistic</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875289"></a><p class="pTableCell">
+
+Current number of entries in the FIFO. Bin is:
+
+
+
+</p>
+
+
+
+<a name="wp875224"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">cov_observed_fifo_contents</span></span></li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

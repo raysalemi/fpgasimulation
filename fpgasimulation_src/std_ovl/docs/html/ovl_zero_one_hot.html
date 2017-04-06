@@ -1,0 +1,1090 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_zero_one_hot</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,60,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_zero_one_hot"></a>
+<a name="wp795672"></a><h3 class="pHeading2">
+  
+
+
+ovl_zero_one_hot
+  </h3>
+
+
+<a name="wp795696"></a><p class="pBody">
+Ensures that the value of an expression is zero or one-hot.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp842795table842773">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp842795"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers030.jpg" height="109" width="242" id="wp842776" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp842797"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp842798"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp842799"></a><p class="pTableCell">
+<span class="cItalic">width </span>
+
+</p>
+
+<a name="wp842802"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+<a name="wp842824"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp842806"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp842807"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp842808"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp842809"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp842813"></a><p class="pTableCell">
+<span class="cBold">Class:</span> 1-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp795697"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp795698"></a><pre class="pCode">
+     <span class="cBold">ovl_zero_one_hot</span> 
+</pre>
+
+<a name="wp839496"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, property_type, msg, coverage_level, </span>
+</pre>
+
+<a name="wp839901"></a><pre class="pCode">
+     <span class="cItalic">         clock_edge, reset_polarity, gating_type, clock_edge, </span>
+</pre>
+
+<a name="wp839902"></a><pre class="pCode">
+     <span class="cItalic">         reset_polarity, gating_type</span>)] 
+</pre>
+
+<a name="wp839497"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, fire</span>);
+</pre>
+
+<a name="EW114"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp839531"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp839500table839498">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839500"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839502"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839504"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839506"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">test_expr</span> argument. Default: 32. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839508"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839510"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839512"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839514"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839516"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839518"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839520"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839522"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839524"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839526"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp839528"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp839530"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp795758"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp838728table795733">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838728"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838730"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838732"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838734"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838736"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838738"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798920"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798922"></a><p class="pTableCell">
+
+Expression that should evaluate to either 0 or a one-hot value on the rising clock edge.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838985"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp838986"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838988"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp795759"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp795760"></a><p class="pBody">
+The ovl_zero_one_hot assertion checker checks the expression <span class="cItalic">test_expr</span> at each active edge of <span class="cItalic">clock</span> to verify the expression evaluates to a one-hot value or is zero. A one-hot value has exactly one bit set to 1.
+</p>
+
+<a name="wp795761"></a><p class="pBody">
+The checker is useful for verifying control circuits, circuit enabling logic and arbitration logic. For example, it can ensure that a finite-state machine with zero-one-cold encoding operates properly and has exactly one bit asserted high&#151; or else is zero. In a datapath circuit the checker can ensure that the enabling conditions for a bus do not result in bus contention.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp801920"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801912table801910">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801912"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ZERO_ONE_HOT</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801914"></a><p class="pTableCell">
+
+Expression evaluated to a value with multiple bits set to 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW115"></a><a name="wp802928"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp802924table802922">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp802924"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp802925"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp802927"></a><p class="pTableCell">
+
+Expression value contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp801936"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp802111table801921">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp802111"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_change</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp802113"></a><p class="pTableCell">
+
+SANITY &#151;  Expression has changed value.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801923"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_all_one_hots_</span>
+
+
+
+</p>
+
+
+
+<a name="wp801924"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">checked</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801926"></a><p class="pTableCell">
+
+CORNER &#151;  Expression evaluated to all possible combinations of one-hot values.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801928"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_all_</span>
+
+
+
+</p>
+
+
+
+<a name="wp801929"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">zeros</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801931"></a><p class="pTableCell">
+
+CORNER &#151;  Expression evaluated to 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874827"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874828"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPNotes"></a>
+<a name="wp801937"></a><h5 class="pHeading4">
+  
+
+
+Notes
+</h5>
+
+
+<a name="wp801938"></a>
+<ol start="1."><li class="LL1Seq">By default, the ovl_zero_one_hot assertion is optimistic and the assertion fails if <span class="cItalic">test_expr</span> has multiple bits not set to 0 (i.e.equals 1, X, Z, etc.). However, if OVL_XCHECK_OFF is set, the assertion fails if and only if <span class="cItalic">test_expr</span> has multiple bits that are 1.</li></ol><a name="MGCCIDPSee also"></a>
+<a name="wp795798"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp800306table800301">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp800306"></a><p class="pTableCell">
+
+<a href="sel.html"><span class="cLink">sel</span> is zero or one-hot at each rising edge of <span class="cItalic">clock.</span>
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers107.jpg" height="68" width="429" id="wp795848" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

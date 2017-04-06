@@ -1,0 +1,2021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_arbiter</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,13,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_arbiter"></a>
+<a name="wp842850"></a><h3 class="pHeading2">
+  
+
+
+ovl_arbiter
+  </h3>
+
+
+<a name="wp842851"></a><p class="pBody">
+Ensures that a resource arbiter provides grants to corresponding requests according to a specified arbitration scheme and within a specified time window. 
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp842880table842852">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp842880"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers031.jpg" height="109" width="242" id="wp842855" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp842882"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp842883"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp842884"></a><p class="pTableCell">
+<span class="cItalic">width</span>
+
+</p>
+
+<a name="wp842885"></a><p class="pTableCell">
+<span class="cItalic">priority_width</span>
+
+</p>
+
+<a name="wp842886"></a><p class="pTableCell">
+<span class="cItalic">min_cks</span>
+
+</p>
+
+<a name="wp842887"></a><p class="pTableCell">
+<span class="cItalic">max_cks </span>
+
+</p>
+
+<a name="wp842888"></a><p class="pTableCell">
+<span class="cItalic">arbitration_rule</span>
+
+</p>
+
+<a name="wp842889"></a><p class="pTableCell">
+<span class="cItalic">priority_check</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp869372"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">single_gnt_check</span></span>
+
+</p>
+
+<a name="wp842892"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+<a name="wp842893"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+<a name="wp842894"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp842895"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp842896"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp842897"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp842901"></a><p class="pTableCell">
+<span class="cBold">Class:</span> event-bounded assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp842904"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp842905"></a><pre class="pCode">
+     <span class="cBold">ovl_arbiter</span> 
+</pre>
+
+<a name="wp842906"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, priority_width, min_cks, max_cks, </span>
+</pre>
+
+<a name="wp842907"></a><pre class="pCode">
+     <span class="cItalic">         arbitration_rule, priority_check</span><span class="cRegular">, </span><span class="cItalic">single_gnt_check,</span>
+</pre>
+
+<a name="wp842908"></a><pre class="pCode">
+     <span class="cItalic">         property_type, msg, coverage_level, clock_edge, reset_polarity, </span>
+</pre>
+
+<a name="wp842909"></a><pre class="pCode">
+     <span class="cItalic">         </span>gating_type<span class="cRegular">)]</span>
+</pre>
+
+<a name="wp842910"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, reqs, gnts, priorities, fire</span>);
+</pre>
+
+<a name="EW22"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp842980"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp842913table842911">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842913"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842915"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842917"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842919"></a><p class="pTableCell">
+
+Width of <span class="cItalic">reqs</span> and <span class="cItalic">gnts</span> ports (number of channels). Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842921"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">priority_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842923"></a><p class="pTableCell">
+
+Number of bits to encode a priority value in <span class="cItalic">priorities</span>. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842925"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842927"></a><p class="pTableCell">
+
+Minimum number of clock cycles after a request that its grant can be issued. If <span class="cItalic">min_cks</span> is 0, a grant can be issued in the same cycle the request is made. Default: 1
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842929"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842931"></a><p class="pTableCell">
+
+Maximum number of clock cycles after a request that its grant can be issued. A value of 0 indicates no upper bound for grants. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842933"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">arbitration_rule</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842935"></a><p class="pTableCell">
+
+Arbitration scheme used by the arbiter. This parameter turns on the corresponding check for the arbitration scheme.
+
+
+
+</p>
+
+
+
+<a name="wp842936"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default) no scheme
+
+
+
+</p>
+
+
+
+<a name="wp842937"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 1 </span>fair (round robin)
+
+
+
+</p>
+
+
+
+<a name="wp842938"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 2</span> FIFO
+
+
+
+</p>
+
+
+
+<a name="wp842939"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 3 </span>least-recently used
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842941"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">priority_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842943"></a><p class="pTableCell">
+
+Whether or not to perform priority checks.
+
+
+
+</p>
+
+
+
+<a name="wp842944"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">priority_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp842945"></a><p class="pTableL1Body">Turns off the priority check.</p>
+
+<a name="wp842946"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">priority_check</span><span style="color: #000000" class="cxgCour10"> = 1 </span>
+
+
+
+</p>
+
+
+
+<a name="wp842947"></a><p class="pTableL1Body">Turns on the priority check. The <span class="cItalic">min_cks</span> parameter must be 0 or 1.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842949"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">single_gnt_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842951"></a><p class="pTableCell">
+
+Whether or not to perform grant_one checks.
+
+
+
+</p>
+
+
+
+<a name="wp842952"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">single_gnt_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>
+
+
+
+</p>
+
+
+
+<a name="wp842953"></a><p class="pTableL1Body">Turns off the grant_one check.</p>
+
+<a name="wp842954"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">single_gnt_check</span><span style="color: #000000" class="cxgCour10"> = 1 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp842955"></a><p class="pTableL1Body">Turns on the grant_one check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842957"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842959"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842961"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842963"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842965"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842967"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842969"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842971"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842973"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842975"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842977"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842979"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp843013"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp842983table842981">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842983"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842985"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842987"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842989"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842991"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842993"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842995"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reqs</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp842997"></a><p class="pTableCell">
+
+Concatenation of request signals to the arbiter. Each bit in the vector is a request from the corresponding channel.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp842999"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gnts</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843001"></a><p class="pTableCell">
+
+Concatenation of grant signals from the arbiter. Each bit in the vector is a grant to the corresponding channel.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843003"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">priorities</span>
+
+
+
+</p>
+
+
+
+<a name="wp843004"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">priority_width*width</span>
+
+
+
+</p>
+
+
+
+<a name="wp843005"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843007"></a><p class="pTableCell">
+
+Concatenation of non-negative integer values corresponding to the request priorities of the corresponding <span class="cItalic">req</span> channels (0 is the lowest priority). If the priority check is on, <span class="cItalic">priorities</span> must not change while any channel is waiting for a grant (otherwise certain checks might produce incorrect results). If the priority check is off, this port is ignored (however, the port must be configured with the specified width). 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843009"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp843010"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843012"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp843014"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp843015"></a><p class="pBody">
+The ovl_arbiter checker ensures an arbiter follows a specified arbitration process. The checker checks <span class="cItalic">reqs</span> and <span class="cItalic">gnts</span> at each active edge of <span class="cItalic">clock</span>. These are two bit vectors representing respectively requests from the channels and grants from the arbiter. Both vectors have the same size (width), which is the same as the number of channels. 
+</p>
+
+<a name="wp843016"></a><p class="pBody">
+A request from a channel is signaled by asserting its corresponding <span class="cItalic">reqs</span> bit, which should be followed (according to the configured arbitration rules) by a responding assertion of the same bit in <span class="cItalic">gnts</span>. If a request deasserts before the arbiter issues the corresponding grant, all checks for that request are cancelled. If a request remains asserted in the cycle its grant is issued, a new request is assumed.
+</p>
+
+<a name="wp843017"></a><p class="pBody">
+The ovl_arbiter checker checks the following rules:
+</p>
+
+<a name="wp843018"></a>
+<ul><li class="LL1BulSolid">A grant should not be issued to a channel without a request.</li></ul><a name="wp843019"></a>
+<ul><li class="LL1BulSolid">A grant asserts for one cycle (unless the grant is for consecutive requests).</li></ul><a name="wp843020"></a>
+<ul><li class="LL1BulSolid">A grant should be issued in the time window specified by [<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] after its request.</li></ul><a name="wp843021"></a><p class="pBody">
+The ovl_arbiter checker can be configured to check that at most one grant is issued each cycle (i.e., a single grant at a time).
+</p>
+
+<a name="wp843022"></a><p class="pBody">
+The ovl_arbiter checker also can be configured to check a specific arbitration scheme by turning the priority check on or off and selecting a value for <span class="cItalic">arbitration_rule</span>. The combination of the two selections determines the expected arbitration scheme.
+</p>
+
+<a name="wp843023"></a>
+<ul><li class="LL1BulSolid">Primary rule.</li></ul><a name="wp843024"></a><p class="pL1Body">If the priority check is on, priority arbitration is the primary rule. When a request is made, the values in <span class="cItalic">priorities</span> are the priorities of the corresponding channels in ascending priority order (a value of 0 is the lowest priority). If multiple requests are pending, the grant should be issued to the channel with the highest priority. If more than one channel has the highest priority, the grant is made according to the secondary rule (applied to the channels with that priority).</p>
+<a name="wp843025"></a><p class="pL1Body">If the priority check is off, only the secondary rule is used to arbitrate the grant.</p>
+<a name="wp843026"></a>
+<ul><li class="LL1BulSolid">Secondary rule.</li></ul><a name="wp843027"></a><p class="pL1Body">The secondary rule is determined by the <span class="cItalic">arbitration_rule</span> parameter. This rule applies to the channels with the highest priority if the priority check is on and to all channels if the priority check is off. If <span class="cItalic">arbitration_rule</span> is 0, no secondary rule is assumed (if the priority check is on and multiple channels have the highest priority, any of them can receive the grant). If the priority check is off, no arbitration scheme checks are performed.</p>
+<a name="wp843028"></a><p class="pL1Body">If <span class="cItalic">arbitration_rule</span> is not 0, the secondary rule is one of the following:</p>
+<a name="wp843029"></a><ul><li class="LL2BulSolid">Fairness or round-robin rule (<span class="cItalic">arbitration_rule</span> is 1).</li></ul><a name="wp843030"></a><p class="pL2Body">Grant is not issued to a (high-priority) channel that has received a grant while another channel's request is pending.</p>
+<a name="wp843031"></a><ul><li class="LL2BulSolid">First-in first-out (FIFO) rule (<span class="cItalic">arbitration_rule</span> is 2).</li></ul><a name="wp843032"></a><p class="pL2Body">Grant is issued to a (high-priority) channel with the longest pending request.</p>
+<a name="wp843033"></a><ul><li class="LL2BulSolid">Least-recently used (LRU) rule (<span class="cItalic">arbitration_rule</span> is 3).</li></ul><a name="wp843034"></a><p class="pL2Body">Grant is issued to a (high-priority) channel whose previous grant was issued the longest time before the current cycle.</p>
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp843081"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843037table843035">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843037"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">GNT_ONLY_IF_REQ</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843039"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Grant was issued without a request.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843040"></a><p class="pTableL1Body"><span class="cItalic">Gnt</span> bit was TRUE, but the corresponding <span class="cItalic">req</span> bit was not TRUE or transitioning from TRUE.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843042"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">ONE_CYCLE_GNT</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843044"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Grant was asserted for longer than 1 cycle.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843045"></a><p class="pTableL1Body">Grant was TRUE for 2 cycles in response to only one request.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843047"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">GNT_IN_WINDOW</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843049"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Grant was not issued within the specified time window.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843050"></a><p class="pTableL1Body">Grant was issued before <span class="cItalic">min_cks</span> cycles or no grant was issued by <span class="cItalic">max_cks</span> cycles.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843052"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">HIGHEST_PRIORITY</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843054"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Grant was issued for a request other than the highest priority request.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843055"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">priority_check</span><span style="color: #000000" class="cxgCour10"> = 1 </span></p>
+
+<a name="wp843056"></a><p class="pTableL1Body">Grant was issued, but another pending request had higher priority than all the requests that received grants.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843058"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">FAIRNESS</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843060"></a><p class="pTableCell">
+
+Two grants were issued to the same channel while another channel's request was pending.
+
+
+
+</p>
+
+
+
+<a name="wp843061"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp843062"></a><p class="pTableL1Body">Two grants were issued to a channel while a request from another channel was pending (violating the fairness rule).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843064"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">FIFO</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843066"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Grant was issued for a request that was not the longest pending request.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843067"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 2</span></p>
+
+<a name="wp843068"></a><p class="pTableL1Body">Grant was issued, but one or more other (high priority) requests were pending longer than the granted request (violating the FIFO rule).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843070"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">LRU</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843072"></a><p class="pTableCell">
+
+Grant was issued to a channel that was more-recently used than another channel with a pending request.
+
+
+
+</p>
+
+
+
+<a name="wp843073"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">arbitration_rule</span><span style="color: #000000" class="cxgCour10"> = 3</span></p>
+
+<a name="wp843074"></a><p class="pTableL1Body">Grant was issued, but another channel with a pending (high priority) request received its previous grant before the granted channel received its previous grant (violating the fairness rule).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843076"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">SINGLE_GRANT</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843078"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Multiple grants were issued in the same clock cycle.</span>
+
+
+
+</p>
+
+
+
+<a name="wp843079"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">single_gnt_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp843080"></a><p class="pTableL1Body">More than one <span class="cItalic">gnts</span> bit was TRUE in the same clock cycle.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW23"></a><a name="MGCCIDPImplicit X/Z Checks"></a>
+<a name="wp843096"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843084table843082">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843084"></a><p class="pTableCell">
+
+reqs contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843086"></a><p class="pTableCell">
+
+Requests contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843088"></a><p class="pTableCell">
+
+grants contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843090"></a><p class="pTableCell">
+
+Grants contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843092"></a><p class="pTableCell">
+
+priorities contains X
+
+
+
+</p>
+
+
+
+<a name="wp843093"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843095"></a><p class="pTableCell">
+
+Priorities contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp843124"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843099table843097">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843099"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_req_granted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843101"></a><p class="pTableCell">
+
+BASIC &#151;  Number of granted requests for each channel.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843103"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_req_aborted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843105"></a><p class="pTableCell">
+
+BASIC &#151;  Number of aborted requests for each channel.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843107"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_req_granted_at_</span>
+
+
+
+</p>
+
+
+
+<a name="wp843108"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843110"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times grant was issued <span class="cItalic">min_cks</span> cycles after its request was asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843112"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_req_granted_at_</span>
+
+
+
+</p>
+
+
+
+<a name="wp843113"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843115"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times grant was issued <span class="cItalic">max_cks</span> cycles after its request was asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843117"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">time_to_grant</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843119"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the number of requests granted at each cycle in the time window.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843121"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">concurrent_requests</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843123"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports for each channel, the number of times each other channel had requests concurrent with that channel.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874405"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp874838table874836">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp874838"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">time_to_grant</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp874840"></a><p class="pTableCell">
+
+Number of grants with the specified request-to-grant latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp874878"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">time_to_grant_good</span>[<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] &#151;  bin index is the observed latency in clock cycles.</li></ul><a name="wp874881"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">time_to_grant_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp874842"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">concurrent_requests</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp874897"></a><p class="pTableCell">
+
+Number of cycles with the specified number of concurrent requests. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp874898"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_reqs_good</span>[1:<span class="cItalic">width</span>] &#151;  bin index is the number of concurrent requests.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

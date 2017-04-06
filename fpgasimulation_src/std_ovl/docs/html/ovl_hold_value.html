@@ -1,0 +1,1429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_hold_value</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,25,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_hold_value"></a>
+<a name="wp845113"></a><h3 class="pHeading2">
+  
+
+
+ovl_hold_value
+  </h3>
+
+
+<a name="wp845114"></a><p class="pBody">
+Ensures that once an expression matches the value of a second expression, the first expression does not change value until a specified event window arrives and then changes value some time in that window.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp845141table845115">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp845141"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers037.jpg" height="109" width="242" id="wp845118" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp845143"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp845144"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp845145"></a><p class="pTableCell">
+<span class="cItalic">width</span>
+
+</p>
+
+<a name="wp845146"></a><p class="pTableCell">
+<span class="cItalic">min</span>
+
+</p>
+
+<a name="wp845147"></a><p class="pTableCell">
+<span class="cItalic">max </span>
+
+</p>
+
+<a name="wp845148"></a><p class="pTableCell">
+property_type
+
+</p>
+
+</td>
+    <td>
+<a name="wp869394"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp845151"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp845152"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp845153"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp845154"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp845158"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp845161"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp845162"></a><pre class="pCode">
+     <span class="cBold">ovl_hold_value</span>
+</pre>
+
+<a name="wp845163"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, min, max, property_type, msg, </span>
+</pre>
+
+<a name="wp845164"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp845165"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, value, fire</span>);
+</pre>
+
+<a name="EW46"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp845212"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp845168table845166">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845168"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845170"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845172"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845174"></a><p class="pTableCell">
+
+Width of <span class="cItalic">test_expr</span> and <span class="cItalic">value</span>. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845176"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845178"></a><p class="pTableCell">
+
+Number of cycles after the value match that the event window opens. Default: 0 (<span class="cItalic">test_expr</span> can change value in any cycle).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845180"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845182"></a><p class="pTableCell">
+
+Number of cycles after the value match that the event window closes. But if <span class="cItalic">max</span> = 0, no event window opens and there are the following special cases:
+
+
+
+</p>
+
+
+
+<a name="wp845183"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> = 0 and </span><span class="cP12"><span style=" font-style: italic;">max</span></span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp845184"></a><p class="pTableL1Body">When <span class="cItalic">test_expr</span> and <span class="cItalic">value</span> match, <span class="cItalic">test_expr</span> must change value in the next cycle. </p>
+
+<a name="wp845185"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> &gt; 0 and </span><span class="cP12"><span style=" font-style: italic;">max</span></span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp845186"></a><p class="pTableL1Body">When <span class="cItalic">test_expr</span> and <span class="cItalic">value</span> match, <span class="cItalic">test_expr</span> must not change value in the next <span class="cItalic">min</span>-1 cycles. </p>
+
+<a name="wp845187"></a><p class="pTableCell">
+
+Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845189"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845191"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845193"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845195"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845197"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845199"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845201"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845203"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845205"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845207"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845209"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845211"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp845239"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp845215table845213">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845215"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845217"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845219"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845221"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845223"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845225"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845227"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845229"></a><p class="pTableCell">
+
+Variable or expression to check.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845231"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">value</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845233"></a><p class="pTableCell">
+
+Value to match with <span class="cItalic">test_expr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845235"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp845236"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845238"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp845240"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp845241"></a><p class="pBody">
+The ovl_hold_value assertion checker checks <span class="cItalic">test_expr</span> and <span class="cItalic">value</span> at the active edge of <span class="cItalic">clock</span>. If <span class="cItalic">test_expr</span> has changed value and the values of <span class="cItalic">test_expr</span> and <span class="cItalic">value</span> match, the checker verifies that the value of <span class="cItalic">test_expr</span> holds as follows:
+</p>
+
+<a name="wp845242"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> = </span><span style="color: #000000" class="cxgCour10i">max</span> (default)</li></ul><a name="wp845243"></a><p class="pL1Body">If the value of <span class="cItalic">test_expr</span> does not change in the next cycle, a hold_value violation occurs.</p>
+<a name="wp845244"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> &lt; </span><span style="color: #000000" class="cxgCour10i">max</span></li></ul><a name="wp845245"></a><p class="pL1Body">If the value of <span class="cItalic">test_expr</span> has not changed within the next <span class="cItalic">max</span> cycles, a hold_value violation occurs.</p>
+<a name="wp845246"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10">0 &lt; </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> </span><span class="cP12">&#8804;</span><span style="color: #000000" class="cxgCour10"> </span><span style="color: #000000" class="cxgCour10i">max</span></li></ul><a name="wp845247"></a><p class="pL1Body">If the value of <span class="cItalic">test_expr</span> changes before an event window opens <span class="cItalic">min</span> cycles later, a hold_value violation occurs. Then, if the value of <span class="cItalic">test_expr</span> changes, the event window closes. However if <span class="cItalic">test_expr</span> still has not changed value <span class="cItalic">max</span> cycles after the value match, the event window closes and a hold_value violation occurs.</p>
+<a name="wp845248"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">max</span><span style="color: #000000" class="cxgCour10"> &lt; </span><span style="color: #000000" class="cxgCour10i">min</span></li></ul><a name="wp845249"></a><p class="pL1Body">If the value of <span class="cItalic">test_expr</span> changes within the next <span class="cItalic">min</span>-1 cycles a hold_value violation occurs.</p>
+<a name="wp845250"></a><p class="pBody">
+The checker returns to the state of checking <span class="cItalic">test_expr</span> and <span class="cItalic">value </span>in the next cycle.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp845270"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp845253table845251">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845253"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">HOLD_VALUE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845255"></a><p class="pTableCell">
+
+A match occurred and the expression had the same value in the next cycle.
+
+
+
+</p>
+
+
+
+<a name="wp845256"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> = </span><span style="color: #000000" class="cxgCour10i">max</span></p>
+
+<a name="wp845257"></a><p class="pTableL1Body">After matching <span class="cItalic">value</span>, <span class="cItalic">test_expr</span> held the same value in the next cycle. </p>
+
+<a name="wp845259"></a><p class="pTableCell">
+
+A match occurred and the expression held the same value for the next `max' cycles.
+
+
+
+</p>
+
+
+
+<a name="wp845260"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> &lt; </span><span style="color: #000000" class="cxgCour10i">max</span></p>
+
+<a name="wp845261"></a><p class="pTableL1Body">After matching <span class="cItalic">value</span>, <span class="cItalic">test_expr</span> held the same value for the next <span class="cItalic">max</span> cycles.</p>
+
+<a name="wp845263"></a><p class="pTableCell">
+
+A match occurred and the expression changed value before the event window or held the same value through the event window.
+
+
+
+</p>
+
+
+
+<a name="wp845264"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10">0 &lt; </span><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> </span><span class="cP12">&#8804;</span><span style="color: #000000" class="cxgCour10"> </span><span style="color: #000000" class="cxgCour10i">max</span></p>
+
+<a name="wp845265"></a><p class="pTableL1Body">After matching <span class="cItalic">value</span>, <span class="cItalic">test_expr</span> did not hold the same value for the next <span class="cItalic">min</span>-1 cycles or <span class="cItalic">test_expr</span> held the same value for the next <span class="cItalic">max</span> cycles.</p>
+
+<a name="wp845267"></a><p class="pTableCell">
+
+A match occurred and the expression changed value before the event window opened.
+
+
+
+</p>
+
+
+
+<a name="wp845268"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10">0 = </span><span style="color: #000000" class="cxgCour10i">max</span><span style="color: #000000" class="cxgCour10"> &lt; </span><span style="color: #000000" class="cxgCour10i">min</span></p>
+
+<a name="wp845269"></a><p class="pTableL1Body">After matching <span class="cItalic">value</span>, <span class="cItalic">test_expr</span> did not hold the same value for the next <span class="cItalic">min</span>-1 cycles.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW47"></a><a name="wp845281"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp845273table845271">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845273"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp845274"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845276"></a><p class="pTableCell">
+
+Expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp845278"></a><p class="pTableCell">
+
+value contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp845280"></a><p class="pTableCell">
+
+Value contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp875028"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875005table875003">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875005"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp875006"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">changes</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875008"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span style=" font-style: italic;">test_expr</span> changed value.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875010"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_hold_value_for_</span>
+
+
+
+</p>
+
+
+
+<a name="wp875011"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875013"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times <span class="cItalic">test_expr</span> held value for exactly <span class="cItalic">min</span> cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875015"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_hold_value_for_</span>
+
+
+
+</p>
+
+
+
+<a name="wp875016"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875018"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times <span class="cItalic">test_expr</span> held value for exactly <span class="cItalic">max</span>+1 cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875020"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_hold_value_for_</span>
+
+
+
+</p>
+
+
+
+<a name="wp875021"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875023"></a><p class="pTableCell">
+
+CORNER &#151;  indicates that the test_expr was held exactly equal to value for specified max clocks. Not reported if <span class="cItalic">max</span> = 0 and <span class="cItalic">min</span> &gt; 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875025"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">observed_hold_time</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875027"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the hold times (in cycles) that occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp875031"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875038table875036">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875038"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_hold_time</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875040"></a><p class="pTableCell">
+
+Number of times the <span class="cItalic">test_expr</span> value was held for the specified number of hold cycles. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875041"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_hold_time_good</span>[<span class="cItalic">min</span>+1:<span class="cItalic">maximum</span>] &#151;  bin index is the observed hold time in clock cycles. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875065"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid">1 (if <span class="cItalic">min</span> = <span class="cItalic">max</span> = 0),</li></ul><a name="wp875090"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">min</span> + 4095 (if <span class="cItalic">min</span> &gt; <span class="cItalic">max</span> = 0), or</li></ul><a name="wp875066"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">max</span> + 1 (if <span class="cItalic">max</span> &gt; 0).</li></ul><a name="wp875042"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_hold_time_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

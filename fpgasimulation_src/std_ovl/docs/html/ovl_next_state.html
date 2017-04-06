@@ -1,0 +1,1572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_next_state</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,36,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_next_state"></a>
+<a name="wp848322"></a><h3 class="pHeading2">
+  
+
+
+ovl_next_state
+  </h3>
+
+
+<a name="wp848375"></a><p class="pBody">
+Ensures that an expression transitions only to specified values.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848352table848323">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp848352"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers043.jpg" height="109" width="242" id="wp848326" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp848354"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp848355"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">severity_level</span></span>
+
+</p>
+
+<a name="wp848356"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">width</span></span>
+
+</p>
+
+<a name="wp848357"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">next_count</span></span>
+
+</p>
+
+<a name="wp848358"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">min_hold</span></span>
+
+</p>
+
+<a name="wp848359"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_hold</span></span>
+
+</p>
+
+<a name="wp848360"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">disallow</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp848363"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp848364"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp848365"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">coverage_level</span></span>
+
+</p>
+
+<a name="wp848366"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp848367"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp848368"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp848372"></a><p class="pTableCell">
+<span class="cBold">Class:</span> event-bounded assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp848376"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp848377"></a><pre class="pCode">
+     <span class="cBold">ovl_next_state</span>
+</pre>
+
+<a name="wp848378"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, next_count, min_hold, max_hold, disallow, </span>
+</pre>
+
+<a name="wp848379"></a><pre class="pCode">
+     <span class="cItalic">         property_type, msg,coverage_level, clock_edge, reset_polarity, </span>
+</pre>
+
+<a name="wp848380"></a><pre class="pCode">
+     <span class="cItalic">         gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp848381"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, curr_state, next_state, </span>
+</pre>
+
+<a name="wp848382"></a><pre class="pCode">
+     <span class="cItalic">      fire</span>);
+</pre>
+
+<a name="EW66"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp848436"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848385table848383">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848385"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848387"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848389"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848391"></a><p class="pTableL1Body">Width of <span class="cItalic">test_expr</span>. Default: 1</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848393"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">next_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848395"></a><p class="pTableCell">
+
+Number of next state values. The <span class="cItalic">next_state </span>port is a concatenated list of next state values. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848397"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_hold</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848399"></a><p class="pTableL1Body">Minimum number of cycles <span class="cItalic">test_expr</span> must not change value when it matches the value of <span class="cItalic">curr_state</span>. Must be &gt; 0. Default: 1</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848401"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_hold</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848403"></a><p class="pTableL1Body">Maximum number of cycles <span class="cItalic">test_expr</span> can remain unchanged when it matches the value of <span class="cItalic">curr_state</span>. A value of 0 turns off checking for a maximum hold time. Must be 0 or &gt; <span class="cItalic">min_hold</span>. Default: 1</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848405"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">disallow</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848407"></a><p class="pTableCell">
+
+Sense of the comparison of <span class="cItalic">test_expr</span> with <span class="cItalic">next_state</span>.
+
+
+
+</p>
+
+
+
+<a name="wp848408"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp848409"></a><p class="pTableL1Body">Next value of <span class="cItalic">test_expr</span> should match one of the values in <span class="cItalic">next_state</span>.</p>
+
+<a name="wp848410"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">disallow </span><span style="color: #000000" class="cxgCour10">= 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp848411"></a><p class="pTableL1Body">Next value of <span class="cItalic">test_expr</span> should not match one of the values in <span class="cItalic">next_state</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848413"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848415"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848417"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848419"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848421"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848423"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848425"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848427"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848429"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848431"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848433"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848435"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp848474"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848441table848439">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848441"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848443"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848445"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848447"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848449"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848451"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848453"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848455"></a><p class="pTableCell">
+
+State variable or expression to check.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848457"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">curr_state</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848459"></a><p class="pTableCell">
+
+Value to compare with <span class="cItalic">test_expr</span>. If no event window is open and the value of <span class="cItalic">test_expr</span> matches the value <span class="cItalic">curr_state</span>, an event window opens.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848461"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">next_state</span>
+
+
+
+</p>
+
+
+
+<a name="wp848462"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">next_count*width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848464"></a><p class="pTableCell">
+
+Concatenated list of next values. 
+
+
+
+</p>
+
+
+
+<a name="wp848465"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp848466"></a><p class="pTableL1Body">Next values are valid values for <span class="cItalic">test_expr</span> when an event window closes.</p>
+
+<a name="wp848467"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">disallow </span><span style="color: #000000" class="cxgCour10">= 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp848468"></a><p class="pTableL1Body">Next values are not valid values for <span class="cItalic">test_expr</span> when an event window closes.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848470"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp848471"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848473"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp848477"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp848478"></a><p class="pBody">
+The ovl_next_state assertion checker evaluates <span class="cItalic">test_expr</span> and <span class="cItalic">curr_state </span>at each active edge of <span class="cItalic">clock</span>. If the value of <span class="cItalic">test_expr </span>matches the value of <span class="cItalic">curr_state</span>, the checker verifies that the value of <span class="cItalic">test_expr</span> behaves as follows:
+</p>
+
+<a name="wp848479"></a>
+<ul><li class="LL1BulSolid">If <span class="cItalic">min_hold</span> &gt; 0 and <span class="cItalic">test_expr</span> changes value before <span class="cItalic">min_hold</span> cycles (including the match cycle) transpire, a next_state violation occurs.</li></ul><a name="wp848480"></a>
+<ul><li class="LL1BulSolid">Otherwise, when <span class="cItalic">test_expr</span> transitions, the checker evaluates <span class="cItalic">next_state</span>. If the new value of <span class="cItalic">test_expr</span> is not a value in <span class="cItalic">next_state</span>, a next_state violation occurs.</li></ul><a name="wp848481"></a>
+<ul><li class="LL1BulSolid">However, if <span class="cItalic">max_hold</span> &gt; 0 and <span class="cItalic">test_expr</span> does not change value before <span class="cItalic">max_hold</span> cycles (including the match cycle) transpire, a next_state violation occurs.</li></ul><a name="wp848482"></a><p class="pBody">
+A next_state check is initiated each cycle <span class="cItalic">test_expr</span> and <span class="cItalic">curr_state</span> match.
+</p>
+
+<a name="wp848483"></a><p class="pBody">
+Setting the <span class="cItalic">disallow</span> parameter to 1, changes the sense of the matching of <span class="cItalic">test_expr</span> and <span class="cItalic">next_state</span> values. A next_state violation occurs if <span class="cItalic">test_expr</span> transitions to a value <span class="cItalic">in</span> next_state.
+</p>
+
+<a name="wp848484"></a><p class="pBody">
+Uses: FSM, state machine, controller, coverage, line coverage, path coverage, branch coverage, state coverage, arc coverage.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp848504"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848487table848485">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848487"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">NEXT_STATE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848489"></a><p class="pTableCell">
+
+Match occurred but expression <span style="color: #000000" class="cxgCour10">value was not a next value, or expression changed too soon.</span>
+
+
+
+</p>
+
+
+
+<a name="wp848490"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 0 and </span><span style="color: #000000" class="cxgCour10i">max_hold</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp848491"></a><p class="pTableL1Body">After matching <span class="cItalic">curr_state</span>, <span class="cItalic">test_expr</span> changed value before <span class="cItalic">min_hold</span> cycles (including the match cycle) or transitioned to a value not in <span class="cItalic">next_state</span> when it transitioned.</p>
+
+<a name="wp848493"></a><p class="pTableCell">
+
+Match occurred but expression <span style="color: #000000" class="cxgCour10">value was not a next value, or expression did not change in event window.</span>
+
+
+
+</p>
+
+
+
+<a name="wp848494"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 0 and </span><span style="color: #000000" class="cxgCour10i">max_hold</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span></p>
+
+<a name="wp848495"></a><p class="pTableL1Body">After matching <span class="cItalic">curr_state</span>, <span class="cItalic">test_expr</span> changed value before <span class="cItalic">min_hold</span> cycles (including the match cycle), transitioned to a value not in <span class="cItalic">next_state</span> when it transitioned, or did not change value for <span class="cItalic">max_hold</span> cycles (including the match cycle).</p>
+
+<a name="wp848497"></a><p class="pTableCell">
+
+Match occurred but expression <span style="color: #000000" class="cxgCour10">value was a next value, or expression changed too soon.</span>
+
+
+
+</p>
+
+
+
+<a name="wp848498"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 1 and </span><span style="color: #000000" class="cxgCour10i">max_hold</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp848499"></a><p class="pTableL1Body">After matching <span class="cItalic">curr_state</span>, <span class="cItalic">test_expr</span> changed value before <span class="cItalic">min_hold</span> cycles (including the match cycle) or transitioned to a value in <span class="cItalic">next_state</span> when it transitioned.</p>
+
+<a name="wp848501"></a><p class="pTableCell">
+
+Match occurred but expression <span style="color: #000000" class="cxgCour10">value was a next value, or </span>expression did not change in event window.
+
+
+
+</p>
+
+
+
+<a name="wp848502"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">disallow</span><span style="color: #000000" class="cxgCour10"> = 1 and </span><span style="color: #000000" class="cxgCour10i">max_hold</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span></p>
+
+<a name="wp848503"></a><p class="pTableL1Body">After matching <span class="cItalic">curr_state</span>, <span class="cItalic">test_expr</span> changed value before <span class="cItalic">min_hold</span> cycles (including the match cycle), transitioned to a value in <span class="cItalic">next_state</span> when it transitioned, or did not change value for <span class="cItalic">max_hold</span> cycles (including the match cycle).</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW67"></a><a name="wp848521"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848507table848505">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848507"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp848508"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848510"></a><p class="pTableCell">
+
+Expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848512"></a><p class="pTableCell">
+
+curr_state contains X 
+
+
+
+</p>
+
+
+
+<a name="wp848513"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848515"></a><p class="pTableCell">
+
+Current state expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848517"></a><p class="pTableCell">
+
+next_state contains X 
+
+
+
+</p>
+
+
+
+<a name="wp848518"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848520"></a><p class="pTableCell">
+
+Next state expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp848542"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp848526table848524">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848526"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_next_state_</span>
+
+
+
+</p>
+
+
+
+<a name="wp848527"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">transitions</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848529"></a><p class="pTableCell">
+
+SANITY &#151;  Number of times <span class="cItalic">test_expr</span> matched <span class="cItalic">curr_state</span> and then transitioned correctly to a value in <span class="cItalic">next_state</span> (<span class="cItalic">disallow</span>=0) or not in <span class="cItalic">next_state</span> (<span class="cItalic">disallow</span>=1).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848531"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_all_transitions</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848533"></a><p class="pTableCell">
+
+CORNER &#151;  Non-zero if <span class="cItalic">test_expr</span> transitioned to every next value found in the sampled <span class="cItalic">next_state</span>. Not meaningful if <span class="cItalic">disallow </span>is 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848535"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_cycles_checked</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848537"></a><p class="pTableCell">
+
+STATISTIC &#151;  Number of cycles <span class="cItalic">test_expr</span> matched <span class="cItalic">curr_state.</span>
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp848539"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">observed_transition</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp848541"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports which values in <span style=" font-style: italic;">next_state</span> that <span style=" font-style: italic;">test_expr</span> transitioned to at least once. Not meaningful if <span class="cItalic">disallow </span>is 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874659"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875313table875311">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875313"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">next_state_corner</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875315"></a><p class="pTableCell">
+
+Whether or not the specified corner case occurred. Bin is:
+
+
+
+</p>
+
+
+
+<a name="wp875316"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">all_transitions_covered</span> &#151;  The <span class="cItalic">test_expr</span> has transitioned to every next value found in the sampled <span class="cItalic">next_state</span>. Not meaningful if <span class="cItalic">disallow</span> is 1.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875320"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">next_state_statistic</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875356"></a><p class="pTableCell">
+
+Coverage statistics. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875357"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">number_of_transitions_covered</span> &#151;  number of transitions made.</li></ul><a name="wp875358"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">cycles_checked</span> &#151;  number of cycles <span class="cItalic">test_expr</span> and <span class="cItalic">curr_state</span> matched.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

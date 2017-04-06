@@ -1,0 +1,2983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_memory_sync</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,29,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_memory_sync"></a>
+<a name="wp846179"></a><h3 class="pHeading2">
+  
+
+
+ovl_memory_sync
+  </h3>
+
+
+<a name="wp846253"></a><p class="pBody">
+Ensures the integrity of accesses to a synchronous memory.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846225table846180">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp846225"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers040.jpg" height="150" width="242" id="wp846183" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp846227"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp846228"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp846229"></a><p class="pTableCell">
+<span class="cItalic">data_width</span>
+
+</p>
+
+<a name="wp846230"></a><p class="pTableCell">
+<span class="cItalic">addr_width</span>
+
+</p>
+
+<a name="wp846231"></a><p class="pTableCell">
+<span class="cItalic">mem_size</span>
+
+</p>
+
+<a name="wp846232"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">pass_thru</span></span>
+
+</p>
+
+<a name="wp846233"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">addr_check</span></span>
+
+</p>
+
+<a name="wp846234"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">init_check</span></span>
+
+</p>
+
+<a name="wp846235"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">conflict_check</span></span>
+
+</p>
+
+<a name="wp846236"></a><p class="pTableCell">
+<span class="cItalic">one_read_check</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp846238"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">one_write_check</span></span>
+
+</p>
+
+<a name="wp846239"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">value_check</span></span>
+
+</p>
+
+<a name="wp846240"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp846241"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp846242"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">coverage_level</span></span>
+
+</p>
+
+<a name="wp846243"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">w_clock_edge</span></span>
+
+</p>
+
+<a name="wp846244"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">r_clock_edge</span></span>
+
+</p>
+
+<a name="wp846245"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp846246"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp846250"></a><p class="pTableCell">
+<span class="cBold">Class:</span> event-bounded assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp846254"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp846255"></a><pre class="pCode">
+     <span class="cBold">ovl_memory_sync</span>
+</pre>
+
+<a name="wp846256"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, data_width, addr_width, mem_size, pass_thru, </span>
+</pre>
+
+<a name="wp846257"></a><pre class="pCode">
+     <span class="cItalic">         addr_check, init_check, conflict_check, one_read_check, </span>
+</pre>
+
+<a name="wp846258"></a><pre class="pCode">
+     <span class="cItalic">         one_write_check, value_check, property_type, msg, </span>
+</pre>
+
+<a name="wp846259"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, r_clock_edge, w_clock_edge, reset_polarity, </span>
+</pre>
+
+<a name="wp846260"></a><pre class="pCode">
+     <span class="cItalic">         gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp846261"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">r_clock, w_clock, reset, enable, start_addr, end_addr, </span>
+</pre>
+
+<a name="wp846262"></a><pre class="pCode">
+     <span class="cItalic">      ren, raddr, rdata, wen, waddr, wdata, fire</span>);
+</pre>
+
+<a name="EW54"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp846368"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846265table846263">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846265"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846267"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846269"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">data_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846271"></a><p class="pTableCell">
+
+Number of bits in a data item. Default: 1
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846273"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">addr_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846275"></a><p class="pTableCell">
+
+Number of bits in an address. Default: 1
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846277"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">mem_size</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846279"></a><p class="pTableCell">
+
+Number of data items in the memory. Default: 2
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846281"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846283"></a><p class="pTableCell">
+
+How the memory handles a simultaneous read and write access to the same address. This parameter applies to the initialization and value checks. 
+
+
+
+</p>
+
+
+
+<a name="wp846284"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp846285"></a><p class="pTableL1Body">No pass-through mode (i.e., read before write). Simultaneous read/write access to the same location should return the current data item as the read data.</p>
+
+<a name="wp846286"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp846287"></a><p class="pTableL1Body">Pass-through mode (i.e., write before read). Simultaneous read/write access to the same location should return the new data item as the read data. Only specify pass-through mode if <span class="cItalic">r_clock</span> === <span class="cItalic">w_clock</span> and <span class="cItalic">conflict_check</span> = 0.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846289"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">addr_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846291"></a><p class="pTableL1Body">Whether or not to perform address checks.</p>
+
+<a name="wp846292"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">addr_check</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp846293"></a><p class="pTableL1Body">Turns off the address check.</p>
+
+<a name="wp846294"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">addr_check</span><span style="color: #000000" class="cxgCour10"> = 1 </span>(Default)</p>
+
+<a name="wp846295"></a><p class="pTableL1Body">Turns on the address check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846297"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">init_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846299"></a><p class="pTableL1Body">Whether or not to perform initialization checks.</p>
+
+<a name="wp846300"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">init_check</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp846301"></a><p class="pTableL1Body">Turns off the initialization check.</p>
+
+<a name="wp846302"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">init_check</span><span style="color: #000000" class="cxgCour10"> = 1 </span>(Default)</p>
+
+<a name="wp846303"></a><p class="pTableL1Body">Turns on the initialization check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846305"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">conflict_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846307"></a><p class="pTableL1Body">Whether or not to perform conflict checks.</p>
+
+<a name="wp846308"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">conflict_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846309"></a><p class="pTableL1Body">Turns off the conflict check.</p>
+
+<a name="wp846310"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">conflict_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846311"></a><p class="pTableL1Body">Turns on the conflict check. Only select the conflict check if <span class="cItalic">r_clock</span> === <span class="cItalic">w_clock</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846313"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">one_read_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846315"></a><p class="pTableL1Body">Whether or not to perform one_read checks.</p>
+
+<a name="wp846316"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_read_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846317"></a><p class="pTableL1Body">Turns off the one_read check.</p>
+
+<a name="wp846318"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_read_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846319"></a><p class="pTableL1Body">Turns on the one_read check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846321"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">one_write_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846323"></a><p class="pTableL1Body">Whether or not to perform one_write checks.</p>
+
+<a name="wp846324"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_write_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846325"></a><p class="pTableL1Body">Turns off the one_write check.</p>
+
+<a name="wp846326"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_write_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846327"></a><p class="pTableL1Body">Turns on the one_write check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846329"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">value_check</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846331"></a><p class="pTableL1Body">Whether or not to perform value checks.</p>
+
+<a name="wp846332"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)</p>
+
+<a name="wp846333"></a><p class="pTableL1Body">Turns off the value check.</p>
+
+<a name="wp846334"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846335"></a><p class="pTableL1Body">Turns on the value check.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846337"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846339"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846341"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846343"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846345"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846347"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846349"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">r_clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846351"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">r_clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846353"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">w_clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846355"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">w_clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846357"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846359"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846361"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846363"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp846423"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846371table846369">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846371"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">r_clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846373"></a><p class="pTableCell">
+
+Clock event for read operations.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846375"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">w_clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846377"></a><p class="pTableCell">
+
+Clock event for write operations.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846379"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846381"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846383"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846385"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">r_clock </span>and<span class="cItalic"> w_clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846387"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">start_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846389"></a><p class="pTableCell">
+
+First address of the memory.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846391"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">end_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846393"></a><p class="pTableCell">
+
+Last address of the memory.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846395"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">ren</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846397"></a><p class="pTableCell">
+
+Read enable input that initiates a read operation from the memory location specified by <span class="cItalic">raddr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846399"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">raddr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846401"></a><p class="pTableCell">
+
+Read address input.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846403"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">rdata</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846405"></a><p class="pTableCell">
+
+Read data input that holds the data item read from memory.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846407"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">wen</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846409"></a><p class="pTableCell">
+
+Write enable input that initiates a write operation of the data item in <span class="cItalic">wdata</span> to the memory location specified by <span class="cItalic">waddr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846411"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">waddr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846413"></a><p class="pTableCell">
+
+Write address input.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846415"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">wdata</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846417"></a><p class="pTableCell">
+
+Write data input.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846419"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp846420"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[OVL_FIRE_WIDTH-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846422"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp846424"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp846425"></a><p class="pBody">
+The ovl_memory_async checker checks <span class="cItalic">wen</span> at the active edge of <span class="cItalic">w_clock</span>. If <span class="cItalic">wen</span> is TRUE, the checker checks the values of <span class="cItalic">waddr</span>, <span class="cItalic">start_addr</span> and <span class="cItalic">end_addr</span>. If <span class="cItalic">waddr</span> is not in the range [<span class="cItalic">start_addr</span>:<span class="cItalic">end_addr</span>], an address check violation occurs. Otherwise, a write operation to the location specified by <span class="cItalic">waddr</span> is assumed. Similarly, the checker checks <span class="cItalic">ren</span> at the active edge of <span class="cItalic">r_clock</span>. If <span class="cItalic">ren</span> is TRUE, the checker checks the values of <span class="cItalic">raddr</span>, <span class="cItalic">start_addr</span> and <span class="cItalic">end_addr</span>. If <span class="cItalic">raddr</span> is not in the range [<span class="cItalic">start_addr</span>:<span class="cItalic">end_addr</span>], an address check violation occurs. Otherwise, a read operation from the location specified by <span class="cItalic">raddr</span> is assumed. Also, if <span class="cItalic">raddr</span> is uninitialized (i.e., has not been written to previously or at the current time), then an initialization check violation occurs.
+</p>
+
+<a name="wp846426"></a><p class="pBody">
+By default, the address and init checks are on, but can be turned off by setting the <span class="cItalic">addr_check</span> and <span class="cItalic">init_check</span> parameters/generics to 0. Note that other checks are valid only if the addresses are valid, so it is recommended that <span class="cItalic">addr_check</span> be left at 1. 
+</p>
+
+<a name="wp846427"></a><p class="pBody">
+The checker can be configured to perform the following additional checks:
+</p>
+
+<a name="wp846428"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10i">conflict_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></li></ul><a name="wp846429"></a><p class="pL1Body">At the active edges of <span class="cItalic">w_clock/r_clock</span>, if <span class="cItalic">wen</span> = <span class="cItalic">ren</span> = TRUE and <span class="cItalic">waddr</span> = <span class="cItalic">raddr</span>, then a conflict check violation occurs (<span class="cItalic">w_clock</span> and <span class="cItalic">r_clock</span> must be the same signal). </p>
+<a name="wp846430"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10i">one_write_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></li></ul><a name="wp846431"></a><p class="pL1Body"><span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+<a name="wp846432"></a><p class="pL2Body">At the active edge of <span class="cItalic">w_clock</span>, if <span class="cItalic">wen</span> is TRUE and the previous access to the data at the address specified by <span class="cItalic">waddr</span> was a write or a simultaneous read/write to that address, a one_write check violation occurs, unless the current operation is a simultaneous read/write to that location.</p>
+<a name="wp846433"></a><p class="pL1Body"><span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+<a name="wp846434"></a><p class="pL2Body">At the active edge of <span class="cItalic">w_clock</span>, if <span class="cItalic">wen</span> is TRUE and the previous access to the data at the address specified by <span class="cItalic">waddr</span> was a write (but not a simultaneous read/write to that address), a one_write check violation occurs.</p>
+<a name="wp846435"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10i">one_read_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></li></ul><a name="wp846436"></a><p class="pL1Body"><span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+<a name="wp846437"></a><p class="pL2Body">At the active edge of <span class="cItalic">r_clock</span>, if <span class="cItalic">ren</span> is TRUE and the previous access to the data at the address specified by <span class="cItalic">raddr</span> was a read (but not a simultaneous read/write to that address), a one_read check violation occurs.</p>
+<a name="wp846438"></a><p class="pL1Body"><span style="color: #000000" class="cxgCour10i">pass_thru</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+<a name="wp846439"></a><p class="pL2Body">At the active edge of <span class="cItalic">r_clock</span>, if <span class="cItalic">ren</span> is TRUE and the previous access to the data at the address specified by <span class="cItalic">raddr</span> was a read or a simultaneous read/write to that address, a one_read check violation occurs, unless the current operation is a simultaneous read/write to that location.</p>
+<a name="wp846440"></a>
+<ul><li class="LL1BulSolid"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></li></ul><a name="wp846441"></a><p class="pL1Body">At the active edge of <span class="cItalic">w_clock</span>, if <span class="cItalic">wen</span> is TRUE, the current value of <span class="cItalic">wdata</span> is the value assumed to be written to the memory location specified by <span class="cItalic">waddr</span>. At the active edge of <span class="cItalic">r_clock</span>, if <span class="cItalic">ren</span> is TRUE and the value of <span class="cItalic">rdata</span> does not match the expected value last written to the address specified by <span class="cItalic">raddr</span>, a value check violation occurs.</p>
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp846480"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846444table846442">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846444"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">ADDRESS</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846446"></a><p class="pTableCell">
+
+Write address was out of range.
+
+
+
+</p>
+
+
+
+<a name="wp846447"></a><p class="pTableL1Body">At an active edge of<span class="cItalic"> w_clock, wen </span>was TRUE but<span class="cItalic"> waddr</span> &lt; <span class="cItalic">start_addr</span> or <span class="cItalic">waddr</span> &gt; <span class="cItalic">end_addr</span>.</p>
+
+<a name="wp846449"></a><p class="pTableCell">
+
+Read address was out of range.
+
+
+
+</p>
+
+
+
+<a name="wp846450"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">r_clock, ren </span>was TRUE but<span class="cItalic"> raddr</span> &lt; <span class="cItalic">start_addr</span> or <span class="cItalic">raddr</span> &gt; <span class="cItalic">end_addr</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846452"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">INITIALIZATION</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846454"></a><p class="pTableCell">
+
+Read location was not initialized.
+
+
+
+</p>
+
+
+
+<a name="wp846455"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">r_clock, ren</span> was TRUE but the memory location pointed to by <span class="cItalic">raddr</span> had not had data written to it since the last reset.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846457"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">CONFLICT</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846459"></a><p class="pTableCell">
+
+Simultaneous read/write accesses to same address.
+
+
+
+</p>
+
+
+
+<a name="wp846460"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">conflict_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846461"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">r_clock, ren</span> was TRUE but <span class="cItalic">wen</span> was also TRUE and <span class="cItalic">raddr</span> = <span class="cItalic">waddr</span>. This check assumes <span class="cItalic">r_clock</span> and <span class="cItalic">w_clock</span> are the same signal.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846463"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">ONE_READ</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846465"></a><p class="pTableCell">
+
+Memory location had two read accesses without an intervening write access.
+
+
+
+</p>
+
+
+
+<a name="wp846466"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_read_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846467"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">r_clock, ren</span> was TRUE but the previous access to the memory location pointed to by <span class="cItalic">raddr</span> was another read.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846469"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">ONE_WRITE</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846471"></a><p class="pTableCell">
+
+Memory location had two write accesses without an intervening read access.
+
+
+
+</p>
+
+
+
+<a name="wp846472"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">one_read_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846473"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">w_clock, wen</span> was TRUE but the previous access to the memory location pointed to by <span class="cItalic">waddr</span> was another write.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846475"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">VALUE</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846477"></a><p class="pTableCell">
+
+Data item read from a location did not match the data last written to that location.
+
+
+
+</p>
+
+
+
+<a name="wp846478"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">value_check</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp846479"></a><p class="pTableL1Body">At an active edge of <span class="cItalic">r_clock, ren</span> was TRUE but the value of <span class="cItalic">rdata</span> did not equal the expected value, which was the value of <span class="cItalic">wdata</span> when a write access to the memory location pointed to by the current value of <span class="cItalic">raddr</span> last occurred.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW55"></a><a name="wp846515"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp846484table846482">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846484"></a><p class="pTableCell">
+
+start_addr contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846486"></a><p class="pTableCell">
+
+Start address contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846488"></a><p class="pTableCell">
+
+end_addr contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846490"></a><p class="pTableCell">
+
+End address contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846492"></a><p class="pTableCell">
+
+ren contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846494"></a><p class="pTableCell">
+
+Read enable was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846496"></a><p class="pTableCell">
+
+raddr contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846498"></a><p class="pTableCell">
+
+Read address contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846500"></a><p class="pTableCell">
+
+rdata contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846502"></a><p class="pTableCell">
+
+Read data contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846504"></a><p class="pTableCell">
+
+wen contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846506"></a><p class="pTableCell">
+
+Write enable was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846508"></a><p class="pTableCell">
+
+waddr contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846510"></a><p class="pTableCell">
+
+Write address contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp846512"></a><p class="pTableCell">
+
+wdata contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp846514"></a><p class="pTableCell">
+
+Write data contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp855660"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp855574table855572">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855574"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_reads</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855576"></a><p class="pTableCell">
+
+SANITY<span style=" font-weight: bold;"> &#151; </span> Number of read accesses.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855578"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_writes</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855580"></a><p class="pTableCell">
+
+SANITY &#151;  Number of write accesses.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855582"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_then_read_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855583"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">from_same_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855585"></a><p class="pTableCell">
+
+BASIC<span style=" font-weight: bold;"> </span>&#151;  Number of times a write access was followed by a read from the same address.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855587"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_same_addr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855588"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">simultaneous_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855589"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">read_write</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855591"></a><p class="pTableCell">
+
+CORNER<span style=" font-weight: bold;"> </span>&#151;  Number of times a simultaneous read/write access to the same address occurred. Not meaningful unless <span class="cItalic">pass_thru </span>is 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855593"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_different_addr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855594"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">simultaneous_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855595"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">read_write</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855597"></a><p class="pTableCell">
+
+CORNER<span style=" font-weight: bold;"> </span>&#151;  Number of times a simultaneous read/write access to different addresses occurred. Not meaningful unless <span class="cItalic">pass_thru </span>is 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855599"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_read_from_start_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855600"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855602"></a><p class="pTableCell">
+
+CORNER &#151;  Number of read accesses to the location specified by <span class="cItalic">start_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855604"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_to_start_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855605"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855607"></a><p class="pTableCell">
+
+CORNER &#151;  Number of write accesses to the location specified by <span class="cItalic">start_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855609"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_read_from_end_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855610"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855612"></a><p class="pTableCell">
+
+CORNER &#151;  Number of read accesses to the location specified by <span class="cItalic">end_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855614"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_to_end_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855615"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855617"></a><p class="pTableCell">
+
+CORNER &#151;  Number of write accesses to the location specified by <span class="cItalic">end_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855619"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_then_read_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855620"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">from_start_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855622"></a><p class="pTableCell">
+
+CORNER<span style=" font-weight: bold;"> </span>&#151;  Number of times a write access to <span class="cItalic">start_addr</span> was followed by a read from <span class="cItalic">start_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855624"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_then_read_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855625"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">from_end_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855627"></a><p class="pTableCell">
+
+CORNER<span style=" font-weight: bold;"> </span>&#151;  Number of times a write access to <span class="cItalic">end_addr</span> was followed by a read from <span class="cItalic">end_addr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855629"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_read_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855631"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports which addresses were read at least once.     
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855633"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_addr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855635"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports which addresses were written at least once. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855637"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_read_to_write_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855638"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">delays</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855640"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports which delays (in numbers of active <span class="cItalic">w_clock</span> edges) from a read to the next write (to any address) occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855642"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_write_to_read_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855643"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">delays</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855645"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports which delays (in numbers of active <span class="cItalic">r_clock</span> edges) from a write to the next read (to any address) occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855647"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_two_writes_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855648"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">without_read</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855650"></a><p class="pTableCell">
+
+STATISTIC &#151;  Number of times a memory location had two write accesses but no read access of the data item stored by the first write.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp855652"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_two_reads_</span>
+
+
+
+</p>
+
+
+
+<a name="wp855653"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">without_write</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp855655"></a><p class="pTableCell">
+
+STATISTIC &#151;  Number of times a memory location had two read accesses but no write access overwriting the data item read by the first read.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874606"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875150table875148">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875150"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_read_addr</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875152"></a><p class="pTableCell">
+
+Number of read operations made from the specified address. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875153"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_read_addr</span>[0:<span class="cItalic">addr_width</span> - 1] &#151;  bin index is the memory address.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875155"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_write_addr</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875157"></a><p class="pTableCell">
+
+Number of write operations made to the specified address. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875158"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_write_addr</span>[0:<span class="cItalic">addr_width</span> - 1] &#151;  bin index is the memory address.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875165"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_delay_from_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875174"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">read_to_write</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875167"></a><p class="pTableCell">
+
+Number of times the delay (in cycles) between a read from a memory location and a write to that location matched the specified latency value. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875168"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_delay_from_read_to_write</span>[0:31] &#151;  bin index is the observed latency.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875200"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_delay_from_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875201"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">write_to_read</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875203"></a><p class="pTableCell">
+
+Number of times the delay (in cycles) between a write to a memory location and a read from that location matched the specified latency value. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875204"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_delay_from_write_to_read</span>[0:31] &#151;  bin index is the observed latency.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

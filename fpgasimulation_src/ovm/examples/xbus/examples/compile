@@ -1,0 +1,12 @@
+-incdir ../sv 
++OVM_TESTNAME=test_read_modify_write 
++OVM_MSG_DETAIL=OVM_LOW 
+
+xbus_tb_top.sv  
+
++incdir+.
++incdir+../../../src
+
+-nowarn PMBDVX
+
+-svpp

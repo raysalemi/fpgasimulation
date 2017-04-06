@@ -1,0 +1,1844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_next</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,35,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_next"></a>
+<a name="wp791108"></a><h3 class="pHeading2">
+  
+
+
+ovl_next
+  </h3>
+
+
+<a name="wp791109"></a><p class="pBody">
+Ensures that the value of an expression is TRUE a specified number of cycles after a start event.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp841512table841487">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp841512"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers014.jpg" height="109" width="242" id="wp841490" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp841514"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp841515"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp841546"></a><p class="pTableCell">
+<span class="cItalic">num_cks </span>
+
+</p>
+
+<a name="wp841547"></a><p class="pTableCell">
+<span class="cItalic">check_overlapping </span>
+
+</p>
+
+<a name="wp841548"></a><p class="pTableCell">
+<span class="cItalic">check_missing_start </span>
+
+</p>
+
+<a name="wp841516"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp841564"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp841519"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp841520"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp841521"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp841522"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp841552"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp791137"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp791138"></a><pre class="pCode">
+     <span class="cBold">ovl_next</span> 
+</pre>
+
+<a name="wp791139"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, num_cks, check_overlapping, check_missing_start, </span>
+</pre>
+
+<a name="wp839830"></a><pre class="pCode">
+     <span class="cItalic">         property_type, msg, coverage_level, clock_edge, reset_polarity, </span>
+</pre>
+
+<a name="wp839831"></a><pre class="pCode">
+     <span class="cItalic">         gating_type</span>)] 
+</pre>
+
+<a name="wp791141"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, start_event, test_expr, fire</span>);
+</pre>
+
+<a name="EW64"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp791189"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp837397table791142">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837397"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837399"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797811"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">num_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797813"></a><p class="pTableCell">
+
+Number of cycles after <span class="cItalic">start_event</span> is TRUE to wait to check that the value of <span class="cItalic">test_expr</span> is TRUE. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797815"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">check_overlapping</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797817"></a><p class="pTableCell">
+
+Whether or not to perform overlap checking. Default: 1 (overlap checking off).
+
+
+
+</p>
+
+
+
+<a name="wp797818"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid">If set to 0, overlap checking is performed. From the active edge of <span class="cItalic">clock</span> after <span class="cItalic">start_event</span> is sampled TRUE to the active edge of <span class="cItalic">clock</span> of the cycle before <span class="cItalic">test_expr</span>  is sampled for the current next check, the checker performs an overlap check. During this interval, if <span class="cItalic">start_event</span> is TRUE at an active edge of <span class="cItalic">clock</span>, then the overlap check fails (illegal overlapping condition).</li></ul><a name="wp797819"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid">If set to 1, overlap checking is not performed.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797821"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">check_missing_start</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797823"></a><p class="pTableCell">
+
+Whether or not to perform missing-start checking. Default: 0 (missing-start checking off).
+
+
+
+</p>
+
+
+
+<a name="wp797824"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid">If set to 0, missing start checks are not performed.</li></ul><a name="wp797825"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid">If set to 1, missing start checks are performed. The checker samples <span class="cItalic">test_expr</span> every active edge of <span class="cItalic">clock</span>. If the value of <span class="cItalic">test_expr</span> is TRUE, then <span class="cItalic">num_cks</span> active edges of <span class="cItalic">clock</span> prior to the current time, <span class="cItalic">start_event</span> must have been TRUE (initiating a next check). If not, the missing-start check fails (<span class="cItalic">start_event</span> without <span class="cItalic">test_expr</span>).</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837869"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837871"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837865"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837867"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837861"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837863"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837857"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837859"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837853"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837855"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837849"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837851"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp791223"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp838528table791190">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838528"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838530"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838532"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838534"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838536"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838538"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797799"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">start_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797801"></a><p class="pTableCell">
+
+Expression that (along with <span class="cItalic">num_cks</span>) identifies when to check <span class="cItalic">test_expr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797803"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797805"></a><p class="pTableCell">
+
+Expression that should evaluate to TRUE <span class="cItalic">num_cks</span> cycles after <span class="cItalic">start_event</span> initiates a next check.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838830"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp838831"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838833"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp791224"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp791225"></a><p class="pBody">
+The ovl_next assertion checker checks the expression <span class="cItalic">start_event</span> at each active edge of <span class="cItalic">clock. </span>If <span class="cItalic">start_event</span> is TRUE, a check is initiated. The check waits for <span class="cItalic">num_cks</span> cycles (i.e., for <span class="cItalic">num_cks</span> additional active edges of <span class="cItalic">clock</span>) and evaluates <span class="cItalic">test_expr</span>. If <span class="cItalic">test_expr</span> is not TRUE, the assertion fails. These checks are pipelined, that is, a check is initiated each cycle start_event is TRUE (even if overlap checking is on and even if an overlap violation occurs).
+</p>
+
+<a name="wp791226"></a><p class="pBody">
+If overlap checking is off (<span class="cItalic">check_overlapping</span> is 1), additional checks can start while a current check is pending. If overlap checking is on, the assertion fails if <span class="cItalic">start_event</span> is sampled TRUE while a check is pending (except on the last clock).
+</p>
+
+<a name="wp791227"></a><p class="pBody">
+If missing-start checking is off (<span class="cItalic">check_missing_start</span> is 0), <span class="cItalic">test_expr</span> can be TRUE any time. If missing-start checking is on, the assertion fails if <span class="cItalic">test_expr</span> is TRUE without a corresponding start event (<span class="cItalic">num_cks</span> cycles previously). However, if <span class="cItalic">test_expr</span> is TRUE in the interval of <span class="cItalic">num_cks</span> - 1 cycles after a reset and has no corresponding start event, the result is indeterminate (i.e., the missing-start check might or might not fail). 
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp791253"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp797751table791228">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797751"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">start_event without </span>
+
+
+
+</p>
+
+
+
+<a name="wp800921"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">test_expr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797753"></a><p class="pTableCell">
+
+The value of <span class="cItalic">start_event</span> was TRUE on an active edge of <span class="cItalic">clock</span>, but <span class="cItalic">num_cks</span> cycles later the value of <span class="cItalic">test_expr</span> was not TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797755"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">illegal overlapping </span>
+
+
+
+</p>
+
+
+
+<a name="wp800922"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">condition detected</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797757"></a><p class="pTableCell">
+
+The <span class="cItalic">check_overlapping</span> parameter is set to 0 and <span class="cItalic">start_event</span> was TRUE on the active edge of <span class="cItalic">clock</span>, but a previous check was pending.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797759"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">test_expr without </span>
+
+
+
+</p>
+
+
+
+<a name="wp800923"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">start_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797761"></a><p class="pTableCell">
+
+The <span class="cItalic">check_missing_start</span> parameter is set to 1 and <span class="cItalic">start_event</span> was not TRUE on the active edge of <span class="cItalic">clock</span>, but <span class="cItalic">num_cks</span> cycles later <span class="cItalic">test_expr</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797763"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">num_cks &lt;= 0</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797765"></a><p class="pTableCell">
+
+The <span class="cItalic">num_cks</span> parameter is less than 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp858722"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">num_cks == 1 and</span>
+
+
+
+</p>
+
+
+
+<a name="wp858728"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">check_overlapping == 0</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp858724"></a><p class="pTableCell">
+
+The <span class="cItalic">num_cks</span> parameter is 1 and check_overlapping is 0, which turns on overlap checking even though overlaps are not relevant.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW65"></a><a name="wp801151"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801147table801145">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801147"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp801148"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801150"></a><p class="pTableCell">
+
+Expression value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801597"></a><p class="pTableCell">
+
+start_event contains X 
+
+
+
+</p>
+
+
+
+<a name="wp801609"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801600"></a><p class="pTableCell">
+
+Start event value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp791267"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp797743table791254">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797743"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_start_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797745"></a><p class="pTableCell">
+
+BASIC &#151;  The value of <span class="cItalic">start_event</span> was TRUE on an active edge of <span class="cItalic">clock</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp797747"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_overlapping_</span>
+
+
+
+</p>
+
+
+
+<a name="wp800924"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">start_events</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp797749"></a><p class="pTableCell">
+
+CORNER &#151;  The <span class="cItalic">check_overlapping</span> parameter is TRUE and the value of <span class="cItalic">start_event</span> was TRUE on an active edge of <span class="cItalic">clock</span> while a check was pending.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874652"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874653"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPSee also"></a>
+<a name="wp791268"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp799855table799850">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp799855"></a><p class="pTableCell">
+
+<a href="b.html"><span class="cLink">b</span> is TRUE 4 cycles after <span class="cItalic">a</span> is TRUE.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers082.jpg" height="76" width="413" id="wp791324" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp791400"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp791351table791349">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp791351"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_next #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp791361"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp791362"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">4, </span>
+
+</p>
+
+<a name="wp791363"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp791364"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">0, </span>
+
+</p>
+
+<a name="wp791365"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp791366"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;error:&rdquo;, </span>
+
+</p>
+
+<a name="wp835297"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835298"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835299"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp791367"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp791371"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp791372"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// num_cks </span>
+
+</p>
+
+<a name="wp791373"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// check_overlapping (on) </span>
+
+</p>
+
+<a name="wp791374"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// check_missing_start (off) </span>
+
+</p>
+
+<a name="wp791375"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp791376"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869722"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869936"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870146"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp791377"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp791381"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">valid_next_a_b (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp791391"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp836072"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp791392"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp791393"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">a, </span>
+
+</p>
+
+<a name="wp837121"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">b, </span>
+
+</p>
+
+<a name="wp791394"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">fire_</span>valid_next_a_b<span style="color: #000000" class="cxgCour10"> );</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp791396"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870328"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp791397"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp791398"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// start_event </span>
+
+</p>
+
+<a name="wp870528"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+</p>
+
+<a name="wp791399"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp791427"></a><p class="pBody">
+Ensures that <span class="cItalic">b</span> is TRUE 4 cycles after <span class="cItalic">a</span> is TRUE. Overlaps are not allowed
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers083.jpg" height="80" width="416" id="wp791402" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp791480"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp791431table791429">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp791431"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_next #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp791441"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp791442"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">4, </span>
+
+</p>
+
+<a name="wp791443"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp791444"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp791445"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp791446"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;error:&rdquo;, </span>
+
+</p>
+
+<a name="wp835305"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835306"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835307"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp791447"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp791451"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp791452"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// num_cks </span>
+
+</p>
+
+<a name="wp791453"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// check_overlapping (off) </span>
+
+</p>
+
+<a name="wp791454"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// check_missing_start (on) </span>
+
+</p>
+
+<a name="wp791455"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp791456"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869726"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869940"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870150"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp791457"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp791461"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">valid_next_a_b (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp791471"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp836078"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp791472"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp791473"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">a, </span>
+
+</p>
+
+<a name="wp837114"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">b, </span>
+
+</p>
+
+<a name="wp791474"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">fire_valid_next_a_b );</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp791476"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870332"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp791477"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp791478"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// start_event </span>
+
+</p>
+
+<a name="wp870532"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+</p>
+
+<a name="wp791479"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp791509"></a><p class="pBody">
+Ensures that <span class="cItalic">b</span> is TRUE 4 cycles after <span class="cItalic">a</span> is TRUE.  Missing-start check is on.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers084.jpg" height="88" width="413" id="wp791482" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

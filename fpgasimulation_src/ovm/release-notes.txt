@@ -1,0 +1,428 @@
+Release Notes for OVM-2.0
+August 5, 2008
+
+-------------------------
+
+** Unified sequences
+
+  The new unified sequences facility unifies the ideas in the scenarios
+  and sequences facilities in OVM-1.1.  The new facility draws from both
+  scenarios and sequences to provide a complete stimulus generation
+  capability.
+
+  >> sequences
+
+  - Sequences are parameterized with request and response types.  The
+    response type defaults to that of the request.
+
+  >> sequence items
+
+  - Sequence items now contain id to enable routing of responses back to
+    the sequence from which the corresponding request originated.
+
+  >> sequencer
+
+  - Sequencers, like sequences are now parameterized request and
+    response types. The default type for the response is that of the
+    request.  
+
+  - A sequencer can route a response back to it the sequence that
+    initiated the request.
+
+  - Sequences can be prioritized and executed based on their priority.
+    The sequencer manages the arbitration.
+
+  - Push-mode sequencers are available to connect sequences to push-mode
+    drivers.
+
+  >> sequencer/driver API
+ 
+  - The sequencer/driver API consists of the following tasks and
+    functions:
+
+    has_do_available()
+    wait_for_sequences()
+    get_next_item()
+    try_next_item()
+    item_done()
+    put()
+    get()
+    peek()
+
+  - The driver and sequencer are connected using a port and export.  A
+    custom port interface provides the necessary tasks and functions
+    that drivers use to access the services provided by sequences and
+    sequencers.  These are all accessible via the ovm_sqr_pull_if.  This
+    interface is bound using the ovm_seq_item_pull_port and _export.
+    The sequencer supplies the export to which the driver with the
+    corresponding port connects.  The sequencer and driver are bound
+    using the usual port connect() function.
+
+  >> sequence/sequencer API
+
+    The sequencer supplies the following set of tasks and functions for
+    sequences to interact with it:
+
+    wait_for_grant()
+    lock()
+    unlock()
+    grab()
+    ungrab()
+    is_grabbed()
+    send_request()
+    get_response()
+
+    This collection of tasks and functions provides for the complete
+    interaction with the sequencer to enable late randomization along
+    with all the other features of sequences.  A collect of `ovm_do_-
+    macros is also availale as a convenience layer and also to enable
+    in-line constraints.
+
+    Lock differs only slightly from grab.  Grab causes the grabbing
+    sequence to immediatly jump to the head of the queue to be serviced
+    next by the driver.  Lock leaves the sequence in the same place in
+    the queue and the lock takes effect when the sequence reaches the
+    head of the queue.
+
+** Factory
+
+  Support for parameterized classes.  This is accomplished by allowing
+  object handles to be used as keys as well as strings.
+
+** Reorganize ovm_port and related classes
+
+    The organization of the ovm_port_base class and associated helper
+    classes has been simplified.  There are no implications for users
+    or existing user code.
+
+	We retain the dual-class nature of the OVM port for backward
+	compatibility reasons: both ovm_component and ovm_port_base define a
+	connect( ) method with conflicting prototypes and semantics. Having
+	ovm_port_base inherit from ovm_component was not an option.  The new
+	port infrastructure is fully implemented in a single file,
+	ovm_port_base.svh. Additionally, the TLM port, export, and imp
+	specializations in the tlm/ directory were updated to reflect the
+	new port hierarchy and optimized for code reduction.
+
+** Port connectivity API
+
+    Ovm_port has two functions, get_connected_to and get_provided_to,
+    each of which returns a list of ports.  This enables users to write
+    code that traverses the connectivity of a design.
+
+** Collapse ovm_threaded_component and ovm_component
+
+    The functionality previously in ovm_threaded_component has now been
+    moved to ovm_component.  Ovm_threaded_component remains as a typedef
+    of ovm_component for backward compatibility.
+
+** Added banners in run_test()
+
+    Run_test() now produces a banner when it starts and a message
+    summary when it completes.
+
+** Bugs Fixed:
+
+  - avm_analysis_imp is now present in in AVM backward compatibility.
+
+  - typo in tlm_req_rsp.svh fixed
+
+  - segfault in Questa in ovm_factory::print_override_info() has been
+    fixed.
+
+  - Previously, back-to-back task phases did not operate correctly.
+    This has been fixed.
+
+  - URM command line processor has been `ifdef'ed so now it is only
+    present in IUS simulations.
+
+------------------------------------------------------------------------
+Release Notes for OVM-1.1
+April 1, 2008
+
+-------------------------
+
+** Singleton top
+
+Created a new class, ovm_root, with a singleton instance named
+ovm_top.  This object serves as common top-level for component
+hierarchies rooted in different modules and it allows many items that
+were in global space to be moved to non-static members of ovm_root.
+Further, this serves as a centralized phase/process control; all phsae
+control is done in a single place instead of distributed amongst
+components in the hierachy.
+
+** Phase changes
+
+  - Moved most functionality to ovm_root class.  This results in a
+    simpler implemtation requiring less code which is more robust.  Now
+    there is no local component state for phases other than current
+    phase handle and phase-related methods in ovm_component have been
+    reduced to two
+
+  - Phase objects are shared globally
+
+  - Phase comparison is done using object handles, not string names.
+
+  - The set of phases has changed, with new phases added and old ones
+    deprecated.
+
+    build
+    post_new (deprecated)
+    export_connections (deprecated)
+    connect
+    import_connections (deprecated)
+    configure (deprecated)
+    end_of_elaboration
+    start_of_simulation
+    pre_run (deprecated)
+    run
+    extract
+    check
+    report
+
+
+** Code reorganization
+
+The code has been reorgaized to support the singleton top as well as to
+improve robustness and maintainability.  Some methods have been added,
+deleted, moved, and deprecated.  Here is the full list:
+
+    base/ovm_component.sv*
+    
+       Added do_func_phase
+       Added get_first_child
+       Added get_next_child
+       Added has_child
+       Added lookup (consolidate relative and absolute)
+       Added start_of_simulation (new phase, replaces pre_run)
+       Added local static bit m_phases_loaded = 0;
+    
+       Changed add_child to m_add_child
+       Changed extract_name to m_extract_name
+       Changed get_child arg is string, not int
+       Changed protected int m_curr_phase changed type to ovm_phase
+       Changed set_full_name to m_set_full_name
+       Changed stop to no args
+    
+       Deprecated absolute_lookup
+       Deprecated add_to_debug_list
+       Deprecated bit m_is_removed = 0;
+       Deprecated bit print_enabled = 1;
+       Deprecated build_debug_lists
+       Deprecated check_connection_size
+       Deprecated do_display
+       Deprecated export_connections
+       Deprecated import_connections
+       Deprecated post_new
+       Deprecated pre_run (added from ovm_threaded_component)
+       Deprecated protected ovm_component m_components[string];
+       Deprecated protected ovm_component m_exports[string];
+       Deprecated protected ovm_component m_implementations[string];
+       Deprecated protected ovm_component m_ports[string];
+       Deprecated relative_lookup
+       Deprecated static ovm_env m_env; (changed to static)
+    
+       Moved do_print to urm_message_compatibility.svh (recording_detail)
+       Moved find_component to ovm_root.find
+       Moved find_components to ovm_root.find_all
+       Moved get_current_global_phase to ovm_top.get_current_phase,
+             returns ovm_phase object
+       Moved global_stop_request to ovm_top.stop_request
+       Moved insert_phase to ovm_top.insert_phase,
+             args are both ovm_phase objects
+       Moved local  event m_stop_event; to ovm_root
+       Moved set_global_stop_timeout to ovm_top.stop_timeout var
+       Moved set_global_timeout to ovm_top.phase_timeout var
+       Moved set_int_local to urm_message_compatibility.svh (recording)
+       Moved static bit m_do_test_mode  to ovm_root
+       Moved static local time m_global_stop_timeout
+             to ovm_root; non-static; renamed stop_timeout, def=MAX)
+       Moved static protected int m_global_curr_phase
+             to ovm_root, type change to ovm_phase
+       Moved static protected ovm_phase m_global_phase_q[$] to ovm_root
+       Moved static protected time m_global_timeout = 0; 
+             to ovm_root, non-static, renamed to phase_timeout, def=MAX)
+       Moved stop_request to ovm_top.stop_request
+       Moved/Deprecated print_unit to ovm_top.print_unit
+       Moved/Deprecated print_unit_list to ovm_top.print_unit_list
+       Moved/Deprecated print_units to ovm_top.print_unit.print_units
+       Moved kill to ovm_threaded_component
+       Moved m_kill_request to ovm_threaded_component
+       Moved m_phase_process to ovm_threaded_component
+    
+       Removed add_component
+       Removed bit top_dog;
+       Removed do_exit_action (ovm_top.stop_request)
+       Removed do_phase
+       Removed do_remove
+       Removed do_set_env
+       Removed execute
+       Removed get_component
+       Removed get_current_phase
+       Removed get_num_components
+       Removed is_removed
+       Removed m_do_current_phase
+       Removed m_do_task_phase 
+       Removed m_get_global_phase_num
+       Removed m_get_phase_num
+       Removed m_global_stop_process
+       Removed m_phase_children
+       Removed m_phase_process_done
+       Removed m_stop_req
+       Removed ovm_find_component (global method)
+       Removed ovm_stop_enum (global space)
+       Removed protected ovm_phase m_phase_q[$]
+       Removed push_back_phase
+       Removed remove
+       Removed remove_child
+       Removed remove_children
+       Removed remove_component
+       Removed remove_component_by_name
+       Removed resolve_all_bindings
+       Removed static protected int m_global_phase_names[string]
+       Removed static protected ovm_component m_comp_list[$]
+       Removed static protected ovm_env s_current_env
+       Removed static protected ovm_event_pool m_global_epool
+       Removed static protected string m_global_curr_phase_name 
+       Removed string m_leaf_name (use get_name() instead)
+       Removed trigger_stop_event
+    
+    base/ovm_env.sv*
+    
+       Deprecated do_test
+       Deprecated/Added m_do_test_mode
+       Deprecated/Added do_task_phase (override)
+       Deprecated run
+    
+       Moved/Deprecated pre_run to ovm_component
+       Moved run_test (global task)
+       Moved run_global_phase to non-static ovm_root,
+             arg is ovm_phase object
+       Moved static bit finish_on_completion = 1;
+             to non-static in ovm_root
+       Removed m_do_task_phase(ovm_phase phase)
+       Removed m_do_global_phase(string ph_name)
+    
+       Moved_GLOBAL_Deprecated run_test  to ovm_root
+       Moved_GLOBAL_Deprecated ovm_print_topology to ovm_root
+    
+    base/ovm_phases.sv
+    
+       Changed  call_task (added ovm_threaded_component or
+                           ovm_component argument)
+       Changed  call_func (added ovm_component argument)
+    
+       Added  local  event   m_start_event;
+       Added  local  bit     m_is_started=0;
+       Added  local  event   m_done_event;
+       Added  local  bit     m_is_done=0;
+       Added  wait_start
+       Added  wait_done
+       Added  is_in_progress
+       Added  is_done
+       Added  reset
+       Added  m_set_in_progress
+       Added  m_set_done
+
+       Removed  local ovm_component m_parent;
+       Removed  execute
+       Removed  get_type_name
+    
+    macros/ovm_phase_defines.sv 
+    
+       Removed macro execute
+       Removed macro m_parent
+    
+       Added macro `define ovm_phase_func_topdown_decl(NAME)
+       Added macro `define ovm_phase_func_bottomup_decl(NAME)
+       Added macro `define ovm_phase_task_topdown_decl(NAME)
+       Added macro `define ovm_phase_task_bottomup_decl(NAME)
+    
+    base/ovm_threaded_component.sv*
+    
+       Deprecated/Moved pre_run to ovm_component
+       Changed - status  (for INCA; impl for INCA is "not implemented")
+       Added - m_phase_process (from ovm_component)
+       Added - m_kill_request (from ovm_component)
+       Added - m_phases_loaded=0; to prevent unnecessary calls to ovm_top.insert_phase
+       Added - do_task_phase  (for invoking task-based phases)
+    
+     base/ovm_printer.sv
+    
+       changed to use get_first_child/get_child/get_next_child interface
+    
+     compatibility/urm_message_compatibility.svh
+    
+       added do_print and set_int_local overrides from ovm_component;
+       these overrides support the URM's recording_detail variable
+    
+    base/ovm_report_object.svh
+    
+       changed call to do_exit_action to top.stop_request(); (do_exit_action removed)
+    
+    base/ovm_connector_base.svh
+    
+       Removed ovm_connection_phase_e enum
+       Removed s_port_type_article[]
+       Removed s_connection_phase_methods[]
+       Removed initialization of above arrays (for INCA)
+       Changed all references to phase strings to ovm_phase objects
+
+    methodology/layered_stimulus/ovm_scenario_controller.svh
+    
+       Changed connect call to export_connections, but may want to keep
+       as 'connect'
+    
+    methodology/sequences/ovm_sequencer_base.sv
+    
+       Removed 'run_forever'; not needed any longer, as run task will no
+       longer be killed upon return. Only a kill or stop_request cann
+       kill processes forked from the run task.
+
+
+
+** Miscellaneous Fixes    
+
+  - Corrected problem where connect-time checks were not properly
+    identifying illegal connectionsin analysis port.  The correction was
+    made by inserting a call to super.connect() in
+    ovm_analysis_port::connect().
+
+  - Fix ovm_component::get_name(). This function was returning the full
+    instance name instead of the leaf name.
+
+  - Add timeunit to phase timeouts so that the timeout is not dependent
+    on the user's timescale.
+
+  - Fix formatting for string values in table. When truncated, one too
+    few charcters were displayed.
+
+  - IUS does not support multiple format strings for $psprintf. Messages
+    using multiple format strings were changed to use a single format
+    string.
+
+  - Fix bug in URM message compatibility that caused `dut_error to
+    always exit (removed automatic OVM_EXIT action).
+
+  - Add command line option OVM_SEVERITY for consistency with other
+    command line options.
+
+  - Fix tlm_fifo bug around thread safety (multiple gets in same time
+    slice caused incorrect results).
+
+  - Add support of one-dimensional static arrays using
+    `ovm_field_sarray_*.
+
+  - Removed assertion from phase cast to allow mixing hierarchy.
+
+  - Provide a non_blocking option for ovm_scenario_driver
+    get_next_item() call.
+
+  - Macros `apply_with and `apply_send_with allow for randomize with
+    parameters.
+
+  - Optional no_randomize argument added to ovm_scenario apply calls.
+
+
+------------------------------------------------------------------------

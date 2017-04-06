@@ -1,0 +1,1480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_req_ack_unique</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,48,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_req_ack_unique"></a>
+<a name="wp849545"></a><h3 class="pHeading2">
+  
+
+
+ovl_req_ack_unique
+  </h3>
+
+
+<a name="wp849592"></a><p class="pBody">
+Ensures every request receives a corresponding acknowledge in a specified time window.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849572table849546">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849572"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers046.jpg" height="109" width="242" id="wp849549" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp849574"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp849575"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp849576"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">min_cks</span></span>
+
+</p>
+
+<a name="wp849577"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_cks </span></span>
+
+</p>
+
+<a name="wp849578"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">method</span></span>
+
+</p>
+
+<a name="wp849579"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp849581"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+<a name="wp849582"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp849583"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp849584"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp849585"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp849589"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp849593"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp849594"></a><pre class="pCode">
+     <span class="cBold">ovl_req_ack_unique</span>
+</pre>
+
+<a name="wp849595"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, min_cks, max_cks, method, property_type, msg, </span>
+</pre>
+
+<a name="wp849596"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp849597"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, req, ack, fire</span>);
+</pre>
+
+<a name="EW90"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp849643"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849600table849598">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849600"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849602"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849604"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849606"></a><p class="pTableCell">
+
+Minimum number of clock cycles after <span class="cItalic">req</span> asserts that its corresponding acknowledge can occur. Default: 1
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849608"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849610"></a><p class="pTableCell">
+
+Maximum number of clock cycles after <span class="cItalic">req</span> asserts that its corresponding acknowledge can occur. Default: 15.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849612"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">method</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849614"></a><p class="pTableCell">
+
+Method used to track and correlate request/acknowledge pairs.
+
+
+
+</p>
+
+
+
+<a name="wp849615"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">method</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp849616"></a><p class="pTableL1Body">Method suitable for a short time window (<span class="cItalic">max_cks</span> &#8804; 15). Uses internal IDs for requests. For each request, generates <span class="cItalic">max_cks</span> properties.</p>
+
+<a name="wp849617"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">method</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp849618"></a><p class="pTableL1Body">Method suitable for a long time window (<span class="cItalic">max_cks</span> &gt; 15). Uses time stamps (computed mod 2 <span class="cItalic">max_cks</span>) to identify requests. To process an acknowledge, the time stamp for the request at the front of the queue is used to verify that the acknowledge meets timing requirements.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849620"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849622"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849624"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849626"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849628"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849630"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849632"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849634"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849636"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849638"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849640"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849642"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp849670"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849646table849644">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849646"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849648"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849650"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849652"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849654"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849656"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849658"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">req</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849660"></a><p class="pTableCell">
+
+Request signal.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849662"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">ack</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849664"></a><p class="pTableCell">
+
+Acknowledgment signal.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849666"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp849667"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849669"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp849671"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp849672"></a><p class="pBody">
+The ovl_req_ack_unique assertion checker checks <span class="cItalic">req</span> and <span class="cItalic">ack</span> at each active edge of <span class="cItalic">clock</span>. If <span class="cItalic">req</span> is TRUE, a request becomes outstanding immediately. The checker tracks outstanding requests on a first-in first-out basis to verify the specified request/acknowledge handshake protocol is obeyed. 
+</p>
+
+<a name="wp849673"></a><p class="pBody">
+The protocol ensures each request has an acknowledgement that occurs in the time window that opens <span class="cItalic">min_cks</span> after the request (i.e., when the request becomes outstanding) and closes <span class="cItalic">max_cks</span> after the request. When <span class="cItalic">ack</span> is TRUE, the oldest outstanding request is checked. If this request has not been outstanding for at least <span class="cItalic">min_cks</span> cycles, the <span class="cItalic">ack</span> is ignored. Otherwise, the request is removed from the outstanding requests FIFO and &ldquo;matched&rdquo; with the current acknowledge. The checker detects the following violations:
+</p>
+
+<a name="wp849674"></a>
+<ul><li class="LL1BulSolid">If <span class="cItalic">ack</span> is TRUE and no requests are outstanding, a no_extraneous_ack violation occurs.</li></ul><a name="wp849675"></a>
+<ul><li class="LL1BulSolid">If a request is not acknowledged in its time window, an ack_timeout violation occurs.</li></ul><a name="wp849676"></a>
+<ul><li class="LL1BulSolid">If max_cks requests are outstanding, additional requests cannot become outstanding. If a request occurs (without a simultaneous acknowledge), a max_outstanding_req violation occurs and the request is ignored.</li></ul><a name="wp849677"></a><p class="pBody">
+To help collect coverage data, the checker tracks individual requests and their acknowledgements (up to the maximum outstanding requests limit, which is <span class="cItalic">max_cks</span> requests). But the larger <span class="cItalic">max_cks</span> is, the greater the decrease in performance. To resolve this problem, the checker can be configured to a second method of tracking request/acknowledge pairs by setting the <span class="cItalic">method</span> parameter to 1. However with this method, the checker does not collect some coverage data.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp849694"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849680table849678">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849680"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">NO_EXTRANEOUS_ACK</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849682"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Acknowledge received when no requests were outstanding.</span>
+
+
+
+</p>
+
+
+
+<a name="wp849683"></a><p class="pTableL1Body">No requests were outstanding and <span class="cItalic">ack</span> was TRUE (and if <span class="cItalic">min_cks</span> = 0, <span class="cItalic">req</span> was FALSE).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849685"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">ACK_TIMEOUT</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849687"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Acknowledge not received in time window.</span>
+
+
+
+</p>
+
+
+
+<a name="wp849688"></a><p class="pTableL1Body">A request was pending for <span class="cItalic">max_cks</span> cycles and did not receive its acknowledge in the last cycle of its time window.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849690"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">MAX_OUTSTANDING_REQ</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849692"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Maximum number of requests were outstanding when an additional request was issued.</span>
+
+
+
+</p>
+
+
+
+<a name="wp849693"></a><p class="pTableL1Body"><span class="cItalic">Req</span> was TRUE and <span class="cItalic">ack</span> was FALSE, but <span class="cItalic">max_cks</span> requests were outstanding.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW91"></a><a name="wp849704"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849697table849695">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849697"></a><p class="pTableCell">
+
+req contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849699"></a><p class="pTableCell">
+
+Request signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849701"></a><p class="pTableCell">
+
+ack contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849703"></a><p class="pTableCell">
+
+Acknowledge signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp875551"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875527table875525">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875527"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_requests</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875529"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">req</span> asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875531"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_acknowledgements</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875533"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">ack</span> asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875535"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_ack_at_min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875537"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times acknowledge was received <span class="cItalic">min_cks</span> cycles after its request was issued. Not meaningful if <span class="cItalic">method</span> = 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875539"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_ack_at_max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875541"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times acknowledge was received <span class="cItalic">max_cks</span> cycles after its request was issued. Not meaningful if <span class="cItalic">method</span> = 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875543"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">observed_ack_times</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875545"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the request-to-acknowledge times (in cycles) that occurred at least once. Not meaningful if <span class="cItalic">method</span> = 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875547"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">observed_outstanding_</span>
+
+
+
+</p>
+
+
+
+<a name="wp875548"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">requests</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875550"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the number of cycles in which exactly <span class="cItalic">index</span> requests become outstanding, for each <span class="cItalic">index</span> in the range [0: <span class="cItalic">max_cks</span>] (except for index = 0, which counts all cycles that no request was outstanding). Not meaningful if <span class="cItalic">method</span> = 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp875567"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875556table875554">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875556"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875558"></a><p class="pTableCell">
+
+Number of acknowledgements with the specified req-to-ack latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875559"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_latency_good</span>[<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] &#151;  bin index is the observed latency in clock cycles.</li></ul><a name="wp875560"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875562"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_outstanding_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875563"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">requests</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875565"></a><p class="pTableCell">
+
+Number of cycles with the specified number of outstanding requests. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875566"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_outstanding_requests</span>[1:<span class="cItalic">max_cks</span>] &#151;  bin index is the number of outstanding requests.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

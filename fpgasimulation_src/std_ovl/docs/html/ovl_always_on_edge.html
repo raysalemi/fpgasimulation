@@ -1,0 +1,1534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_always_on_edge</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,12,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_always_on_edge"></a>
+<a name="wp786801"></a><h3 class="pHeading2">
+  
+
+
+ovl_always_on_edge
+  </h3>
+
+
+<a name="wp786802"></a><p class="pBody">
+Ensures that the value of an expression is TRUE when a sampling event undergoes a specified transition.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp834079table834054">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp834079"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers002.jpg" height="109" width="242" id="wp834057" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp834117"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp834118"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp834202"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">edge_type</span></span>
+
+</p>
+
+<a name="wp834119"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+<a name="wp834120"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp834203"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp834123"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp834124"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp834125"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp834096"></a><p class="pTableCell">
+<span class="cBold">Class:</span> 2-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp786828"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp786829"></a><pre class="pCode">
+     <span class="cBold">ovl_always_on_edge</span> 
+</pre>
+
+<a name="wp834131"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, edge_type, property_type, msg, coverage_level, </span>
+</pre>
+
+<a name="wp834208"></a><pre class="pCode">
+              <span class="cItalic">clock_edge, reset_polarity, gating_type</span>)] 
+</pre>
+
+<a name="wp834133"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, fire</span>);
+</pre>
+
+<a name="EW20"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp786863"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp834139table834137">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834139"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834141"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834198"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">edge_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834200"></a><p class="pTableCell">
+
+Transition type for sampling event: OVL_NOEDGE, OVL_POSEDGE, OVL_NEGEDGE or OVL_ANYEDGE. Default: OVL_NOEDGE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834143"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834145"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834147"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834149"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834151"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834153"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834155"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834157"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834159"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834161"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834163"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834165"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp786897"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp834822table786864">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834822"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834824"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834826"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834828"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834830"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834832"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834834"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">sampling_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834836"></a><p class="pTableCell">
+
+Expression that (along with <span class="cItalic">edge_type</span>) identifies when to evaluate and test <span class="cItalic">test_expr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834838"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834840"></a><p class="pTableCell">
+
+Expression that should evaluate to TRUE on the rising clock edge.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp834842"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp834843"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp834845"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp786898"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp786899"></a><p class="pBody">
+The ovl_always_on_edge assertion checker checks the single-bit expression <span class="cItalic">sampling_event</span> for a particular type of transition. If the specified transition of the sampling event occurs, the single-bit expression <span class="cItalic">test_expr</span> is evaluated at the active edge of <span class="cItalic">clock</span> to verify the expression does not evaluate to FALSE. 
+</p>
+
+<a name="wp786900"></a><p class="pBody">
+The <span class="cItalic">edge_type</span> parameter determines which type of transition of <span class="cItalic">sampling_event</span> initiates the check:
+</p>
+
+<a name="wp786901"></a>
+<ul><li class="LL1BulSolid">OVL_POSEDGE performs the check if <span class="cItalic">sampling_event</span> transitions from FALSE to TRUE.</li></ul><a name="wp786902"></a>
+<ul><li class="LL1BulSolid">OVL_NEGEDGE performs the check if <span class="cItalic">sampling_event</span> transitions from TRUE to FALSE.</li></ul><a name="wp786903"></a>
+<ul><li class="LL1BulSolid">OVL_ANYEDGE performs the check if <span class="cItalic">sampling_event</span> transitions from TRUE to FALSE or from FALSE to TRUE.</li></ul><a name="wp786904"></a>
+<ul><li class="LL1BulSolid">OVL_NOEDGE always initiates the check. This is the default value of <span class="cItalic">edge_type</span>. In this case, <span class="cItalic">sampling_event</span> is never sampled and the checker has the same functionality as ovl_always.</li></ul><a name="wp786905"></a><p class="pBody">
+The checker is a variant of ovl_always, with the added capability of qualifying the assertion with a sampling event transition. This checker is useful when events are identified by their transition in addition to their logical state.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp786913"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798784table786906">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798784"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ALWAYS_ON_EDGE</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798786"></a><p class="pTableCell">
+
+Expression evaluated to FALSE when the sampling event transitioned as specified by <span class="cItalic">edge_type</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW21"></a><a name="wp801051"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801047table801045">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801047"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp801048"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801050"></a><p class="pTableCell">
+
+Expression value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801386"></a><p class="pTableCell">
+
+sampling_event
+
+
+
+</p>
+
+
+
+<a name="wp801468"></a><p class="pTableCell">
+
+contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801389"></a><p class="pTableCell">
+
+Sampling event value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp786914"></a><h6 class="pHeading5">
+  
+
+
+Cover Points
+</h6>
+
+
+<a name="wp786915"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874398"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874399"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPSee also"></a>
+<a name="wp786916"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp799437table799432">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp799437"></a><p class="pTableCell">
+
+<a href="fire_.html"><span class="cLink">fire_</span>request_when_FSM_idle<span style="color: #000000" class="cxgCour10">);</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp836686"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+
+
+</p>
+
+
+
+<a name="wp836687"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// reset </span>
+
+
+
+</p>
+
+
+
+<a name="wp836688"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// enable</span> 
+
+
+
+</p>
+
+
+
+<a name="wp834854"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// sampling_event </span>
+
+
+
+</p>
+
+
+
+<a name="wp870468"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+
+
+</p>
+
+
+
+<a name="wp834301"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h5 class="pHeading4">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h5>
+
+
+<a name="wp786967"></a><p class="pBody">
+Ensures that (<span class="cItalic">state</span> == `IDLE) is TRUE at each rising edge of <span class="cItalic">clock</span> when <span class="cItalic">req</span> transitions from FALSE to TRUE.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers052.jpg" height="84" width="311" id="wp786969" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp870632"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp787002table787000">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp787002"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_always_on_edge #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp834308"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp834309"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ANYEDGE, </span>
+
+</p>
+
+<a name="wp834310"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp834311"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;Error: </span>req transition when FSM not idle<span style="color: #000000" class="cxgCour10">&rdquo;, </span>
+
+</p>
+
+<a name="wp834312"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_NONE,</span>
+
+</p>
+
+<a name="wp834313"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp834314"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp834315"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK )</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp834319"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp834320"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// edge_type </span>
+
+</p>
+
+<a name="wp834321"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp834322"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869614"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869828"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870038"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp834326"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp787028"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">req_transition_when_FSM_idle (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp787038"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp787039"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp834855"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,</span>
+
+</p>
+
+<a name="wp787040"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">req, </span>
+
+</p>
+
+<a name="wp787041"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">state == `IDLE,</span>
+
+</p>
+
+<a name="wp834333"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">fire_</span>req_transition_when_FSM_idle<span style="color: #000000" class="cxgCour10">);</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp836332"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp836333"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset </span>
+
+</p>
+
+<a name="wp870436"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// enable</span> 
+
+</p>
+
+<a name="wp834858"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// sampling_event </span>
+
+</p>
+
+<a name="wp870472"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+</p>
+
+<a name="wp834332"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp787048"></a><p class="pBody">
+Ensures that (<span class="cItalic">state </span>== <span class="cItalic">`IDLE</span>) is TRUE at each rising edge of <span class="cItalic">clock</span> when <span class="cItalic">req</span> transitions from TRUE to FALSE or from FALSE to TRUE.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers053.jpg" height="81" width="319" id="wp787050" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp870633"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp787082table787080">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp787082"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_always_on_edge #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp834340"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp834341"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_NOEDGE, </span>
+
+</p>
+
+<a name="wp834342"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp834360"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;Error: req when FSM not idle&rdquo;, </span>
+
+</p>
+
+<a name="wp834344"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_NONE,</span>
+
+</p>
+
+<a name="wp834345"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp834346"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp834347"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK )</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp834351"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp834352"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// edge_type </span>
+
+</p>
+
+<a name="wp834353"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp834354"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869618"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869832"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870042"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp834358"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp787108"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">req_when_FSM_idle (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp787118"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp787119"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp834859"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,</span>
+
+</p>
+
+<a name="wp787120"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1'b0, </span>
+
+</p>
+
+<a name="wp787121"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">!req || (state == `IDLE),</span>
+
+</p>
+
+<a name="wp834363"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">fire_</span>req_when_FSM_idle<span style="color: #000000" class="cxgCour10">);</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp787123"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp787124"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset </span>
+
+</p>
+
+<a name="wp870441"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// enable</span> 
+
+</p>
+
+<a name="wp834862"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// sampling_event </span>
+
+</p>
+
+<a name="wp870476"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+</p>
+
+<a name="wp834366"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp787159"></a><p class="pBody">
+Ensures that (!<span class="cItalic">req</span> || (<span class="cItalic">state</span> == `IDLE)) is TRUE at each rising edge of <span class="cItalic">clock</span>.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers054.jpg" height="81" width="283" id="wp787129" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

@@ -1,0 +1,1470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_bits</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,14,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_bits"></a>
+<a name="wp843158"></a><h3 class="pHeading2">
+  
+
+
+ovl_bits
+  </h3>
+
+
+<a name="wp843159"></a><p class="pBody">
+Ensures that the number of asserted (or deasserted) bits of the value of an expression is within a specified range.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843182table843160">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp843182"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers034.jpg" height="109" width="242" id="wp843163" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp843184"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp843185"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp843186"></a><p class="pTableCell">
+<span class="cItalic">width</span>
+
+</p>
+
+<a name="wp843187"></a><p class="pTableCell">
+<span class="cItalic">asserted</span>
+
+</p>
+
+<a name="wp843188"></a><p class="pTableCell">
+<span class="cItalic">min</span>
+
+</p>
+
+<a name="wp843189"></a><p class="pTableCell">
+<span class="cItalic">max</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp869377"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+<a name="wp843193"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+<a name="wp843194"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp843195"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp843196"></a><p class="pTableCell">
+<span class="cItalic">oreset_polarity</span>
+
+</p>
+
+<a name="wp843197"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp843201"></a><p class="pTableCell">
+<span class="cBold">Class:</span> 1-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp843204"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp843205"></a><pre class="pCode">
+     <span class="cBold">ovl_bits</span> 
+</pre>
+
+<a name="wp843206"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, asserted, min, max, property_type, msg, </span>
+</pre>
+
+<a name="wp843207"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp843208"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, fire</span>);
+</pre>
+
+<a name="EW24"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp843266"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843211table843209">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843211"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843213"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843215"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843217"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">test_expr</span> argument. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843219"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843221"></a><p class="pTableCell">
+
+Whether to count asserted or deasserted bits.
+
+
+
+</p>
+
+
+
+<a name="wp843222"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 0 </span>
+
+
+
+</p>
+
+
+
+<a name="wp843223"></a><p class="pTableL1Body">Counts FALSE (deasserted) bits.</p>
+
+<a name="wp843224"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 1 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp843225"></a><p class="pTableL1Body">Counts TRUE (asserted) bits.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843227"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843229"></a><p class="pTableCell">
+
+Whether or not to perform min checks. Default: 1.
+
+
+
+</p>
+
+
+
+<a name="wp843230"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp843231"></a><p class="pTableL1Body">Turns off the min check.</p>
+
+<a name="wp843232"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> </span><span class="cP12">&#352;</span><span style="color: #000000" class="cxgCour10"> 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp843233"></a><p class="pTableL1Body">Minimum number of bits in <span class="cItalic">test_expr</span> that should be asserted (or deasserted).</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843235"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp864649"></a><p class="pTableCell">
+
+Maximum number of bits in <span class="cItalic">test_expr</span> that should be asserted (or deasserted). <span class="cItalic">Max</span> must be <span class="cP10">&#352;</span> <span class="cItalic">min</span>. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843243"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843245"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843247"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843249"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843251"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843253"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843255"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843257"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843259"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843261"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843263"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843265"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp843291"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843271table843269">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843271"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843273"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843275"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843277"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843279"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843281"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843283"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843285"></a><p class="pTableCell">
+
+Variable or expression to check.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843287"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp843288"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843290"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp843294"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp843295"></a><p class="pBody">
+The ovl_bits checker checks the multiple-bit expression <span class="cItalic">test_expr</span> at each active edge of <span class="cItalic">clock</span> and counts the number of TRUE bits (if <span class="cItalic">asserted</span> is 1) or FALSE bits (if <span class="cItalic">asserted</span> is 0). If the count is &lt; <span class="cItalic">min</span> a min violation occurs and if the count is &gt; <span class="cItalic">max</span>, a max violation occurs. X and Z bits are not included in the bit count.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp843317"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843300table843298">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843300"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MIN</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843302"></a><p class="pTableCell">
+
+Fewer than `min' bits were asserted.
+
+
+
+</p>
+
+
+
+<a name="wp843303"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> &gt; 0 and </span><span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp843304"></a><p class="pTableL1Body">The number of TRUE bits in the value of <span class="cItalic">test_expr</span> was less than the minimum specified by <span class="cItalic">min</span>.</p>
+
+<a name="wp843305"></a><p class="pTableCell">
+
+Fewer than `min' bits were deasserted.
+
+
+
+</p>
+
+
+
+<a name="wp843306"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">min</span><span style="color: #000000" class="cxgCour10"> &gt; 0 and </span><span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp843307"></a><p class="pTableL1Body">The number of FALSE bits in the value of <span class="cItalic">test_expr</span> was less than the minimum specified by <span class="cItalic">min</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843309"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MAX</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843311"></a><p class="pTableCell">
+
+More than `max' bits were asserted.
+
+
+
+</p>
+
+
+
+<a name="wp843312"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 1</span></p>
+
+<a name="wp843313"></a><p class="pTableL1Body">The number of TRUE bits in the value of <span class="cItalic">test_expr</span> was more than the maximum specified by <span class="cItalic">max</span>.</p>
+
+<a name="wp843314"></a><p class="pTableCell">
+
+More than `max' bits were deasserted.
+
+
+
+</p>
+
+
+
+<a name="wp843315"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">asserted</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp843316"></a><p class="pTableL1Body">The number of FALSE bits in the value of <span class="cItalic">test_expr</span> was more than the maximum specified by <span class="cItalic">max</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp870644"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Illegal parameter <br />values set where <br />min &gt; max</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp870646"></a><p class="pTableCell">
+
+Max is not 0, but <span class="cItalic">max</span> &lt; <span class="cItalic">min</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW25"></a><a name="MGCCIDPImplicit X/Z Checks"></a>
+<a name="wp843324"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843320table843318">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843320"></a><p class="pTableCell">
+
+test_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp843321"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843323"></a><p class="pTableCell">
+
+Expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp843349"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp843329table843327">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843329"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_values_checked</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843332"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">test_expr</span> changed value.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843334"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_bits_within_</span>
+
+
+
+</p>
+
+
+
+<a name="wp843335"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">limit</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843338"></a><p class="pTableCell">
+
+BASIC &#151;  Number of cycles the number of counted <span class="cItalic">test_expr</span> bits was in range.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843340"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_bits_at_min</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843342"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the number of counted <span class="cItalic">test_expr</span> bits was <span class="cItalic">min</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp843344"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_bits_at_max</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp843346"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the number of counted <span class="cItalic">test_expr</span> bits was <span class="cItalic">max</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874412"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874413"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPSee also"></a>
+<a name="wp852588"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp852582table852577">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp852582"></a><p class="pTableCell">
+
+<a href="fire_.html"><span class="cLink">fire_</span>id_sel_bits<span style="color: #000000" class="cxgCour10">);</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp852647"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+
+
+</p>
+
+
+
+<a name="wp852648"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// reset </span>
+
+
+
+</p>
+
+
+
+<a name="wp870445"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// enable</span> 
+
+
+
+</p>
+
+
+
+<a name="wp870480"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// test_expr</span> 
+
+
+
+</p>
+
+
+
+<a name="wp852652"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h5 class="pHeading4">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h5>
+
+
+<a name="wp852654"></a><p class="pBody">
+Ensures <span class="cItalic">id_sel</span> has exactly 1 or 2 TRUE bits each <span class="cItalic">clk</span> cycle <span class="cItalic">id_ok</span> is TRUE.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers055.jpg" height="132" width="487" id="wp852727" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers056.jpg" height="131" width="474" id="wp855668" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

@@ -1,0 +1,1611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_reg_loaded</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,47,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_reg_loaded"></a>
+<a name="wp849219"></a><h3 class="pHeading2">
+  
+
+
+ovl_reg_loaded
+  </h3>
+
+
+<a name="wp849268"></a><p class="pBody">
+Ensures that a register is loaded with source data within a specified time window.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849248table849220">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849248"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers045.jpg" height="109" width="242" id="wp849223" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp849250"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp849251"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp849252"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">width</span></span>
+
+</p>
+
+<a name="wp849253"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">start_count</span></span>
+
+</p>
+
+<a name="wp849254"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">end_count</span></span>
+
+</p>
+
+<a name="wp849255"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp849257"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+<a name="wp849258"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp849259"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp849260"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp849261"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp849265"></a><p class="pTableCell">
+<span class="cBold">Class:</span> event-bounded assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp849269"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp849270"></a><pre class="pCode">
+     <span class="cBold">ovl_reg_loaded</span>
+</pre>
+
+<a name="wp849271"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, start_count, end_count, property_type, </span>
+</pre>
+
+<a name="wp849272"></a><pre class="pCode">
+     <span class="cItalic">         msg, coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp849273"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, start_event, end_event, src_expr, </span>
+</pre>
+
+<a name="wp849274"></a><pre class="pCode">
+     <span class="cItalic">      dest_expr, fire</span><span class="cRegular">);</span>
+</pre>
+
+<a name="EW88"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp849316"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849277table849275">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849277"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849279"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849281"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849283"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">src_expr </span>and<span class="cItalic"> dest_expr </span>registers. Default: 4. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849285"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">start_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849287"></a><p class="pTableCell">
+
+Number of cycles after <span class="cItalic">start_event</span> asserts that the time window opens. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849289"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">end_count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849291"></a><p class="pTableCell">
+
+Number of cycles after <span class="cItalic">start_event</span> asserts that the time window closes (if it is still open). If <span class="cItalic">end_count</span> is 0, only the <span class="cItalic">end_event</span> signal is used to define the time windows. Default: 10.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849293"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849295"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849297"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849299"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849301"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849303"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849305"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849307"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849309"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849311"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849313"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849315"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp849351"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849319table849317">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849319"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849321"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849323"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849325"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849327"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849329"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849331"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">start_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849333"></a><p class="pTableCell">
+
+Start event signal for the reg_loaded check. If the time window is closed (or closing), the rising edge of <span class="cItalic">start_event</span> initiates a new check. The time window opens <span class="cItalic">start_count</span> cycles later.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849335"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">end_event</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849337"></a><p class="pTableCell">
+
+End event signal for the reg_loaded check. If the time window is open (or opening), the rising edge of <span class="cItalic">end_event</span> terminates the current check, closes the window and issues a reg_loaded violation (if <span class="cItalic">dest_expr</span> loaded the value of <span class="cItalic">src_expr</span> in that cycle, the time window would be closing).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849339"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">src_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849341"></a><p class="pTableCell">
+
+Source register containing the values that load the <span class="cItalic">dest_expr</span> register. For each reg_loaded check, the source value in <span class="cItalic">src_expr</span> is sampled in the same cycle that <span class="cItalic">start_event</span> asserts.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849343"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">dest_expr</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849345"></a><p class="pTableCell">
+
+Destination register for the values in <span class="cItalic">src_expr</span>.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849347"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp849348"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849350"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp849352"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp849353"></a><p class="pBody">
+The ovl_reg_loaded assertion checker checks <span class="cItalic">start_event</span> at each active edge of <span class="cItalic">clock. </span>If <span class="cItalic">start_event</span> has just transitioned to TRUE, the checker evaluates the source register (<span class="cItalic">src_expr</span>) and initiates a reg_loaded check to verify that this value gets loaded into the destination register (<span class="cItalic">dest_expr</span>) in the specified time window. 
+</p>
+
+<a name="wp849354"></a><p class="pBody">
+If <span class="cItalic">start_count</span> is 0, the time window opens immediately. Otherwise, the time window opens <span class="cItalic">start_count</span> cycles after the current cycle. The values of <span class="cItalic">dest_expr</span> in the cycles between the start of the reg_loaded check and the time window opening are not relevant. When the time window opens, the checker evaluates <span class="cItalic">dest_expr</span> and re-evaluates <span class="cItalic">dest_expr</span> each subsequent cycle. Once the value of <span class="cItalic">dest_expr</span> equals the captured value of <span class="cItalic">src_expr</span>, the current reg_loaded check terminates successfully. The time window closes when one of the following occur:
+</p>
+
+<a name="wp849355"></a>
+<ul><li class="LL1BulSolid">The current cycle is <span class="cItalic">end_count</span> cycles after <span class="cItalic">start_event</span> asserted (<span class="cItalic">end_count</span> &gt; 0).</li></ul><a name="wp849356"></a>
+<ul><li class="LL1BulSolid">The <span class="cItalic">end_event</span> signal is TRUE.</li></ul><a name="wp849357"></a><p class="pBody">
+If <span class="cItalic">dest_expr</span> has not loaded the <span class="cItalic">src_expr</span> value by the cycle the time window closes, a reg_loaded violation occurs.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp849369"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849360table849358">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849360"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">REG_LOADED</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849362"></a><p class="pTableCell">
+
+Test expression did not equal the value of the source register in the specified time window.
+
+
+
+</p>
+
+
+
+<a name="wp849363"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">end_count</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span></p>
+
+<a name="wp849364"></a><p class="pTableL1Body">Either <span class="cItalic">end_event</span> became TRUE or <span class="cItalic">end_count</span> cycles passed after the rising edge of <span class="cItalic">start_event</span> and <span class="cItalic">dest_expr</span> was still not equal to the captured value of <span class="cItalic">src_expr</span> (ignoring values of <span class="cItalic">dest_expr</span> in the <span class="cItalic">start_count</span> cycles after <span class="cItalic">start_event</span> asserted).</p>
+
+<a name="wp849366"></a><p class="pTableCell">
+
+Test expression did not equal the value of the source expression in the time window that ended when `end_event' asserted.
+
+
+
+</p>
+
+
+
+<a name="wp849367"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">end_count</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp849368"></a><p class="pTableL1Body"><span class="cItalic">End_event</span> became TRUE after the rising edge of <span class="cItalic">start_event</span> and <span class="cItalic">dest_expr</span> was still not equal to the captured value of <span class="cItalic">src_expr</span> (ignoring values of <span class="cItalic">dest_expr</span> in the <span class="cItalic">start_count</span> cycles after <span class="cItalic">start_event</span> asserted).</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW89"></a><a name="wp849391"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849372table849370">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849372"></a><p class="pTableCell">
+
+start_event contains X 
+
+
+
+</p>
+
+
+
+<a name="wp849373"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849375"></a><p class="pTableCell">
+
+Start event signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849377"></a><p class="pTableCell">
+
+end_event contains X 
+
+
+
+</p>
+
+
+
+<a name="wp849378"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849380"></a><p class="pTableCell">
+
+End event signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849382"></a><p class="pTableCell">
+
+src_expr contains X or 
+
+
+
+</p>
+
+
+
+<a name="wp849383"></a><p class="pTableCell">
+
+Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849385"></a><p class="pTableCell">
+
+Source expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849387"></a><p class="pTableCell">
+
+dest_expr contains X 
+
+
+
+</p>
+
+
+
+<a name="wp849388"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849390"></a><p class="pTableCell">
+
+Test expression contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp849424"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849394table849392">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849394"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_values_checked</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849396"></a><p class="pTableCell">
+
+SANITY &#151;  Number of times a reg_loaded check was initiated (i.e., number of cycles <span class="cItalic">start_event</span> transitioned to TRUE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849398"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_reg_loaded</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849400"></a><p class="pTableCell">
+
+BASIC &#151;  Number of times a reg_loaded check was terminated successfully (i.e, <span class="cItalic">dest_expr</span> was loaded with <span class="cItalic">src_expr</span> in the time window).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849402"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_end_event_in_</span>
+
+
+
+</p>
+
+
+
+<a name="wp852423"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">window</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849404"></a><p class="pTableCell">
+
+BASIC &#151;  Number of time windows in which <span class="cItalic">end_event</span> asserted (whether or not <span class="cItalic">dest_expr</span> loaded <span class="cItalic">src_expr</span> in the window). Not meaningful if <span class="cItalic">end_count</span> = 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849406"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_no_end_event_in_</span>
+
+
+
+</p>
+
+
+
+<a name="wp852432"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">window</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849409"></a><p class="pTableCell">
+
+BASIC &#151;  Number of time windows in which <span class="cItalic">end_event</span> did not assert (whether or not <span class="cItalic">dest_expr</span> loaded <span class="cItalic">src_expr</span> in the window). Not meaningful if <span class="cItalic">end_count</span> = 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849411"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_load_at_start_</span>
+
+
+
+</p>
+
+
+
+<a name="wp849412"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849414"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times <span class="cItalic">dest_expr</span> loaded <span class="cItalic">src_expr</span> exactly <span class="cItalic">start_count</span> cycles after <span class="cItalic">start_event</span> asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849416"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_load_at_end_</span>
+
+
+
+</p>
+
+
+
+<a name="wp849417"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">count</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849419"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times <span class="cItalic">dest_expr</span> loaded the <span class="cItalic">src_expr</span> value exactly <span class="cItalic">end_count</span> cycles after <span class="cItalic">start_event</span> asserted. Not meaningful if <span class="cItalic">end_count</span> = 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849421"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_load_times</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849423"></a><p class="pTableCell">
+
+STATISTIC &#151;  Reports the load times (in cycles from asserting <span class="cItalic">start_event</span> to loading <span class="cItalic">src_expr</span> into <span class="cItalic">dest_expr</span>) that occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874736"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875432table875430">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875432"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_dest_expr_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875447"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">reg_load_time</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875434"></a><p class="pTableCell">
+
+Number of times <span class="cItalic">dest_expr</span> was loaded in the specified number of cycles. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875435"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_load_time_good</span>[<span class="cItalic">start_count</span>+1:<span class="cItalic">maximum</span>] &#151;  bin index is the observed load time in clock cycles. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875437"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">start_count</span> + 4095 (if <span class="cItalic">end_count</span> = 0) or</li></ul><a name="wp875438"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">end_count</span> (if <span class="cItalic">end_count</span> &gt; 0).</li></ul><a name="wp875439"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_load_time_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

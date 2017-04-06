@@ -1,0 +1,1192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_width</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,56,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_width"></a>
+<a name="wp794794"></a><h3 class="pHeading2">
+  
+
+
+ovl_width
+  </h3>
+
+
+<a name="wp794795"></a><p class="pBody">
+Ensures that when value of an expression is TRUE, it remains TRUE for a minimum number of clock cycles and transitions from TRUE no later than a maximum number of clock cycles.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp842482table842460">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp842482"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers027.jpg" height="109" width="242" id="wp842463" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp869455"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp869456"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp869457"></a><p class="pTableCell">
+<span class="cItalic">min_cks </span>
+
+</p>
+
+<a name="wp842514"></a><p class="pTableCell">
+<span class="cItalic">max_cks </span>
+
+</p>
+
+<a name="wp842486"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp842521"></a><p class="pTableCell">
+<span class="cItalic">msg</span>
+
+</p>
+
+<a name="wp842489"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp842490"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp842491"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp842492"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp842496"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp794820"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp794821"></a><pre class="pCode">
+     <span class="cBold">ovl_width</span> 
+</pre>
+
+<a name="wp794822"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, min_cks, max_cks, property_type</span>, <span class="cItalic">msg</span>,
+</pre>
+
+<a name="wp839891"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span>)]
+</pre>
+
+<a name="wp794823"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, enable, test_expr, fire</span>);
+</pre>
+
+<a name="EW106"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp794861"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp837449table794824">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837449"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837451"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796785"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796787"></a><p class="pTableCell">
+
+Minimum number of clock edges <span class="cItalic">test_expr</span> must remain TRUE once it is sampled TRUE. The special case where <span class="cItalic">min_cks</span> is 0 turns off minimum checking (i.e., <span class="cItalic">test_expr</span> can transition from TRUE in the next clock cycle). Default: 1 (i.e., same as 0).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796789"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796791"></a><p class="pTableCell">
+
+Maximum number of clock edges <span class="cItalic">test_expr</span> can remain TRUE once it is sampled TRUE. The special case where <span class="cItalic">max_cks</span> is 0 turns off maximum checking (i.e., <span class="cItalic">test_expr</span> can remain TRUE for any number of cycles). Default: 1 (i.e., <span class="cItalic">test_expr</span> must transition from TRUE in the next clock cycle).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838209"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838211"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838205"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838207"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838201"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838203"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838197"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838199"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838193"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838195"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838189"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838191"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp794879"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp838688table794862">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838688"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838690"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838692"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838694"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838696"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838698"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798907"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">test_expr</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798909"></a><p class="pTableCell">
+
+Expression that should evaluate to TRUE for at least <span class="cItalic">min_cks</span> cycles and at most <span class="cItalic">max_cks</span> cycles after it is sampled TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838907"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp838908"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838910"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp794880"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp794881"></a><p class="pBody">
+The ovl_width assertion checker checks the single-bit expression <span class="cItalic">test_expr</span> at each active edge of <span class="cItalic">clock. </span>If the value of <span class="cItalic">test_expr</span> is TRUE, the checker performs the following steps:
+</p>
+
+<a name="wp794882"></a>
+<ol start="1."><li class="LL1Seq">Unless it is disabled by setting <span class="cItalic">min_cks</span> to 0, a minimum check is initiated. The check evaluates <span class="cItalic">test_expr</span> at each subsequent active edge of <span class="cItalic">clock</span>. If its value is not TRUE, the minimum check fails. Otherwise, after <span class="cItalic">min_cks</span> -1 cycles transpire, the minimum check terminates.</li></ol><a name="wp794883"></a>
+<ol start="2."><li class="LL1Seq">Unless it is disabled by setting <span class="cItalic">max_cks</span> to 0, a maximum check is initiated. The check evaluates <span class="cItalic">test_expr</span> at each subsequent active edge of <span class="cItalic">clock</span>. If its value does not transition from TRUE by the time <span class="cItalic">max_cks</span> cycles transpire (from the start of checking), the maximum check fails.</li></ol><a name="wp794884"></a>
+<ol start="3."><li class="LL1Seq">The checker returns to checking <span class="cItalic">test_expr</span> in the next cycle. In particular if <span class="cItalic">test_expr</span> is TRUE, a new set of checks is initiated. </li></ol><a name="MGCCIDPAssertion Checks"></a>
+<a name="wp794904"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp796757table794885">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796757"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MIN_CHECK</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796759"></a><p class="pTableCell">
+
+The value of <span class="cItalic">test_expr</span> was held TRUE for less than <span class="cItalic">min_cks</span> cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796761"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MAX_CHECK</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796763"></a><p class="pTableCell">
+
+The value of <span class="cItalic">test_expr</span> was held TRUE for more than <span class="cItalic">max_cks</span> cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796765"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">min_cks &gt; max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796767"></a><p class="pTableCell">
+
+The <span class="cItalic">min_cks</span> parameter is greater than the <span class="cItalic">max_cks</span> parameter (and <span class="cItalic">max_cks</span> &gt;0). Unless the violation is fatal, either the minimum or maximum check will fail.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW107"></a><a name="wp801325"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801321table801319">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801321"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">test_expr contains X </span></span>
+
+
+
+</p>
+
+
+
+<a name="wp801322"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">or Z</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801808"></a><p class="pTableCell">
+
+Expression value was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp794924"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp796745table794905">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796745"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp799268"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">asserts</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796747"></a><p class="pTableCell">
+
+BASIC &#151;  A check was initiated (i.e., <span class="cItalic">test_expr</span> was sampled TRUE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796749"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp799269"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">asserted_for_min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796751"></a><p class="pTableCell">
+
+CORNER &#151;  The expression <span class="cItalic">test_expr</span> was held TRUE for exactly <span class="cItalic">min_cks</span> cycles (<span class="cItalic">min_cks</span> &gt; 0).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp796753"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_test_expr_</span>
+
+
+
+</p>
+
+
+
+<a name="wp799270"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">asserted_for_max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp796755"></a><p class="pTableCell">
+
+CORNER &#151;  The expression <span class="cItalic">test_expr</span> was held TRUE for exactly <span class="cItalic">max_cks</span> cycles (<span class="cItalic">max_cks</span> &gt; 0).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874799"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874800"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPSee also"></a>
+<a name="wp794925"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp800198table800193">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp800198"></a><p class="pTableCell">
+
+<a href="req.html"><span class="cLink">req</span> asserts for 2 or 3 cycles.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers103.jpg" height="70" width="413" id="wp794977" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

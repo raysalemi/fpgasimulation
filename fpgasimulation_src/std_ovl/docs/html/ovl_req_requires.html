@@ -1,0 +1,1664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_req_requires</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,49,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_req_requires"></a>
+<a name="wp849804"></a><h3 class="pHeading2">
+  
+
+
+ovl_req_requires
+  </h3>
+
+
+<a name="wp849805"></a><p class="pBody">
+Ensures that every request event initiates a valid request-response event sequence that finishes within a specified time window.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849838table849806">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849838"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers047.jpg" height="109" width="242" id="wp849809" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp849840"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp849841"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp849842"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">min_cks</span></span>
+
+</p>
+
+<a name="wp849843"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_cks </span></span>
+
+</p>
+
+<a name="wp849844"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp869432"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp849848"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp849849"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp849850"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp849851"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp849855"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp849858"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp849859"></a><pre class="pCode">
+     <span class="cBold">ovl_req_requires</span>
+</pre>
+
+<a name="wp849860"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, min_cks, max_cks, property_type, msg, </span>
+</pre>
+
+<a name="wp849861"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp849862"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, req_trigger, req_follower,</span>
+</pre>
+
+<a name="wp849863"></a><pre class="pCode">
+     <span class="cItalic">      resp_leader, resp_trigger, fire</span>);
+</pre>
+
+<a name="EW92"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp849901"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849866table849864">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849866"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849868"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849870"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849872"></a><p class="pTableCell">
+
+Minimum number of clock cycles after <span class="cItalic">req_trigger</span> is TRUE that the event sequence can finish.<span class="cItalic"> </span>Value of <span class="cItalic">min_cks</span> must be &gt; 0. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849874"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849876"></a><p class="pTableCell">
+
+Maximum number of clock cycles after <span class="cItalic">req_trigger</span> is TRUE that the event sequence should finish.<span class="cItalic"> </span>The special value 0 selects no upper bound. If <span class="cItalic">max_cks</span> <img src='images/symbol_ne.gif' align='absmiddle' /> 0, then <span class="cItalic">max_cks</span> must be &#352; <span class="cItalic">min_cks</span>. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849878"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849880"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849882"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849884"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849886"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849888"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849890"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849892"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849894"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849896"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849898"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849900"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp849936"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849904table849902">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849904"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849906"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849908"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849910"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849912"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849914"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849916"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">req_trigger</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849918"></a><p class="pTableCell">
+
+Request trigger signal. If <span class="cItalic">req_trigger</span> is TRUE, the checker initiates a new check and its corresponding time window opens <span class="cItalic">min_cks</span> cycles later.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849920"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">req_follower</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849922"></a><p class="pTableCell">
+
+Request follower signal. A request event finishes at the first rising edge of <span class="cItalic">req_follower</span> after <span class="cItalic">req_trigger</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849924"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">resp_leader</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849926"></a><p class="pTableCell">
+
+Response leader signal. The first rising edge of <span class="cItalic">resp_leader</span> in a cycle after the request event initiates the response event.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849928"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">resp_trigger</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849930"></a><p class="pTableCell">
+
+Response trigger signal. The response event finishes at the first rising edge of <span class="cItalic">resp_trigger</span> in the same or subsequent cycle as the rising edge of <span class="cItalic">resp_leader</span>. This event must be in the time window from <span class="cItalic">min_cks</span> to <span class="cItalic">max_cks</span> cycles after <span class="cItalic">req_trigger</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849932"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp849933"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[OVL_FIRE_WIDTH-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849935"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp849937"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp849938"></a><p class="pBody">
+The ovl_req_requires assertion checker checks <span class="cItalic">req_trigger</span> at each active edge of <span class="cItalic">clock</span>. If <span class="cItalic">req_trigger</span> is TRUE, a req_requires check is initiated. The checker verifies that a semaphore request-response event sequence transpires with the last event occurring within the time window specified by [<span class="cItalic">max_cks</span>:<span class="cItalic">min_cks</span>]. The event sequence must have the following characteristics:
+</p>
+
+<a name="wp849939"></a>
+<ul><li class="LL1BulSolid">When <span class="cItalic">req_trigger</span> is TRUE: <span class="cItalic">req_follower</span>, <span class="cItalic">resp_leader</span>, <span class="cItalic">resp_trigger</span> are TRUE in sequence.</li></ul><a name="wp849940"></a>
+<ul><li class="LL1BulSolid">Each event happens at the active clock edge at which the first occurrence of its signal is TRUE following the previous event in the sequence. </li></ul><a name="wp849941"></a>
+<ul><li class="LL1BulSolid">The sequence has the following timing relations:</li></ul><a name="wp849942"></a><pre class="pCodeIndent">
+           t<sub style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: none; text-transform: none" class="cSubscript">req_trigger</sub> &#8804; t<sub style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: none; text-transform: none" class="cSubscript">req_follower</sub> &lt; t<sub style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: none; text-transform: none" class="cSubscript">resp_leader</sub> &#8804; t<sub style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-decoration: none; text-transform: none" class="cSubscript">resp_trigger</sub>
+</pre>
+
+<a name="wp849943"></a><pre class="pCodeIndent">
+           
+</pre>
+
+<a name="wp849944"></a><p class="pL1Body">That is, the <span class="cItalic">req_trigger</span> and <span class="cItalic">req_follower</span> events can occur in the same cycle and the <span class="cItalic">resp_leader</span> and <span class="cItalic">resp_trigger</span> events can occur in the same cycle, but the <span class="cItalic">resp_leader</span> event must be after the <span class="cItalic">req_follower</span> event.</p>
+<a name="wp849945"></a><p class="pBody">
+A req_requires check violation occurs if one of the following cases arises:
+</p>
+
+<a name="wp849946"></a>
+<ul><li class="LL1BulSolid">The semaphore event sequence finishes before the [<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] time window opens.</li></ul><a name="wp849947"></a>
+<ul><li class="LL1BulSolid">A cycle is reached at which the checker determines the semaphore event sequence cannot finish within the [<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] time window.</li></ul><a name="wp849948"></a>
+<ul><li class="LL1BulSolid">The [<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] time window closes, but the semaphore event sequence did not finish.</li></ul><a name="wp849949"></a><p class="pBody">
+The default value of <span class="cItalic">max_cks</span> is 0, which sets no upper bound for the time windows. In this case, a req_requires violation occurs only when a sequence finishes before <span class="cItalic">min_cks</span> cycles after the <span class="cItalic">req_trigger</span> event. The default value of <span class="cItalic">min_cks</span> is 1, so if both <span class="cItalic">min_cks</span> and <span class="cItalic">max_cks</span> are left set to their defaults, the req_requires check cannot be violated.
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp849961"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849952table849950">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849952"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">REQ_REQUIRES</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849954"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">A request-response event sequence started, but did not finish when the specified time window was open.</span>
+
+
+
+</p>
+
+
+
+<a name="wp849955"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">max_cks</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span></p>
+
+<a name="wp849956"></a><p class="pTableL1Body"><span class="cItalic">Req_trigger</span> was TRUE, so a request-response event sequence started. But, either the sequence finished before <span class="cItalic">min_cks</span> cycles, or it could not finish by <span class="cItalic">max_cks</span> cycles.</p>
+
+<a name="wp849958"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">A request-response event sequence started, but it finished before the specified time window opened.</span>
+
+
+
+</p>
+
+
+
+<a name="wp849959"></a><p class="pTableL1Body"><span style="color: #000000" class="cxgCour10i">max_cks</span><span style="color: #000000" class="cxgCour10"> = 0</span></p>
+
+<a name="wp849960"></a><p class="pTableL1Body"><span class="cItalic">Req_trigger</span> was TRUE, so a request-response event sequence started, but the sequence finished before <span class="cItalic">min_cks</span> cycles.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW93"></a><a name="wp849980"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849964table849962">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849964"></a><p class="pTableCell">
+
+req_trigger contains X 
+
+
+
+</p>
+
+
+
+<a name="wp849965"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849967"></a><p class="pTableCell">
+
+Request trigger was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849969"></a><p class="pTableCell">
+
+req_follower contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849971"></a><p class="pTableCell">
+
+Request follower was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849973"></a><p class="pTableCell">
+
+resp_leader contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849975"></a><p class="pTableCell">
+
+Response leader was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp849977"></a><p class="pTableCell">
+
+resp_trigger contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp849979"></a><p class="pTableCell">
+
+Response trigger was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp849981"></a><h6 class="pHeading5">
+  
+
+
+Cover Points
+</h6>
+
+
+<a name="wp849982"></a><p class="pBody">
+If overlapping request-response sequences are triggered, the coverage data might be inaccurate because the cover group vectors do not reflect which responses belong to which requests.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp849985table849983">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849985"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_requests</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp849987"></a><p class="pTableCell">
+SANITY &#151;  Number of cycles <span class="cItalic">req_trigger</span> was TRUE.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849989"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_request_</span>
+
+</p>
+
+<a name="wp849990"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">followers</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp849992"></a><p class="pTableCell">
+BASIC &#151;  Number of times <span class="cItalic">req_trigger</span> was TRUE and <span class="cItalic">req_follower</span> was TRUE in the same or subsequent cycle.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849994"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_response_leaders</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp849996"></a><p class="pTableCell">
+BASIC &#151;  Number of times <span class="cItalic">req_trigger</span> was TRUE; <span class="cItalic">req_follower</span> was TRUE in the same or subsequent cycle; and then <span class="cItalic">resp_leader</span> was TRUE in a subsequent cycle.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp849998"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_req_requires</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850000"></a><p class="pTableCell">
+BASIC &#151;  Number of valid request-response event sequences.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850002"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_resp_trigger_at_</span>
+
+</p>
+
+<a name="wp850003"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">min_cks</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850005"></a><p class="pTableCell">
+CORNER &#151;  Number of valid request-response event sequences that finished in <span class="cItalic">min_cks</span> cycles.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850007"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_resp_trigger_at_</span>
+
+</p>
+
+<a name="wp850008"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">max_cks</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850010"></a><p class="pTableCell">
+CORNER &#151;  Number of valid request-response event sequences that finished in <span class="cItalic">max_cks</span> cycles.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850012"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_req_trigger_to_</span>
+
+</p>
+
+<a name="wp850013"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">resp_trigger</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850015"></a><p class="pTableCell">
+STATISTIC &#151;  Reports the request-trigger to response-trigger times (in cycles) that occurred at least once.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850017"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_req_trigger_to_</span>
+
+</p>
+
+<a name="wp850018"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">req_follower</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850020"></a><p class="pTableCell">
+STATISTIC &#151;  Reports the request-trigger to request-follower times (in cycles) that occurred at least once.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850022"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_req_follower_to_</span>
+
+</p>
+
+<a name="wp850023"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">resp_leader</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850025"></a><p class="pTableCell">
+STATISTIC &#151;  Reports the request-follower to response-leader times (in cycles) that occurred at least once.
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850027"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">cover_resp_leader_to_</span>
+
+</p>
+
+<a name="wp850028"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">resp_trigger</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850030"></a><p class="pTableCell">
+STATISTIC &#151;  Reports the response-leader to response-trigger times (in cycles) that occurred at least once.
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874750"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875574table875572">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875574"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency_btw_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875592"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">req_trigger_and_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875593"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">resp_trigger</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875576"></a><p class="pTableCell">
+
+Number of requests with the specified request-trigger to response-trigger latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875611"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_trigger_resp_trigger_latency_good</span> [<span class="cItalic">min_cks</span>:<span class="cItalic">maximum</span>] &#151;  bin index is the observed latency in clock cycles from the request trigger to the response trigger. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875612"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid">4095 (if <span class="cItalic">max_cks</span> = 0) or</li></ul><a name="wp875613"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">max_cks</span> (if <span class="cItalic">max_cks</span> &gt; 0).</li></ul><a name="wp875578"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_trigger_resp_trigger_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875628"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency_btw_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875629"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">req_trigger_and_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875630"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">resp_follower</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875659"></a><p class="pTableCell">
+
+Number of requests with the specified request-trigger to response-follower latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875660"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_trigger_resp_follower_latency_good</span> [0:<span class="cItalic">maximum</span>] &#151;  bin index is the observed latency in clock cycles from the request trigger to the response follower. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875634"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid">4095 (if <span class="cItalic">max_cks</span> = 0) or</li></ul><a name="wp875635"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">max_cks</span> (if <span class="cItalic">max_cks</span> &gt; 0).</li></ul><a name="wp875636"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_trigger_resp_follower_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875666"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency_btw_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875667"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">req_follower_and_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875668"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">resp_leader</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875670"></a><p class="pTableCell">
+
+Number of requests with the specified request-follower to response-leader latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875671"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_follower_resp_leader_latency_good</span> [1:<span class="cItalic">maximum</span>] &#151;  bin index is the observed latency in clock cycles from the request follower to the response leader. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875672"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid">4095 (if <span class="cItalic">max_cks</span> = 0) or</li></ul><a name="wp875673"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">max_cks</span> (if <span class="cItalic">max_cks</span> &gt; 0).</li></ul><a name="wp875674"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_req_follower_resp_leader_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875698"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency_btw_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875699"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">resp_leader_and_</span></span>
+
+
+
+</p>
+
+
+
+<a name="wp875700"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">resp_trigger</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875702"></a><p class="pTableCell">
+
+Number of requests with the specified response-leader to response-trigger latency. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875703"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_resp_leader_resp_trigger_latency_good</span> [0:<span class="cItalic">maximum</span>] &#151;  bin index is the observed latency in clock cycles from the response leader to the response trigger. The value of <span class="cItalic">maximum</span> is:</li></ul><a name="wp875704"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid">4095 (if <span class="cItalic">max_cks</span> = 0) or</li></ul><a name="wp875705"></a>
+
+<ul class="TableLists"><li class="LL2TableBulSolid"><span class="cItalic">max_cks</span> (if <span class="cItalic">max_cks</span> &gt; 0).</li></ul><a name="wp875706"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_resp_leader_resp_trigger_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

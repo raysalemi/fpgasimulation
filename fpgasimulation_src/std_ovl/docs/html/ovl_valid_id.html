@@ -1,0 +1,2230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_valid_id</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,54,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_valid_id"></a>
+<a name="wp851059"></a><h3 class="pHeading2">
+  
+
+
+ovl_valid_id
+  </h3>
+
+
+<a name="wp851060"></a><p class="pBody">
+Ensures that each issued ID is returned within a specified time window; that returned IDs match issued IDs; and that the issued and outstanding IDs do not exceed specified limits.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851102table851061">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp851102"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers049.jpg" height="125" width="242" id="wp851064" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp851104"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp851105"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp851106"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">width </span></span>
+
+</p>
+
+<a name="wp851107"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">min_cks</span></span>
+
+</p>
+
+<a name="wp851108"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_cks</span></span>
+
+</p>
+
+<a name="wp851109"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_instances</span></span>
+
+</p>
+
+<a name="wp851110"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_ids</span></span>
+
+</p>
+
+<a name="wp851111"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">max_instances_per_id</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp869439"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">instance_count_width</span></span>
+
+</p>
+
+<a name="wp851114"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp851115"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp851116"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">coverage_level</span></span>
+
+</p>
+
+<a name="wp851117"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp851118"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp851119"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp851123"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp851126"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp851127"></a><pre class="pCode">
+     <span class="cBold">ovl_valid_id</span>
+</pre>
+
+<a name="wp851128"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, min_cks, max_cks, max_instances, max_ids, </span>
+</pre>
+
+<a name="wp851129"></a><pre class="pCode">
+     <span class="cItalic">         max_instances_per_id, instance_count_width, property_type, msg, </span>
+</pre>
+
+<a name="wp851130"></a><pre class="pCode">
+     <span class="cItalic">         coverage_level, clock_edge, reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp851131"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, issued, issued_count, returned, </span>
+</pre>
+
+<a name="wp851132"></a><pre class="pCode">
+     <span class="cItalic">      flush, issued_id, returned_id, flush_id, fire</span>);
+</pre>
+
+<a name="EW102"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp851190"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851135table851133">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851135"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851137"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851139"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851141"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">issued_id, returned_id </span>and flush_id. Default: 2. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851143"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">min_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851145"></a><p class="pTableCell">
+
+Minimum number of clock cycles an ID instance must be outstanding. Must be &gt; 0. Default: 1
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851147"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851149"></a><p class="pTableCell">
+
+Maximum number of clock cycles an ID instance can be outstanding. Must be <img src='images/symbol_ge.gif' align='absmiddle' /> <span class="cItalic">min_cks</span>. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851151"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_instances</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851153"></a><p class="pTableCell">
+
+Maximum number of ID instances that can be outstanding at any time. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851155"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_ids</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851157"></a><p class="pTableCell">
+
+Maximum number of different IDs that can be outstanding at any time. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851159"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">max_instances_per_id</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851161"></a><p class="pTableCell">
+
+Maximum number of instances of a single ID that can be outstanding at any time. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851163"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">instance_count_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851165"></a><p class="pTableCell">
+
+Width of <span class="cItalic">issued_count</span>. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851167"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851169"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851171"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851173"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851175"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851177"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851179"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851181"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851183"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851185"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851187"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851189"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp851238"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851193table851191">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851193"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851195"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851197"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851199"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851201"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851203"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851205"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">issued</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851207"></a><p class="pTableCell">
+
+Issued IDs signal indicating the ID in <span class="cItalic">issued_id</span> is added to the outstanding IDs list. The <span class="cItalic">issued_count</span> port specifies the number of instances of the ID to make outstanding.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851209"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">issued_count</span>
+
+
+
+</p>
+
+
+
+<a name="wp851210"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">instance_count_width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851212"></a><p class="pTableCell">
+
+Number of instances of the issued ID to make outstanding when <span class="cItalic">issued</span> asserts.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851214"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">returned</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851216"></a><p class="pTableCell">
+
+Returned ID signal indicating an instance of the ID in <span class="cItalic">returned_id</span> is removed from the outstanding IDs list.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851218"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">flush</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851220"></a><p class="pTableCell">
+
+Flush ID signal indicating all instances of the ID in <span class="cItalic">flush_id</span> are removed from the outstanding IDs list.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851222"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">issued_id</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851224"></a><p class="pTableCell">
+
+Expression or variable containing the ID to add to the outstanding IDs list if <span class="cItalic">issued</span> is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851226"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">returned_id</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851228"></a><p class="pTableCell">
+
+Expression or variable containing the ID of an instance returned and removed from the outstanding IDs list if <span class="cItalic">returned</span> is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851230"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">flush_id</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851232"></a><p class="pTableCell">
+
+Expression or variable containing the ID to flush if <span class="cItalic">flush</span> is TRUE. All instances of the ID are removed from the outstanding IDs list.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851234"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp851235"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851237"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp851239"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp851240"></a><p class="pBody">
+The ovl_valid_id assertion checker checks <span class="cItalic">flush, returned </span>and<span class="cItalic"> issued </span>at each active edge of <span class="cItalic">clock</span> and performs the following sequence of operations using an internal scratch pad of outstanding IDs:
+</p>
+
+<a name="wp851241"></a>
+<ol start="1."><li class="LL1Seq">If <span class="cItalic">flush</span> is TRUE, the ID specified in <span class="cItalic">flush_id</span> is compared to the outstanding IDs. All instances (if any) of the flush ID are removed from the list of outstanding IDs. If <span class="cItalic">returned</span> is TRUE and <span class="cItalic">flush_id</span> = <span class="cItalic">returned_id</span>, the returned instance is ignored (even if it was not previously outstanding or was outstanding longer that <span class="cItalic">max_cks</span>). If <span class="cItalic">issued</span> is TRUE and <span class="cItalic">flush_id</span> = <span class="cItalic">issued_id</span>, the issued ID instances are flushed as well (even if one of the outstanding IDs, instances or instances-per-ID limits for the issued ID instance were reached).</li></ol><a name="wp851242"></a>
+<ol start="2."><li class="LL1Seq">If <span class="cItalic">returned</span> is TRUE and the ID in <span class="cItalic">returned_ID</span> is not being flushed:</li></ol><a name="wp851243"></a><ol start="1."><li class="LL2Seq">If an instance of the returned ID is outstanding, the longest-outstanding instance of the returned ID is removed from the list of outstanding ID instances. If that ID instance was outstanding for fewer than <span class="cItalic">min_cks</span> cycles, a min_cks violation occurs.</li></ol><a name="wp851244"></a><ol start="2."><li class="LL2Seq">If no instance of the returned ID is outstanding, a returned_id violation occurs. Even if an instance of the returned ID were issued in the same cycle, all ID instances must be outstanding for <span class="cItalic">min_cks</span> cycles (and <span class="cItalic">min_cks</span> must be &#352; 1). In particular, the same ID instance cannot be issued and returned in the same cycle.</li></ol><a name="wp851245"></a>
+<ol start="3."><li class="LL1Seq">If <span class="cItalic">issued</span> is TRUE and <span class="cItalic">issued_count</span> is 0, an issued_count violation occurs.</li></ol><a name="wp851246"></a>
+<ol start="4."><li class="LL1Seq">If <span class="cItalic">issued</span> is TRUE and <span class="cItalic">issued_count</span> &gt; 0, then:</li></ol><a name="wp851247"></a><ol start="1."><li class="LL2Seq">If the current number of unique outstanding IDs is <span class="cItalic">max_ids </span>and issued_id is not one of them, a max_instances violation occurs.</li></ol><a name="wp851248"></a><ol start="2."><li class="LL2Seq">If the current number of outstanding ID instances plus <span class="cItalic">issued_count</span> exceeds <span class="cItalic">max_instances</span>, a max_ids violation occurs.</li></ol><a name="wp851249"></a><ol start="3."><li class="LL2Seq">If the current number of outstanding instances of the issued ID plus <span class="cItalic">issued_count</span> exceeds <span class="cItalic">max_instances_per_id</span>, a max_instances_per_id violation occurs.</li></ol><a name="wp851250"></a><ol start="4."><li class="LL2Seq">If the none of these violations occur, <span class="cItalic">issued_count</span> instances of the ID in <span class="cItalic">issued_id</span> are added to the list of outstanding ID instances.</li></ol><a name="wp851251"></a>
+<ol start="5."><li class="LL1Seq">After flushing and returning IDs, if any IDs have been outstanding for <span class="cItalic">max_cks</span> cycles, a max_cks violation occurs in the next cycle.</li></ol><a name="MGCCIDPAssertion Checks"></a>
+<a name="wp851283"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851254table851252">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851254"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">RETURNED_ID</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851256"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Returned ID not outstanding.</span>
+
+
+
+</p>
+
+
+
+<a name="wp851257"></a><p class="pTableL1Body"><span class="cItalic">Returned</span> is TRUE, but the list of outstanding ID instances does not contain an instance of <span class="cItalic">returned_ID</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851259"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">MAX_CKS</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851261"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ID instance outstanding for too many cycles.</span>
+
+
+
+</p>
+
+
+
+<a name="wp851262"></a><p class="pTableL1Body">An ID instance was outstanding longer than <span class="cItalic">max_cks</span> cycles.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851264"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MIN_CKS</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851266"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ID instance returned in too few cycles.</span>
+
+
+
+</p>
+
+
+
+<a name="wp851267"></a><p class="pTableL1Body"><span class="cItalic">Returned</span> is TRUE and an instance of the ID in <span class="cItalic">returned_id</span> is outstanding, but the longest-outstanding instance of the ID has been outstanding for fewer than <span class="cItalic">min_cks</span> cycles.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851269"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">MAX_IDS</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851271"></a><p class="pTableCell">
+
+Maximum number of outstanding IDs or ID instances exceeded.
+
+
+
+</p>
+
+
+
+<a name="wp851272"></a><p class="pTableL1Body"><span class="cItalic">Issued</span> is TRUE, but the number of outstanding instances plus <span class="cItalic">issued_count</span> (minus 1 if an instance of <span class="cItalic">issued_id</span> is returned without error) exceeds <span class="cItalic">max_instances</span> or the number of unique outstanding IDs plus <span class="cItalic">issued_count</span> (minus 1 if an instance of <span class="cItalic">issued_id</span> is returned without error) exceeds <span class="cItalic">max_ids.</span> </p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851274"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">MAX_INSTANCES_PER_ID</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851276"></a><p class="pTableCell">
+
+Maximum number of outstanding ID instances for the issued ID exceeded.
+
+
+
+</p>
+
+
+
+<a name="wp851277"></a><p class="pTableL1Body"><span class="cItalic">Issued</span> is TRUE, but the number of outstanding instances of <span class="cItalic">issued_id</span> plus <span class="cItalic">issued_count</span> (minus 1 if an instance of <span class="cItalic">issued_id</span> is returned without error) exceeds <span class="cItalic">max_instances_per_id</span>.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851279"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ISSUED_COUNT</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851281"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ID issued with count 0.</span>
+
+
+
+</p>
+
+
+
+<a name="wp851282"></a><p class="pTableL1Body"><span class="cItalic">Issued</span> is TRUE, but <span class="cItalic">issued_count</span> is 0.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW103"></a><a name="wp851316"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851286table851284">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851286"></a><p class="pTableCell">
+
+issued contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851288"></a><p class="pTableCell">
+
+Issued signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851290"></a><p class="pTableCell">
+
+returned contains X or 
+
+
+
+</p>
+
+
+
+<a name="wp851291"></a><p class="pTableCell">
+
+Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851293"></a><p class="pTableCell">
+
+Returned signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851295"></a><p class="pTableCell">
+
+flush contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851297"></a><p class="pTableCell">
+
+Flush signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851299"></a><p class="pTableCell">
+
+issued_id contains X
+
+
+
+</p>
+
+
+
+<a name="wp851300"></a><p class="pTableCell">
+
+or Z when issued is
+
+
+
+</p>
+
+
+
+<a name="wp851301"></a><p class="pTableCell">
+
+asserted
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851303"></a><p class="pTableCell">
+
+Issued ID contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851305"></a><p class="pTableCell">
+
+ret_id contains X 
+
+
+
+</p>
+
+
+
+<a name="wp851306"></a><p class="pTableCell">
+
+or Z when returned is
+
+
+
+</p>
+
+
+
+<a name="wp851307"></a><p class="pTableCell">
+
+asserted
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851309"></a><p class="pTableCell">
+
+Returned ID contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851311"></a><p class="pTableCell">
+
+flush_id contains X 
+
+
+
+</p>
+
+
+
+<a name="wp851312"></a><p class="pTableCell">
+
+or Z when flush is
+
+
+
+</p>
+
+
+
+<a name="wp851313"></a><p class="pTableCell">
+
+asserted
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851315"></a><p class="pTableCell">
+
+Flush ID contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp851358"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp851319table851317">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851319"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_issued_asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851321"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">issued</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851323"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_returned_</span>
+
+
+
+</p>
+
+
+
+<a name="wp851324"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851326"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">returned</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851328"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_flush_asserted</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851330"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span class="cItalic">flush</span> was TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851332"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">turnaround_times</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851334"></a><p class="pTableCell">
+
+BASIC &#151;  Reports the turnaround times (i.e., number of cycles after an ID instance is issued that the instance is returned) that occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851336"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">outstanding_ids</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851338"></a><p class="pTableCell">
+
+BASIC &#151;  Reports the numbers of outstanding ID instances that occurred at least once.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851340"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_returned_at_min_</span>
+
+
+
+</p>
+
+
+
+<a name="wp851341"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851343"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times the returned ID instance was outstanding for <span class="cItalic">min_cks</span> cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851345"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_returned_at_max_</span>
+
+
+
+</p>
+
+
+
+<a name="wp851346"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cks</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851348"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times the returned ID instance was outstanding for <span class="cItalic">max_cks</span> cycles.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851350"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_max_ids</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851352"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the outstanding IDs reached the <span class="cItalic">max_ids</span> limit or the <span class="cItalic">max_instances</span> limit.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp851354"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_max_instances_</span>
+
+
+
+</p>
+
+
+
+<a name="wp851355"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">per_id</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp851357"></a><p class="pTableCell">
+
+CORNER &#151;  Number of cycles the outstanding instances of an ID reached the <span class="cItalic">max_instances_per_id</span> limit.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874785"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Groups
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp875751table875749">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875751"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">observed_latency</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875753"></a><p class="pTableCell">
+
+Number of returned IDs with the specified turnaround time. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875754"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_latency_good</span>[<span class="cItalic">min_cks</span>:<span class="cItalic">max_cks</span>] &#151;  bin index is the observed turnaround time in clock cycles.</li></ul><a name="wp875755"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_latency_bad</span> &#151;  default.</li></ul></td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp875757"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">outstanding_ids</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp875760"></a><p class="pTableCell">
+
+Number of cycles with the specified number of outstanding ids. Bins are:
+
+
+
+</p>
+
+
+
+<a name="wp875761"></a>
+
+<ul class="TableLists"><li class="LL1TableBulSolid"><span class="cItalic">observed_outstanding_ids</span>[0:<span class="cItalic">max_instances</span>] &#151;  bin index is the instance ID.</li></ul></td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

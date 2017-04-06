@@ -1,0 +1,170 @@
+/* Character tags that are not size dependent, therefore browser/platform independent */
+
+a:link    {
+  color: #2652A2;
+  text-decoration: none;
+}
+a:active  {
+  color: #2652A2;
+  text-decoration: none;
+}
+a:hover   {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: #2652A2;
+  text-decoration: none;
+}
+span.cCode {
+  font-family: Courier New, Courier, mono;
+}
+span.cFootnote {
+  font-size: 0.9em;
+  line-height: 0%;
+  vertical-align: super;
+  margin-top: 0.0em;
+  margin-bottom: -2px;
+  font-family: Courier New, Courier, mono;
+}
+
+span.cKeyword {
+  font-family: Courier New, Courier, mono;
+  font-weight: bold;
+}
+div.WWHInlineRelatedTopics {
+  margin-top:    8px;
+  margin-bottom: 4px;
+}
+em.cEmphasis {
+  font-style: italic;
+}
+span.cAlignRight {
+  text-align: right;
+}
+span.cTab25 {
+  margin: 0.25in;
+}
+span.cTab5 {
+  margin: 0.5in;
+}
+span.cTab75 {
+  margin: 0.75in;
+}
+span.cBlack {
+  color: #000000;
+}
+span.cBold {
+  font-weight: bold;
+}
+span.cBoldItalic {
+  font-weight: bold;
+  font-style: italic;
+}
+span.cBoldLink {
+  color: #2652A2;
+  font-weight: bold;
+  text-decoration: none;
+}
+span.cDefault{
+}
+span.cEquationVariables {
+  font-style: italic;
+}
+span.cH1Blue {
+  color: #5E82A3;
+}
+span.cI {
+  font-style: italic;
+}
+span.cItalic {
+  font-style: italic;
+}
+span.cLink {
+  color: #2652A2;
+  text-decoration: none;
+}
+span.cLink:hover {
+  color: blue;
+  text-decoration: underline}
+span.cLinkItalic {
+  color: #2652A2;
+  font-style: italic;
+}
+span.cLinkItalic:hover {
+  color: blue;
+  font-style: italic;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: underline}
+span.cNoPDF {
+}
+span.cNotesBlack {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  color: black;
+  font-size: 1.2em;
+  background-color: white;
+  font-weight: bold;
+}
+span.cNotesRed {
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  color: #A7001D;
+  font-size: 1.2em;
+  background-color: white;
+  font-weight: bold;
+}
+span.cOptDflt {
+  text-decoration: underline;
+}
+span.cOptional {
+}
+span.cOptRpl {
+  font-style: italic}
+span.cOptRplDflt {
+  font-style: italic;
+  text-decoration: underline;
+}
+span.cR {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+span.cRegular {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+span.cReqDflt {
+  font-weight: bold;
+  text-decoration: underline;
+}
+span.cReqRpl {
+  font-style: italic;
+  font-variant: normal;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: none;
+}
+span.cReqRplDflt {
+  font-style: italic;
+  font-variant: normal;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: none;
+}
+span.cRequired {
+  font-weight: bold;
+}
+span.cSymbolFont {
+  font-family: Symbol;
+}
+span.czArrow {
+  font-family: Symbol;
+}
+u.cUnderline {
+  text-decoration: underline;
+}

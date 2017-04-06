@@ -1,0 +1,1979 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_stack</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,50,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_stack"></a>
+<a name="wp850100"></a><h3 class="pHeading2">
+  
+
+
+ovl_stack
+  </h3>
+
+
+<a name="wp850162"></a><p class="pBody">
+Ensures the data integrity of a stack and ensures that the stack does not overflow or underflow.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850139table850101">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp850139"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers048.jpg" height="107" width="242" id="wp850104" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp850141"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp850142"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp850143"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">width</span></span>
+
+</p>
+
+<a name="wp850144"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">depth</span></span>
+
+</p>
+
+<a name="wp850145"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">push_latency</span></span>
+
+</p>
+
+<a name="wp850146"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">pop_latency</span></span>
+
+</p>
+
+<a name="wp850147"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">high_water_mark</span></span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp850150"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">property_type</span></span>
+
+</p>
+
+<a name="wp850151"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">msg</span></span>
+
+</p>
+
+<a name="wp850152"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">coverage_level</span></span>
+
+</p>
+
+<a name="wp850153"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">clock_edge</span></span>
+
+</p>
+
+<a name="wp850154"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">reset_polarity</span></span>
+
+</p>
+
+<a name="wp850155"></a><p class="pTableCell">
+<span class="cP12"><span style=" font-weight: regular; font-style: italic; vertical-align: baseline; color:#000000">gating_type</span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp850159"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp850163"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp850164"></a><pre class="pCode">
+     <span class="cBold">ovl_stack</span>
+</pre>
+
+<a name="wp850165"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level, width, depth, push_latency, pop_latency, </span>
+</pre>
+
+<a name="wp850166"></a><pre class="pCode">
+     <span class="cItalic">         high_water_mark, property_type, msg, coverage_level, clock_edge, </span>
+</pre>
+
+<a name="wp850167"></a><pre class="pCode">
+     <span class="cItalic">         reset_polarity, gating_type</span><span class="cRegular">)]</span>
+</pre>
+
+<a name="wp850168"></a><pre class="pCode">
+     <span class="cItalic">   instance_name</span> (<span class="cItalic">clock, reset, enable, push, pop, full, empty, push_data, </span>
+</pre>
+
+<a name="wp850169"></a><pre class="pCode">
+     <span class="cItalic">      pop_data, fire</span>);
+</pre>
+
+<a name="EW94"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp850227"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850172table850170">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850172"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850174"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850176"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850178"></a><p class="pTableCell">
+
+Width of a data item. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850180"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">depth</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850182"></a><p class="pTableCell">
+
+Stack depth. The <span class="cItalic">depth</span> must be &gt; 0. Default: 2.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850184"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push_latency</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850186"></a><p class="pTableCell">
+
+Latency for push operation.
+
+
+
+</p>
+
+
+
+<a name="wp850187"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push_latency</span><span style="color: #000000" class="cxgCour10"> = 0 </span>(Default)
+
+
+
+</p>
+
+
+
+<a name="wp850188"></a><p class="pTableL1Body">Value of <span class="cItalic">push_data</span> is valid and the push operation is performed in the same cycle <span class="cItalic">push</span> asserts. </p>
+
+<a name="wp850189"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push_latency</span><span style="color: #000000" class="cxgCour10"> &gt; 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp850190"></a><p class="pTableL1Body">Value of <span class="cItalic">push_data</span> is valid and the push operation is performed <span class="cItalic">push_latency</span> cycles after <span class="cItalic">push</span> asserts. </p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850192"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop_latency</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850194"></a><p class="pTableCell">
+
+Latency for pop operation.
+
+
+
+</p>
+
+
+
+<a name="wp850195"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop_latency</span><span style="color: #000000" class="cxgCour10"> = 0</span> (Default)
+
+
+
+</p>
+
+
+
+<a name="wp850196"></a><p class="pTableL1Body">Value of <span class="cItalic">pop_data</span> is valid and the pop operation is performed in the same cycle <span class="cItalic">pop</span> asserts. </p>
+
+<a name="wp850197"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop_latency</span><span style="color: #000000" class="cxgCour10"> &gt; 0 </span>
+
+
+
+</p>
+
+
+
+<a name="wp850198"></a><p class="pTableL1Body">Value of <span class="cItalic">pop_data</span> is valid and the pop operation is performed <span class="cItalic">pop_latency</span> cycles after <span class="cItalic">pop</span> asserts.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850200"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">high_water_mark</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850202"></a><p class="pTableCell">
+
+Stack high-water mark. Must be &lt; <span class="cItalic">depth</span>. A value of 0 disables the cover_high_water_mark cover point. Default: 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850204"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850206"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850208"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850210"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850212"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850214"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850216"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850218"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850220"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850222"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850224"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850226"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp850279"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850230table850228">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850230"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850232"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850234"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850236"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850238"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850240"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850242"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850244"></a><p class="pTableCell">
+
+Stack push input. When <span class="cItalic">push</span> asserts, the stack performs a push operation. A data item is pushed onto the stack and the stack counter increments by 1. If <span class="cItalic">push_latency</span> is 0, the push is performed in the same cycle <span class="cItalic">push</span> asserts. Otherwise <span class="cItalic">push_latency</span> cycles later, <span class="cItalic">push_data</span> is latched, the push operation occurs, and the stack counter increments.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850246"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850248"></a><p class="pTableCell">
+
+Stack pop input. When <span class="cItalic">pop</span> asserts, the stack performs a pop operation. A data item is popped from the stack and the stack counter decrements by 1. If <span class="cItalic">deq_latency</span> is 0, the pop is performed in the same cycle <span class="cItalic">pop</span> asserts. Otherwise <span class="cItalic">enq_latency</span> cycles later, the pop operation occurs, the stack counter decrements, and <span class="cItalic">pop_data</span> is valid.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850250"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850252"></a><p class="pTableCell">
+
+Output status flag from the stack. 
+
+
+
+</p>
+
+
+
+<a name="wp850253"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp850254"></a><p class="pTableL1Body">Stack not full.</p>
+
+<a name="wp850255"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">full</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp850256"></a><p class="pTableL1Body">Stack full.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850258"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850260"></a><p class="pTableCell">
+
+Output status flag from the stack. 
+
+
+
+</p>
+
+
+
+<a name="wp850261"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span><span style="color: #000000" class="cxgCour10"> = 0</span>
+
+
+
+</p>
+
+
+
+<a name="wp850262"></a><p class="pTableL1Body">Stack not empty.</p>
+
+<a name="wp850263"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">empty</span><span style="color: #000000" class="cxgCour10"> = 1</span>
+
+
+
+</p>
+
+
+
+<a name="wp850264"></a><p class="pTableL1Body">Stack empty.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850266"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push_data</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850268"></a><p class="pTableCell">
+
+Push data input to the stack. Contains the data item to push onto the stack.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850270"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop_data</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850273"></a><p class="pTableCell">
+
+Pop data output from the stack. Contains the data item popped from the stack.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850275"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp850276"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">[OVL_FIRE_WIDTH-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850278"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp850280"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp850281"></a><p class="pBody">
+The ovl_stack checker checks <span class="cItalic">push</span> and <span class="cItalic">pop</span> at the active edge of <span class="cItalic">clock</span>. If <span class="cItalic">push</span> is TRUE, the checker assumes a push operation occurs <span class="cItalic">push_latency</span> cycles later (or in the same cycle if <span class="cItalic">push_latency</span> is 0). <span class="cItalic">In that cycle</span>, the checker does the following:
+</p>
+
+<a name="wp850282"></a>
+<ul><li class="LL1BulSolid">If a pop operation is scheduled for this cycle, a simultaneous_push_pop check violation occurs.</li></ul><a name="wp850283"></a>
+<ul><li class="LL1BulSolid">Otherwise, if the stack is already full, an overflow check violation occurs. The checker assumes the data item in <span class="cItalic">push_data</span> was latched in the current cycle and replaced the top entry.</li></ul><a name="wp850284"></a>
+<ul><li class="LL1BulSolid">Otherwise, the checker assumes the data item in <span class="cItalic">push_data</span> was latched in the current cycle and pushed on the top of the stack. The checker increments the stack counter by 1 in the next cycle.</li></ul><a name="wp850285"></a><p class="pBody">
+Similarly, if <span class="cItalic">pop</span> is TRUE, the checker assumes a pop operation occurs <span class="cItalic">pop_latency</span> cycles later (or in the same cycle if <span class="cItalic">pop_latency</span> is 0). <span class="cItalic">In that cycle</span>, unless a simultaneous_push_pop violation has occurred, the checker does the following:
+</p>
+
+<a name="wp850286"></a>
+<ul><li class="LL1BulSolid">If the stack is already empty, an underflow check violation occurs.</li></ul><a name="wp850287"></a>
+<ul><li class="LL1BulSolid">Otherwise, the checker assumes the data item on the top of the stack was popped and compares the value of <span class="cItalic">pop_data </span>with the expected value of the popped data item. If they do not match, a value check violation occurs. The checker decrements the stack counter by 1 in the next cycle.</li></ul><a name="wp850288"></a><p class="pBody">
+The ovl_stack checker also checks <span class="cItalic">full</span> and <span class="cItalic">empty</span> at the active edge of <span class="cItalic">clock</span>. After the stack pointer is adjusted to reflect a push or pop performed in the previous cycle:
+</p>
+
+<a name="wp850289"></a>
+<ul><li class="LL1BulSolid">If the stack is full and <span class="cItalic">full</span> is FALSE or if the stack is not full and <span class="cItalic">full</span> is TRUE, a full check violation occurs.</li></ul><a name="wp850290"></a>
+<ul><li class="LL1BulSolid">If the stack is empty and <span class="cItalic">empty</span> is FALSE or if the stack is not empty and <span class="cItalic">empty</span> is TRUE, an empty check violation occurs.</li></ul><a name="MGCCIDPAssertion Checks"></a>
+<a name="wp850326"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+ Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850293table850291">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850293"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">OVERFLOW</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850295"></a><p class="pTableCell">
+
+Data pushed onto stack when the stack was full.
+
+
+
+</p>
+
+
+
+<a name="wp850296"></a><p class="pTableL1Body">Stack had <span class="cItalic">depth</span> data items <span class="cItalic">push_latency</span> cycles after <span class="cItalic">push</span> was sampled TRUE.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850298"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">UNDERFLOW</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850300"></a><p class="pTableCell">
+
+Data popped from stack when the stack was empty.
+
+
+
+</p>
+
+
+
+<a name="wp850301"></a><p class="pTableL1Body">Stack was empty <span class="cItalic">pop_latency</span> cycles after <span class="cItalic">pop</span> was sampled TRUE.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850303"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">SIMULTANEOUS_PUSH_POP</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850305"></a><p class="pTableCell">
+
+Push and pop operations occurred together.
+
+
+
+</p>
+
+
+
+<a name="wp850306"></a><p class="pTableL1Body">A push operation and a pop operation were both scheduled for the same cycle.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850308"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">VALUE</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850310"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Data value popped from the stack did not match the corresponding data value pushed onto the stack.</span>
+
+
+
+</p>
+
+
+
+<a name="wp850311"></a><p class="pTableL1Body"><span class="cItalic">Pop</span> was sampled TRUE, but <span class="cItalic">pop_latency</span> cycles later the value of <span class="cItalic">pop_data</span> did not equal the expected value pushed onto the stack in a previous cycle.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850313"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">FULL</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850315"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Stack was empty, but `empty' was deasserted.</span>
+
+
+
+</p>
+
+
+
+<a name="wp850316"></a><p class="pTableL1Body"><span class="cItalic">Empty</span> was sampled FALSE when the stack was empty.</p>
+
+<a name="wp850317"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Stack was not empty, but `empty' was asserted.</span>
+
+
+
+</p>
+
+
+
+<a name="wp850318"></a><p class="pTableL1Body"><span class="cItalic">Empty</span> was sampled TRUE when the stack was not empty.</p>
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850320"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">EMPTY</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850322"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Stack was full, but `full' was deasserted.</span>
+
+
+
+</p>
+
+
+
+<a name="wp850323"></a><p class="pTableL1Body"><span class="cItalic">Full</span> was sampled FALSE when the stack was full.</p>
+
+<a name="wp850324"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Stack was not full, but `full' was asserted.</span>
+
+
+
+</p>
+
+
+
+<a name="wp850325"></a><p class="pTableL1Body"><span class="cItalic">Full</span> was sampled TRUE when the stack was not full.</p>
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW95"></a><a name="wp850354"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850329table850327">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850329"></a><p class="pTableCell">
+
+push contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850331"></a><p class="pTableCell">
+
+Push signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850333"></a><p class="pTableCell">
+
+pop contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850335"></a><p class="pTableCell">
+
+Pop signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850337"></a><p class="pTableCell">
+
+push_data contains X
+
+
+
+</p>
+
+
+
+<a name="wp850338"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850340"></a><p class="pTableCell">
+
+Push data contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850342"></a><p class="pTableCell">
+
+pop_data contains X 
+
+
+
+</p>
+
+
+
+<a name="wp850343"></a><p class="pTableCell">
+
+or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850345"></a><p class="pTableCell">
+
+Pop data contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850347"></a><p class="pTableCell">
+
+full contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850349"></a><p class="pTableCell">
+
+Full signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850351"></a><p class="pTableCell">
+
+empty contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850353"></a><p class="pTableCell">
+
+Empty signal was X or Z.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp850384"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp850357table850355">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850357"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_pushes</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850359"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span style=" font-style: italic;">push</span> was asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850361"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_pops</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850363"></a><p class="pTableCell">
+
+SANITY &#151;  Number of cycles <span style=" font-style: italic;">pop</span> was asserted.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850365"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_max_entries</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850367"></a><p class="pTableCell">
+
+BASIC &#151;  Number of cycles for which the number of data items in the stack was the same as the maximum number of data items the stack had held up to and including that cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850369"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_push_then_pop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850371"></a><p class="pTableCell">
+
+BASIC &#151;  Number of times a <span style=" font-style: italic;">push</span> was followed by a <span style=" font-style: italic;">pop</span> without an intervening <span style=" font-style: italic;">push</span> (or <span style=" font-style: italic;">pop</span>).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850373"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850375"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times a push incremented the stack pointer to <span class="cItalic">depth</span> data items.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850377"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850379"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times a pop decremented the stack pointer to 0 data items.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp850381"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_high_water_mark</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp850383"></a><p class="pTableCell">
+
+CORNER &#151;  Number of times the stack had more data items than the specified <span class="cItalic">high_water_mark</span>. Not meaningful if <span class="cItalic">high_water_mark </span>is 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874757"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874758"></a><p class="pBody">
+none
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>

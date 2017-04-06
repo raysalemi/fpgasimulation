@@ -1,0 +1,1802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 for FrameMaker 8.0.2.1385" />
+    <meta name="TEMPLATEBASE" content="mgc_ww_v2.1.055" />
+    <meta name="LASTUPDATED" content="Wed Jun 04 11:36:51 2008" />
+    <meta name="mgc_html_doctitle" content="Accellera Standard OVL V2 LRM" />
+    <title>ovl_fifo_index</title>	<link rel="stylesheet" href="document.css" type="text/css"/>
+	<link rel="stylesheet" href="catalog.css" type="text/css"/>
+</head>
+
+
+<body>
+
+
+
+
+ 
+<!--10,22,0-->
+<!--EnDhEaDeR-->
+
+<a name="MGCCIDPovl_fifo_index"></a>
+<a name="wp788732"></a><h3 class="pHeading2">
+  
+
+
+ovl_fifo_index
+  </h3>
+
+
+<a name="wp788733"></a><p class="pBody">
+Ensures that a FIFO-type structure never overflows or underflows. This checker can be configured to support multiple pushes (FIFO writes) and pops (FIFO reads) during the same clock cycle.
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp840914table840889">
+  <tr align="left" valign="top">
+    <td>
+<a name="wp840914"></a><p class="pBodyRelative">
+
+
+
+<img src="images/ovl_checkers007.jpg" height="109" width="242" id="wp840892" border="0" hspace="0" vspace="0"/>
+
+
+
+
+</p>
+
+</td>
+    <td>
+<a name="wp840916"></a><p class="pTableCell">
+<span class="cBold">Parameters/Generics:</span> 
+
+</p>
+
+<a name="wp840917"></a><p class="pTableCell">
+<span class="cItalic">severity_level</span>
+
+</p>
+
+<a name="wp840952"></a><p class="pTableCell">
+<span class="cItalic">depth </span>
+
+</p>
+
+<a name="wp840953"></a><p class="pTableCell">
+<span class="cItalic">push_width </span>
+
+</p>
+
+<a name="wp840954"></a><p class="pTableCell">
+<span class="cItalic">pop_width </span>
+
+</p>
+
+<a name="wp840921"></a><p class="pTableCell">
+<span class="cItalic">simultaneous_push_pop</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp841052"></a><p class="pTableCell">
+<span class="cItalic">property_type</span>
+
+</p>
+
+<a name="wp840924"></a><p class="pTableCell">
+msg
+
+</p>
+
+<a name="wp840925"></a><p class="pTableCell">
+<span class="cItalic">coverage_level</span>
+
+</p>
+
+<a name="wp840926"></a><p class="pTableCell">
+<span class="cItalic">clock_edge</span>
+
+</p>
+
+<a name="wp840927"></a><p class="pTableCell">
+<span class="cItalic">reset_polarity</span>
+
+</p>
+
+<a name="wp840928"></a><p class="pTableCell">
+<span class="cItalic">gating_type</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp840967"></a><p class="pTableCell">
+<span class="cBold">Class:</span> <span class="cItalic">n</span>-cycle assertion
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBody">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="MGCCIDPSyntax"></a>
+<a name="wp788762"></a><h5 class="pHeading4">
+  
+
+
+Syntax
+</h5>
+
+
+<a name="wp788763"></a><pre class="pCode">
+     <span class="cBold">ovl_fifo_index</span>  
+</pre>
+
+<a name="wp788764"></a><pre class="pCode">
+           [#(<span class="cItalic">severity_level</span>, <span class="cItalic">depth</span>, <span class="cItalic">push_width</span>, <span class="cItalic">pop_width</span>,
+</pre>
+
+<a name="wp841066"></a><pre class="pCode">
+     <span class="cItalic">         simultaneous_push_pop, property_type</span>, <span class="cItalic">msg</span>,<span class="cItalic"> coverage_level, </span>
+</pre>
+
+<a name="wp841067"></a><pre class="pCode">
+     <span class="cItalic">         clock_edge, reset_polarity, gating_type</span>)] 
+</pre>
+
+<a name="wp788766"></a><pre class="pCode">
+        <span class="cItalic">instance_name</span> (<span class="cItalic">clock, reset, enable, push, pop, fire</span>);
+</pre>
+
+<a name="EW40"></a><a name="MGCCIDPParameters/Generics"></a>
+<a name="wp788816"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Parameters/Generics
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp837365table788767">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837365"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">severity_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837367"></a><p class="pTableCell">
+
+Severity of the failure. Default: OVL_SEVERITY_DEFAULT (OVL_ERROR).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798410"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">depth</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798412"></a><p class="pTableCell">
+
+Maximum number of elements in the FIFO or queue structure. This parameter must be &gt; 0. Default: 1.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798414"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798416"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">push</span> argument. Default: 1. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798418"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop_width</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798420"></a><p class="pTableCell">
+
+Width of the <span class="cItalic">pop</span> argument. Default: 1. 
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798434"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">simultaneous_push_pop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798436"></a><p class="pTableCell">
+
+Whether or not to allow simultaneous push/pop operations in the same clock cycle. When set to 0, if push and pop operations occur in the same cycle, the assertion fails. Default: 1 (simultaneous push/pop operations are allowed).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837630"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">property_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837632"></a><p class="pTableCell">
+
+Property type. Default: OVL_PROPERTY_DEFAULT (OVL_ASSERT).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837626"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">msg</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837628"></a><p class="pTableCell">
+
+Error message printed when assertion fails. Default: OVL_MSG_DEFAULT (&ldquo;VIOLATION&rdquo;).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837622"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">coverage_level</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837624"></a><p class="pTableCell">
+
+Coverage level. Default: OVL_COVER_DEFAULT (OVL_BASIC).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837618"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock_edge</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837620"></a><p class="pTableCell">
+
+Active edge of the <span class="cItalic">clock</span> input. Default: OVL_CLOCK_EDGE_DEFAULT (OVL_POSEDGE).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837614"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset_polarity</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837616"></a><p class="pTableCell">
+
+Polarity (active level) of the <span class="cItalic">reset</span> input. Default: OVL_RESET_POLARITY_DEFAULT (OVL_ACTIVE_LOW).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp837610"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">gating_type</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp837612"></a><p class="pTableCell">
+
+Gating behavior of the checker when <span class="cItalic">enable</span> is FALSE. Default: OVL_GATING_TYPE_DEFAULT (OVL_GATE_CLOCK).
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPPorts"></a>
+<a name="wp788850"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Ports
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp838414table788817">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838414"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">clock</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838416"></a><p class="pTableCell">
+
+Clock event for the assertion.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838418"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">reset</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838420"></a><p class="pTableCell">
+
+Synchronous reset signal indicating completed initialization.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838422"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">enable</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838424"></a><p class="pTableCell">
+
+Enable signal for <span class="cItalic">clock, </span>if <span class="cItalic">gating_type</span> = OVL_GATE_CLOCK (the default gating type) or <span class="cItalic">reset</span> (if <span class="cItalic">gating_type</span> = OVL_GATE_RESET). Ignored if <span class="cItalic">gating_type</span> is OVL_NONE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798398"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">push</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">push_width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798400"></a><p class="pTableCell">
+
+Expression that indicates the number of push operations that will occur during the current cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798402"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">pop</span><span style="color: #000000" class="cxgCour10">[</span><span style="color: #000000" class="cxgCour10i">pop_width</span><span style="color: #000000" class="cxgCour10">-1:0]</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798404"></a><p class="pTableCell">
+
+Expression that indicates the number of pop operations that will occur during the current cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp838785"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10i">fire</span>
+
+
+
+</p>
+
+
+
+<a name="wp838786"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">[OVL_FIRE_WIDTH-1:0]</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp838788"></a><p class="pTableCell">
+
+Fire output. Assertion failure when <span class="cItalic">fire</span>[0] is TRUE. X/Z check failure when <span class="cItalic">fire</span>[1] is TRUE. Cover event when <span class="cItalic">fire</span>[2] is TRUE.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPDescription"></a>
+<a name="wp788851"></a><h5 class="pHeading4">
+  
+
+
+Description
+</h5>
+
+
+<a name="wp788852"></a><p class="pBody">
+The ovl_fifo_index assertion checker tracks the numbers of pushes (writes) and pops (reads) that occur for a FIFO or queue memory structure. This checker does permit simultaneous pushes/pops on the queue within the same clock cycle. It ensures the FIFO never overflows (i.e., too many pushes occur without enough pops) and never underflows (i.e., too many pops occur without enough pushes). This checker is more complex than the ovl_no_overflow and ovl_no_underflow checkers, which check only the boundary conditions (overflow and underflow respectively).
+</p>
+
+<a name="MGCCIDPAssertion Checks"></a>
+<a name="wp788872"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Assertion Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798352table788853">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798352"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">OVERLOW</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798354"></a><p class="pTableCell">
+
+Push operation overflowed the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798356"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">UNDERFLOW</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798358"></a><p class="pTableCell">
+
+Pop operation underflowed the FIFO.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798360"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">ILLEGAL PUSH AND POP</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798362"></a><p class="pTableCell">
+
+Push and pop operations performed in the same clock cycle, but the simultaneous_push_pop parameter is set to 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="EW41"></a><a name="wp801510"></a><h6 class="pzHeading2">
+  Implicit X/Z Checks
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp801506table801504">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801506"></a><p class="pTableCell">
+
+push contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801509"></a><p class="pTableCell">
+
+Push expression value contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp801525"></a><p class="pTableCell">
+
+pop contains X or Z
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp801527"></a><p class="pTableCell">
+
+Pop expression value contained X or Z bits.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pzHeading2">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+<a name="MGCCIDPCover Points"></a>
+<a name="wp788904"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Cover Points
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798332table788873">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798332"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_push</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798334"></a><p class="pTableCell">
+
+BASIC &#151;  Push operation occurred.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798336"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_pop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798338"></a><p class="pTableCell">
+
+BASIC &#151;  Pop operation occurred.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798340"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_full</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798342"></a><p class="pTableCell">
+
+CORNER &#151;  FIFO was full.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798344"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_empty</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798346"></a><p class="pTableCell">
+
+CORNER &#151;  FIFO was empty.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798348"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">cover_fifo_</span>
+
+
+
+</p>
+
+
+
+<a name="wp800910"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">simultaneous_push_pop</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798350"></a><p class="pTableCell">
+
+CORNER &#151;  Push and pop operations occurred in the same clock cycle.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPCover Groups"></a>
+<a name="wp874469"></a><h6 class="pHeading5">
+  
+
+
+Cover Groups
+</h6>
+
+
+<a name="wp874470"></a><p class="pBody">
+none
+</p>
+
+<a name="MGCCIDPErrors"></a>
+<a name="wp788912"></a><h6 class="pHeading5">
+  
+
+
+
+
+
+Errors
+
+</h6>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp798328table788905">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp798328"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">Depth parameter value must be &gt; 0</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp798330"></a><p class="pTableCell">
+
+Depth parameter is set to 0.
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h6 class="pHeading5">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h6>
+
+
+<a name="MGCCIDPNotes"></a>
+<a name="wp788913"></a><h5 class="pHeading4">
+  
+
+
+Notes
+</h5>
+
+
+<a name="wp788914"></a>
+<ol start="1."><li class="LL1Seq">The checker checks the values of the <span class="cItalic">push</span> and <span class="cItalic">pop</span> expressions. By default, (i.e., simultaneous_push_pop is 1), &ldquo;simultaneous&rdquo; push/pop operations are allowed. In this case, the checker assumes the design properly handles simultaneous push/pop operations, so it only ensures that the FIFO buffer index <span class="cItalic">at the end of the cycle</span> has not overflowed or underflowed. The assertion cannot ensure the FIFO buffer index does not overflow between a push and pop performed in the same cycle.  Similarly, the assertion cannot ensure the FIFO buffer index does not underflow between a pop and push performed in the same cycle.</li></ol><a name="MGCCIDPSee also"></a>
+<a name="wp788915"></a><h5 class="pHeading4">
+  
+
+
+
+
+
+See also
+
+</h5>
+
+<div id="TableDivQz"></div>
+
+<div align="left">
+
+
+
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="0" width="96%" id="wp799632table799627">
+
+  <tr align="left" valign="top">
+
+    <td>
+
+<a name="wp799632"></a><p class="pTableCell">
+
+<a href="fire_fifo_.html"><span class="cLink">fire_fifo_</span>no_over_underflow<span style="color: #000000" class="cxgCour10"> );</span>
+
+
+
+</p>
+
+
+
+</td>
+
+    <td>
+
+<a name="wp788967"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+
+
+</p>
+
+
+
+<a name="wp870268"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+
+
+</p>
+
+
+
+<a name="wp788968"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+
+
+</p>
+
+
+
+<a name="wp788969"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// push </span>
+
+
+
+</p>
+
+
+
+<a name="wp836741"></a><p class="pTableCell">
+
+<span style="color: #000000" class="cxgCour10">// pop</span> 
+
+
+
+</p>
+
+
+
+<a name="wp788970"></a><p class="pTableCell">
+
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+
+
+</p>
+
+
+
+</td>
+
+
+
+</tr>
+
+
+
+</table>
+
+
+
+</div>
+
+<div id='EndTable'> </div>
+
+<h5 class="pHeading4">
+
+<br clear='left' class='Blank4Table' />
+
+
+
+</h5>
+
+
+<a name="wp788972"></a><p class="pBody">
+Ensures that an 8-element FIFO never overflows or underflows. Only single pushes and pops can occur in a clock cycle (<span class="cItalic">push_width</span> and <span class="cItalic">pop_width </span>values are 1). A push and pop operation in the same clock cycle is allowed (value of <span class="cItalic">simultaneous_push_pop</span> is 1).
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers066.jpg" height="93" width="382" id="wp788975" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+<a name="wp789073"></a><p class="pBodyRelative">
+
+</p>
+<div id="TableDivQz"></div>
+<div align="left">
+
+
+<table align="left" border="0" cellpadding="2" cellspacing="2" id="wp789022table789020">
+  <tr align="left" valign="top">
+    <td colspan="4" rowspan="1"><a name="wp789022"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">ovl_fifo_index #(</span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp789032"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ERROR, </span>
+
+</p>
+
+<a name="wp789033"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">8, </span>
+
+</p>
+
+<a name="wp789034"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp789035"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">1, </span>
+
+</p>
+
+<a name="wp837657"></a><p class="pTableCell">
+0,
+
+</p>
+
+<a name="wp789036"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ASSERT, </span>
+
+</p>
+
+<a name="wp789037"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">&ldquo;violation&rdquo;, </span>
+
+</p>
+
+<a name="wp835170"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_COVER_DEFAULT,</span>
+
+</p>
+
+<a name="wp835171"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_POSEDGE,</span>
+
+</p>
+
+<a name="wp835172"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_ACTIVE_LOW,</span>
+
+</p>
+
+<a name="wp789038"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">`OVL_GATE_CLOCK)</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp789043"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// severity_level </span>
+
+</p>
+
+<a name="wp789044"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// depth </span>
+
+</p>
+
+<a name="wp789045"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// push_width </span>
+
+</p>
+
+<a name="wp789046"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// pop_width </span>
+
+</p>
+
+<a name="wp837652"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// simultaneous_push_pop</span> 
+
+</p>
+
+<a name="wp789047"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// property_type </span>
+
+</p>
+
+<a name="wp789048"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// msg </span>
+
+</p>
+
+<a name="wp869666"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// coverage_level</span> 
+
+</p>
+
+<a name="wp869880"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock_edge</span> 
+
+</p>
+
+<a name="wp870090"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset_polarity</span> 
+
+</p>
+
+<a name="wp789049"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// gating_type </span></span>
+
+</p>
+
+</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td colspan="2" rowspan="1"><a name="wp789054"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">no_over_underflow (</span>
+
+</p>
+
+</td>
+    <td>
+&#160;</td>
+
+</tr>
+  <tr align="left" valign="top">
+    <td>
+&#160;</td>
+    <td>
+&#160;</td>
+    <td>
+<a name="wp789064"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">clock,  </span>
+
+</p>
+
+<a name="wp835977"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">reset,</span>
+
+</p>
+
+<a name="wp789065"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">enable,  </span>
+
+</p>
+
+<a name="wp789066"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">push,  </span>
+
+</p>
+
+<a name="wp837228"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">pop, </span>
+
+</p>
+
+<a name="wp789067"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">fire_fifo_</span>no_over_underflow<span style="color: #000000" class="cxgCour10"> );</span>
+
+</p>
+
+</td>
+    <td>
+<a name="wp789069"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// clock </span>
+
+</p>
+
+<a name="wp870272"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// reset</span> 
+
+</p>
+
+<a name="wp789070"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// enable </span></span>
+
+</p>
+
+<a name="wp789071"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// push </span>
+
+</p>
+
+<a name="wp836746"></a><p class="pTableCell">
+<span style="color: #000000" class="cxgCour10">// pop</span> 
+
+</p>
+
+<a name="wp789072"></a><p class="pTableCell">
+<span class="cP10"><span style=" font-family: Courier; font-weight: regular; font-angle: normal; vertical-align: baseline; color:#000000">// fire</span></span>
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div id='EndTable'> </div>
+<p class="pBodyRelative">
+<br clear='left' class='Blank4Table' />
+
+</p>
+
+<a name="wp789074"></a><p class="pBody">
+Ensures that an 8-element FIFO never overflows or underflows and that in no cycle do both push and pop operations occur.
+
+
+</p>
+<div align="left"><img src="images/ovl_checkers067.jpg" height="93" width="430" id="wp789076" border="0" hspace="0" vspace="0"/></div><p class="pBody">
+
+
+
+
+
+</p>
+
+
+
+
+
+
+  <p><font size=-2>Copyright 2005-2008 Accellera Organization Inc.</font></body>
+</html>
